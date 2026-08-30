@@ -75,5 +75,15 @@
   "partners.40a81c1746": "https://",
   "partners.016b0393d7": "you@example.com",
   "partners.e56c67a722": "Una breve introducción, tus fortalezas y el tipo de proyectos que disfrutas.",
-  "partners.8f6a1a2b3c": "Arquitecto"
+  "partners.8f6a1a2b3c": "Arquitecto",
+  "partners.role_web": "Desarrolladores Web <span>↗</span>",
+  "partners.role_sw": "Desarrolladores de Software <span>↗</span>",
+  "partners.role_mobile": "Desarrolladores Móviles <span>↗</span>",
+  "partners.role_uiux": "Diseñadores UI / UX <span>↗</span>",
+  "partners.role_ai": "Especialistas en IA y Automatización <span>↗</span>",
+  "partners.role_marketing": "Marketing Digital <span>↗</span>",
+  "partners.role_seo": "Especialistas SEO <span>↗</span>",
+  "partners.role_creative": "Profesionales Creativos <span>↗</span>",
+  "partners.role_it": "Especialistas IT <span>↗</span>",
+  "partners.role_tech": "Expertos en Tecnología <span>↗</span>"
 }

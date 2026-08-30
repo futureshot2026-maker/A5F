@@ -94,8 +94,8 @@ if(pf){
   const path=location.pathname;
   const page=path.startsWith('/services')?'services':path.startsWith('/partners')?'partners':'home';
   const supported=['en','ar','es','de'];
-  const saved=localStorage.getItem('a5f-lang')||'en';
-  const lang=supported.includes(saved)?saved:'en';
+  const saved=localStorage.getItem('a5f-lang')||'es';
+  const lang=supported.includes(saved)?saved:'es';
   const localeCache={};
 
   function setHtml(key,value){
