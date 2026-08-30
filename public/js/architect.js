@@ -1,7 +1,7 @@
 (function(){
   const supported=['en','ar','es','de'];
-  let lang=localStorage.getItem('a5f-lang')||'en';
-  if(!supported.includes(lang)) lang='en';
+  let lang=localStorage.getItem('a5f-lang')||'es';
+  if(!supported.includes(lang)) lang='es';
   const state={step:1,brief:'',problem:'',audience:'',outcome:'',connect:[],scope:'',timeline:''};
   const cache={};
   const form=document.getElementById('architectForm');
