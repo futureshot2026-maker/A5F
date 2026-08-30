@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A5F — Project Workspace / Team</title>
+<title>A5F — Espacio de Proyecto / Equipo</title>
 <style>
 :root{--ink:#17191d;--muted:#707784;--line:#e5e7eb;--bg:#f5f6f8;--paper:#fff;--soft:#eef1f4;--accent:#b98a3d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1180px;margin:auto;padding:28px 20px 70px}
@@ -21,22 +21,22 @@ select,input,textarea{width:100%;box-sizing:border-box;border:1px solid #dfe3e8;
 </style>
 </head>
 <body><main class="wrap">
-<header class="top"><div class="brand">A5F</div><span style="display:flex;gap:14px;flex-wrap:wrap"><a class="back" href="/client/">← Client Portal</a><a class="back" href="/files/">Files &amp; Documents</a></span></header>
+<header class="top"><div class="brand">A5F</div><span style="display:flex;gap:14px;flex-wrap:wrap"><a class="back" href="/client/">← Portal del Cliente</a><a class="back" href="/files/">Archivos y Documentos</a></span></header>
 <section class="hero">
-<div class="eyebrow">A5F / PROJECT WORKSPACE</div><h1 id="project">Project</h1><p class="muted" id="meta">—</p><span class="status" id="status">PLANNING</span>
-<div class="stats"><div class="stat"><b id="progressText">0%</b><span class="muted">Progress</span></div><div class="stat"><b id="taskCount">0/0</b><span class="muted">Tasks</span></div><div class="stat"><b id="milestoneCount">0</b><span class="muted">Milestones</span></div><div class="stat"><b id="teamCount">0</b><span class="muted">Team</span></div><div class="stat"><b id="days">—</b><span class="muted">Timeline</span></div></div>
+<div class="eyebrow">A5F / ESPACIO DE PROYECTO</div><h1 id="project">Proyecto</h1><p class="muted" id="meta">—</p><span class="status" id="status">PLANIFICACIÓN</span>
+<div class="stats"><div class="stat"><b id="progressText">0%</b><span class="muted">Progreso</span></div><div class="stat"><b id="taskCount">0/0</b><span class="muted">Tareas</span></div><div class="stat"><b id="milestoneCount">0</b><span class="muted">Hitos</span></div><div class="stat"><b id="teamCount">0</b><span class="muted">Equipo</span></div><div class="stat"><b id="days">—</b><span class="muted">Plazo</span></div></div>
 <div class="progress"><div class="bar" id="bar"></div></div>
 </section>
 
 <section class="grid">
 <div>
-<section class="card"><h2>Tasks</h2><div class="filters"><input id="taskSearch" placeholder="Search tasks…"><select id="taskFilter"><option value="ALL">All tasks</option><option value="OPEN">Open</option><option value="DONE">Done</option></select></div><div id="tasks"></div><div class="row" style="margin-top:12px"><button class="btn primary" id="addTask">Add task</button></div></section>
-<section class="card section-gap"><h2>Team &amp; Collaboration</h2><div class="notice">Assign work, add collaborators and keep project decisions in one place.</div><div id="team" class="team-grid"></div><div class="row" style="margin-top:14px"><button class="btn primary" id="addMember">Add team member</button></div></section>
-<section class="card section-gap"><h2>Comments</h2><div id="comments"></div><label for="commentAuthor">Comment as</label><select id="commentAuthor"></select><label for="commentInput">Message</label><textarea id="commentInput" placeholder="Write a project update or mention a teammate with @name…"></textarea><div class="row" style="margin-top:10px"><button class="btn primary" id="addComment">Post comment</button></div></section>
+<section class="card"><h2>Tareas</h2><div class="filters"><input id="taskSearch" placeholder="Buscar tareas…"><select id="taskFilter"><option value="ALL">Todas las tareas</option><option value="OPEN">Abiertas</option><option value="DONE">Hechas</option></select></div><div id="tasks"></div><div class="row" style="margin-top:12px"><button class="btn primary" id="addTask">Añadir tarea</button></div></section>
+<section class="card section-gap"><h2>Equipo y Colaboración</h2><div class="notice">Asigna trabajo, añade colaboradores y mantén las decisiones del proyecto en un solo lugar.</div><div id="team" class="team-grid"></div><div class="row" style="margin-top:14px"><button class="btn primary" id="addMember">Añadir miembro del equipo</button></div></section>
+<section class="card section-gap"><h2>Comentarios</h2><div id="comments"></div><label for="commentAuthor">Comentar como</label><select id="commentAuthor"></select><label for="commentInput">Mensaje</label><textarea id="commentInput" placeholder="Escribe una actualización del proyecto o menciona a un compañero con @nombre…"></textarea><div class="row" style="margin-top:10px"><button class="btn primary" id="addComment">Publicar comentario</button></div></section>
 </div>
 <div>
-<section class="card"><h2>Project control</h2><label>Status</label><select id="statusSelect"><option>PLANNING</option><option>DESIGN</option><option>DEVELOPMENT</option><option>QA</option><option>LAUNCH</option><option>ON HOLD</option></select><label>Next milestone</label><input id="milestone" placeholder="e.g. MVP review"><label>Due date</label><input id="due" type="date"><div class="row" style="margin-top:14px"><button class="btn primary" id="save">Save project</button></div><div id="milestones" style="margin-top:18px"></div></section>
-<section class="card section-gap"><h2>Activity</h2><div class="timeline" id="timeline"></div></section>
+<section class="card"><h2>Control del proyecto</h2><label>Estado</label><select id="statusSelect"><option>PLANIFICACIÓN</option><option>DISEÑO</option><option>DESARROLLO</option><option>QA</option><option>LANZAMIENTO</option><option>EN PAUSA</option></select><label>Próximo hito</label><input id="milestone" placeholder="p. ej. Revisión del MVP"><label>Fecha límite</label><input id="due" type="date"><div class="row" style="margin-top:14px"><button class="btn primary" id="save">Guardar proyecto</button></div><div id="milestones" style="margin-top:18px"></div></section>
+<section class="card section-gap"><h2>Actividad</h2><div class="timeline" id="timeline"></div></section>
 </div></section>
 </main>
 <script>
@@ -49,39 +49,39 @@ const bp=lead?.blueprint?.brief||lead?.blueprint||JSON.parse(localStorage.getIte
 const uid=()=>crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random());
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 let project=JSON.parse(localStorage.getItem(key)||'null');
-if(!project){project={name:lead?.project||bp.project||'A5F Project',status:'PLANNING',tasks:[
-{id:1,title:'Project kickoff',done:false,assignee:null},{id:2,title:'UX / system design',done:false,assignee:null},{id:3,title:'Development sprint',done:false,assignee:null},{id:4,title:'QA and client review',done:false,assignee:null},{id:5,title:'Launch',done:false,assignee:null}],milestones:[],events:[],team:[
-{id:'owner',name:'A5F Project Lead',role:'ADMIN',email:''},{id:'client',name:lead?.name||'Client',role:'CLIENT',email:lead?.email||''}
+if(!project){project={name:lead?.project||bp.project||'Proyecto A5F',status:'PLANIFICACIÓN',tasks:[
+{id:1,title:'Inicio del proyecto',done:false,assignee:null},{id:2,title:'Diseño de UX / sistema',done:false,assignee:null},{id:3,title:'Sprint de desarrollo',done:false,assignee:null},{id:4,title:'QA y revisión del cliente',done:false,assignee:null},{id:5,title:'Lanzamiento',done:false,assignee:null}],milestones:[],events:[],team:[
+{id:'owner',name:'Responsable de Proyecto A5F',role:'ADMIN',email:''},{id:'client',name:lead?.name||'Cliente',role:'CLIENT',email:lead?.email||''}
 ],comments:[]};}
 project.team=Array.isArray(project.team)?project.team:[];project.comments=Array.isArray(project.comments)?project.comments:[];project.events=Array.isArray(project.events)?project.events:[];project.tasks=(project.tasks||[]).map(t=>({...t,assignee:t.assignee||null}));
-if(!project.team.length)project.team=[{id:'owner',name:'A5F Project Lead',role:'ADMIN',email:''}];
+if(!project.team.length)project.team=[{id:'owner',name:'Responsable de Proyecto A5F',role:'ADMIN',email:''}];
 const $=id=>document.getElementById(id);
-$('project').textContent=project.name;$('meta').textContent=[lead?.company,lead?.email].filter(Boolean).join(' · ')||'A5F project workspace';$('statusSelect').value=project.status||'PLANNING';
+$('project').textContent=project.name;$('meta').textContent=[lead?.company,lead?.email].filter(Boolean).join(' · ')||'Espacio de trabajo del proyecto A5F';$('statusSelect').value=project.status||'PLANIFICACIÓN';
 function initials(name){return String(name||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'?'}
 function addEvent(text){project.events.push({text,at:new Date().toISOString()});if(project.events.length>80)project.events=project.events.slice(-80)}
 function render(){
  const total=project.tasks.length,done=project.tasks.filter(x=>x.done).length,p=total?Math.round(done/total*100):0;
  $('progressText').textContent=p+'%';$('taskCount').textContent=done+'/'+total;$('milestoneCount').textContent=project.milestones.length;$('teamCount').textContent=project.team.length;$('bar').style.width=p+'%';$('status').textContent=project.status;
- const dueDates=project.milestones.map(x=>x.due).filter(Boolean).sort();if(dueDates.length){const ms=Math.ceil((new Date(dueDates[dueDates.length-1]+'T23:59:59')-new Date())/86400000);$('days').textContent=(ms>=0?ms+'d':'Overdue')}else $('days').textContent='—';
+ const dueDates=project.milestones.map(x=>x.due).filter(Boolean).sort();if(dueDates.length){const ms=Math.ceil((new Date(dueDates[dueDates.length-1]+'T23:59:59')-new Date())/86400000);$('days').textContent=(ms>=0?ms+'d':'Vencido')}else $('days').textContent='—';
  const tq=($('taskSearch').value||'').toLowerCase(),tf=$('taskFilter').value;const shown=project.tasks.filter(t=>(tf==='ALL'||(tf==='DONE'?t.done:!t.done))&&(!tq||t.title.toLowerCase().includes(tq)));
- const memberOptions='<option value="">Unassigned</option>'+project.team.map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join('');
- $('tasks').innerHTML=shown.length?shown.map(t=>{const member=project.team.find(m=>m.id===t.assignee);return `<div class="task"><input type="checkbox" data-id="${esc(t.id)}" ${t.done?'checked':''}><div class="task-main"><div class="task-title ${t.done?'done':''}">${esc(t.title)}</div><div class="task-meta"><span class="tag">${t.done?'DONE':'OPEN'}</span>${member?`<span class="tag">${esc(member.name)}</span>`:''}</div></div><select class="task-assignee" data-assignee="${esc(t.id)}">${memberOptions}</select></div>`}).join(''):'<div class="empty">No tasks match this filter.</div>';
- $('tasks').querySelectorAll('input[type=checkbox]').forEach(cb=>cb.onchange=()=>{const t=project.tasks.find(x=>String(x.id)===cb.dataset.id);if(!t)return;t.done=cb.checked;addEvent((t.done?'Completed: ':'Reopened: ')+t.title);save()});
- $('tasks').querySelectorAll('[data-assignee]').forEach(sel=>{const t=project.tasks.find(x=>String(x.id)===sel.dataset.assignee);if(t)sel.value=t.assignee||'';sel.onchange=()=>{const m=project.team.find(x=>x.id===sel.value);t.assignee=sel.value||null;addEvent((m?'Assigned '+t.title+' to '+m.name:'Unassigned task: '+t.title));save()}});
- $('team').innerHTML=project.team.map(m=>`<div class="member"><div class="avatar">${esc(initials(m.name))}</div><div class="member-info"><div class="member-name">${esc(m.name)}</div><div class="member-role">${esc(m.email||'No email')}</div><span class="role">${esc(m.role)}</span></div><div class="member-actions"><button class="icon-btn" data-edit-member="${esc(m.id)}" aria-label="Edit member">Edit</button></div></div>`).join('');
+ const memberOptions='<option value="">Sin asignar</option>'+project.team.map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join('');
+ $('tasks').innerHTML=shown.length?shown.map(t=>{const member=project.team.find(m=>m.id===t.assignee);return `<div class="task"><input type="checkbox" data-id="${esc(t.id)}" ${t.done?'checked':''}><div class="task-main"><div class="task-title ${t.done?'done':''}">${esc(t.title)}</div><div class="task-meta"><span class="tag">${t.done?'HECHA':'ABIERTA'}</span>${member?`<span class="tag">${esc(member.name)}</span>`:''}</div></div><select class="task-assignee" data-assignee="${esc(t.id)}">${memberOptions}</select></div>`}).join(''):'<div class="empty">Ninguna tarea coincide con este filtro.</div>';
+ $('tasks').querySelectorAll('input[type=checkbox]').forEach(cb=>cb.onchange=()=>{const t=project.tasks.find(x=>String(x.id)===cb.dataset.id);if(!t)return;t.done=cb.checked;addEvent((t.done?'Completada: ':'Reabierta: ')+t.title);save()});
+ $('tasks').querySelectorAll('[data-assignee]').forEach(sel=>{const t=project.tasks.find(x=>String(x.id)===sel.dataset.assignee);if(t)sel.value=t.assignee||'';sel.onchange=()=>{const m=project.team.find(x=>x.id===sel.value);t.assignee=sel.value||null;addEvent((m?'Asignada '+t.title+' a '+m.name:'Tarea sin asignar: '+t.title));save()}});
+ $('team').innerHTML=project.team.map(m=>`<div class="member"><div class="avatar">${esc(initials(m.name))}</div><div class="member-info"><div class="member-name">${esc(m.name)}</div><div class="member-role">${esc(m.email||'Sin email')}</div><span class="role">${esc(m.role)}</span></div><div class="member-actions"><button class="icon-btn" data-edit-member="${esc(m.id)}" aria-label="Editar miembro">Editar</button></div></div>`).join('');
  $('team').querySelectorAll('[data-edit-member]').forEach(btn=>btn.onclick=()=>editMember(btn.dataset.editMember));
  $('commentAuthor').innerHTML=project.team.map(m=>`<option value="${esc(m.id)}">${esc(m.name)} · ${esc(m.role)}</option>`).join('');
- $('comments').innerHTML=project.comments.length?project.comments.slice().reverse().map(c=>{const a=project.team.find(m=>m.id===c.authorId);return `<div class="comment"><div class="comment-head"><span class="comment-author">${esc(a?.name||'Team member')}</span><small>${new Date(c.at).toLocaleString()}</small></div><div class="comment-body">${esc(c.text).replace(/(@[^\s@]+)/g,'<span class="mention">$1</span>')}</div></div>`}).join(''):'<div class="empty">No comments yet. Start the project conversation here.</div>';
- $('milestones').innerHTML=project.milestones.length?'<div class="eyebrow">MILESTONES</div>'+project.milestones.map(m=>`<div class="milestone"><b class="milestone-name">${esc(m.name)}</b><small class="muted">${esc(m.due||'No date')}</small></div>`).join(''):'<div class="muted" style="font-size:13px">No milestones yet.</div>';
- const events=project.events.length?project.events:[{text:'Project workspace created',at:new Date().toISOString()}];$('timeline').innerHTML=events.slice().reverse().map(e=>`<div class="event"><b>${esc(e.text)}</b><small>${new Date(e.at).toLocaleString()}</small></div>`).join('');
+ $('comments').innerHTML=project.comments.length?project.comments.slice().reverse().map(c=>{const a=project.team.find(m=>m.id===c.authorId);return `<div class="comment"><div class="comment-head"><span class="comment-author">${esc(a?.name||'Miembro del equipo')}</span><small>${new Date(c.at).toLocaleString()}</small></div><div class="comment-body">${esc(c.text).replace(/(@[^\s@]+)/g,'<span class="mention">$1</span>')}</div></div>`}).join(''):'<div class="empty">Todavía no hay comentarios. Empieza aquí la conversación del proyecto.</div>';
+ $('milestones').innerHTML=project.milestones.length?'<div class="eyebrow">HITOS</div>'+project.milestones.map(m=>`<div class="milestone"><b class="milestone-name">${esc(m.name)}</b><small class="muted">${esc(m.due||'Sin fecha')}</small></div>`).join(''):'<div class="muted" style="font-size:13px">Todavía no hay hitos.</div>';
+ const events=project.events.length?project.events:[{text:'Espacio de proyecto creado',at:new Date().toISOString()}];$('timeline').innerHTML=events.slice().reverse().map(e=>`<div class="event"><b>${esc(e.text)}</b><small>${new Date(e.at).toLocaleString()}</small></div>`).join('');
 }
 function save(){localStorage.setItem(key,JSON.stringify(project));render()}
-function editMember(memberId){const m=project.team.find(x=>x.id===memberId);if(!m)return;const name=prompt('Member name',m.name);if(name===null)return;const role=prompt('Role: ADMIN, TEAM, CLIENT',m.role);if(role===null)return;const email=prompt('Email',m.email||'');if(email===null)return;m.name=name.trim()||m.name;m.role=role.trim().toUpperCase()||m.role;m.email=email.trim();addEvent('Updated team member: '+m.name);save()}
-$('statusSelect').onchange=()=>{project.status=$('statusSelect').value;addEvent('Status changed to '+project.status);save()};
-$('save').onclick=()=>{const m=$('milestone').value.trim(),d=$('due').value;if(m){project.milestones.push({id:uid(),name:m,due:d});addEvent('Milestone added: '+m);$('milestone').value='';$('due').value=''}save()};
-$('addTask').onclick=()=>{const title=prompt('Task name');if(!title?.trim())return;project.tasks.push({id:uid(),title:title.trim(),done:false,assignee:null});addEvent('Task added: '+title.trim());save()};
-$('addMember').onclick=()=>{const name=prompt('Member name');if(!name?.trim())return;const role=prompt('Role: ADMIN, TEAM, CLIENT','TEAM');if(!role?.trim())return;const email=prompt('Email (optional)','')??'';const m={id:uid(),name:name.trim(),role:role.trim().toUpperCase(),email:email.trim()};project.team.push(m);addEvent('Added team member: '+m.name);save()};
-$('addComment').onclick=()=>{const text=$('commentInput').value.trim(),authorId=$('commentAuthor').value;if(!text)return;$('commentInput').value='';project.comments.push({id:uid(),authorId,text,at:new Date().toISOString()});const a=project.team.find(x=>x.id===authorId);addEvent((a?.name||'Team member')+' posted a comment');save()};
+function editMember(memberId){const m=project.team.find(x=>x.id===memberId);if(!m)return;const name=prompt('Nombre del miembro',m.name);if(name===null)return;const role=prompt('Rol: ADMIN, TEAM, CLIENT',m.role);if(role===null)return;const email=prompt('Email',m.email||'');if(email===null)return;m.name=name.trim()||m.name;m.role=role.trim().toUpperCase()||m.role;m.email=email.trim();addEvent('Miembro del equipo actualizado: '+m.name);save()}
+$('statusSelect').onchange=()=>{project.status=$('statusSelect').value;addEvent('Estado cambiado a '+project.status);save()};
+$('save').onclick=()=>{const m=$('milestone').value.trim(),d=$('due').value;if(m){project.milestones.push({id:uid(),name:m,due:d});addEvent('Hito añadido: '+m);$('milestone').value='';$('due').value=''}save()};
+$('addTask').onclick=()=>{const title=prompt('Nombre de la tarea');if(!title?.trim())return;project.tasks.push({id:uid(),title:title.trim(),done:false,assignee:null});addEvent('Tarea añadida: '+title.trim());save()};
+$('addMember').onclick=()=>{const name=prompt('Nombre del miembro');if(!name?.trim())return;const role=prompt('Rol: ADMIN, TEAM, CLIENT','TEAM');if(!role?.trim())return;const email=prompt('Email (opcional)','')??'';const m={id:uid(),name:name.trim(),role:role.trim().toUpperCase(),email:email.trim()};project.team.push(m);addEvent('Miembro del equipo añadido: '+m.name);save()};
+$('addComment').onclick=()=>{const text=$('commentInput').value.trim(),authorId=$('commentAuthor').value;if(!text)return;$('commentInput').value='';project.comments.push({id:uid(),authorId,text,at:new Date().toISOString()});const a=project.team.find(x=>x.id===authorId);addEvent((a?.name||'Miembro del equipo')+' publicó un comentario');save()};
 $('taskSearch').oninput=render;$('taskFilter').onchange=render;
 render();
 })();

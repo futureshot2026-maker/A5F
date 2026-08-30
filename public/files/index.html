@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A5F — Files & Documents</title>
+<title>A5F — Archivos y Documentos</title>
 <link rel="icon" href="/assets/favicon-32.png">
 <style>
 :root{--ink:#17191d;--muted:#707784;--line:#e5e7eb;--bg:#f5f6f8;--paper:#fff}
@@ -20,28 +20,28 @@ select,input{border:1px solid #dfe3e8;border-radius:10px;padding:10px;font:inher
 @media(max-width:800px){.grid{grid-template-columns:1fr}.file{grid-template-columns:minmax(0,1fr)}h1{font-size:32px}}
 </style></head>
 <body><main class="wrap">
-<header class="top"><div class="brand">A5F</div><div class="actions"><a class="back" href="/project/">← Project Workspace</a><a class="back" href="/client/">Client Portal</a></div></header>
-<section class="hero"><div class="eyebrow">A5F / FILES & DOCUMENTS</div>
-<h1 id="project">Project Files</h1><p class="muted">One place for project documents, references and deliverables.</p>
-<div class="toolbar"><select id="category"><option>Blueprint</option><option>Proposal</option><option>Contract</option><option>Design</option><option>Deliverable</option><option>Other</option></select>
-<input id="fileInput" type="file" multiple><button class="btn primary" id="upload">Add selected files</button></div></section>
-<section class="grid"><div class="card"><h2>All files <span class="tag" id="count">0</span></h2><div id="list"></div></div>
-<div><div class="card"><h2>Recent files</h2><div id="recent"></div></div><div class="card"><h2>Categories</h2><div id="categories"></div></div></div></section>
+<header class="top"><div class="brand">A5F</div><div class="actions"><a class="back" href="/project/">← Espacio de Proyecto</a><a class="back" href="/client/">Portal del Cliente</a></div></header>
+<section class="hero"><div class="eyebrow">A5F / ARCHIVOS Y DOCUMENTOS</div>
+<h1 id="project">Archivos del Proyecto</h1><p class="muted">Un solo lugar para los documentos, referencias y entregables del proyecto.</p>
+<div class="toolbar"><select id="category"><option>Blueprint</option><option>Propuesta</option><option>Contrato</option><option>Diseño</option><option>Entregable</option><option>Otro</option></select>
+<input id="fileInput" type="file" multiple><button class="btn primary" id="upload">Añadir archivos seleccionados</button></div></section>
+<section class="grid"><div class="card"><h2>Todos los archivos <span class="tag" id="count">0</span></h2><div id="list"></div></div>
+<div><div class="card"><h2>Archivos recientes</h2><div id="recent"></div></div><div class="card"><h2>Categorías</h2><div id="categories"></div></div></div></section>
 </main>
 <script>
 (()=>{const KEY='a5f-project-files', $=id=>document.getElementById(id);
 let files=JSON.parse(localStorage.getItem(KEY)||'[]');
 const leads=JSON.parse(localStorage.getItem('a5f-leads')||'[]'), id=localStorage.getItem('a5f-proposal-lead'), lead=leads.find(x=>x.id===id);
-$('project').textContent=(lead&&lead.project?lead.project:'Project')+' — Files';
+$('project').textContent=(lead&&lead.project?lead.project:'Proyecto')+' — Archivos';
 const esc=x=>String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const size=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(1)+' MB';
 function persist(){localStorage.setItem(KEY,JSON.stringify(files));render()}
 function render(){
  $('count').textContent=files.length;
- $('list').innerHTML=files.length?files.map((f,i)=>`<div class="file"><div><div class="name">${esc(f.name)}</div><div class="meta">${esc(f.category)} · ${size(f.size)} · ${new Date(f.date).toLocaleString()}</div></div><div class="actions"><button class="btn secondary" data-open="${i}">Open</button><button class="btn secondary" data-delete="${i}">Delete</button></div></div>`).join(''):'<div class="empty">No project files yet.</div>';
- $('recent').innerHTML=files.slice().sort((a,b)=>b.date-a.date).slice(0,5).map(f=>`<div class="meta" style="padding:7px 0"><b>${esc(f.name)}</b><br>${esc(f.category)}</div>`).join('')||'<div class="empty">No recent files.</div>';
+ $('list').innerHTML=files.length?files.map((f,i)=>`<div class="file"><div><div class="name">${esc(f.name)}</div><div class="meta">${esc(f.category)} · ${size(f.size)} · ${new Date(f.date).toLocaleString()}</div></div><div class="actions"><button class="btn secondary" data-open="${i}">Abrir</button><button class="btn secondary" data-delete="${i}">Eliminar</button></div></div>`).join(''):'<div class="empty">Todavía no hay archivos del proyecto.</div>';
+ $('recent').innerHTML=files.slice().sort((a,b)=>b.date-a.date).slice(0,5).map(f=>`<div class="meta" style="padding:7px 0"><b>${esc(f.name)}</b><br>${esc(f.category)}</div>`).join('')||'<div class="empty">No hay archivos recientes.</div>';
  const cats={};files.forEach(f=>cats[f.category]=(cats[f.category]||0)+1);
- $('categories').innerHTML=Object.entries(cats).map(([k,v])=>`<div style="padding:7px 0"><b>${esc(k)}</b> <span class="tag">${v}</span></div>`).join('')||'<div class="empty">No categories yet.</div>';
+ $('categories').innerHTML=Object.entries(cats).map(([k,v])=>`<div style="padding:7px 0"><b>${esc(k)}</b> <span class="tag">${v}</span></div>`).join('')||'<div class="empty">Todavía no hay categorías.</div>';
  document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{files.splice(+b.dataset.delete,1);persist()});
  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{const f=files[+b.dataset.open]; if(!f.data)return; const a=document.createElement('a');a.href=f.data;a.download=f.name;a.target='_blank';a.click()});
 }
