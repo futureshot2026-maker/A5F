@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "systems": "Systeme",
+    "architect": "Architect",
+    "work": "Projekte",
+    "partners": "Partner",
+    "menu": "MENÜ",
+    "mode": "MODUS",
+    "discovery": "DISCOVERY",
+    "output": "AUSGABE",
+    "systemBlueprint": "SYSTEM-BLUEPRINT",
+    "homeLabel": "A5F Startseite",
+    "leadCenter": "Lead Center"
+  },
+  "skip": "Zum Inhalt",
+  "eyebrow": "A5F / PROJECT ARCHITECT",
+  "title": "Aus dem Problem wird ein <em>Blueprint.</em>",
+  "lead": "Beantworte einige fokussierte Fragen. A5F formt daraus eine erste Systemarchitektur, einen Umsetzungsweg und eine Wachstumslandkarte.",
+  "step1": "01 / KONTEXT",
+  "step2": "02 / ERGEBNIS",
+  "step3": "03 / SYSTEM",
+  "step4": "04 / SKALIERUNG",
+  "step5": "05 / REVIEW",
+  "q1": "Was baust du?",
+  "q1h": "Beschreibe Produkt, Service oder internes System in einem Satz.",
+  "q2": "Welches Problem ist am wichtigsten?",
+  "q2h": "Wo liegen heute Reibung, Risiko oder verpasste Chancen?",
+  "q3": "Wer nutzt es?",
+  "q3h": "Wähle die primäre Zielgruppe.",
+  "q4": "Was ist das wichtigste Ergebnis?",
+  "q4h": "Wähle das Ergebnis mit dem größten Wert.",
+  "q5": "Was muss verbunden werden?",
+  "q5h": "Wähle die beteiligten Systeme oder Kanäle.",
+  "q6": "Wie komplex ist die erste Version?",
+  "q6h": "Wähle den Umfang für den Start.",
+  "q7": "Welcher Zeitrahmen ist geplant?",
+  "q7h": "Wähle einen realistischen ersten Meilenstein.",
+  "next": "Weiter →",
+  "back": "← Zurück",
+  "build": "Blueprint erstellen",
+  "reset": "Neu starten",
+  "result": "SYSTEM-BLUEPRINT",
+  "architecture": "Empfohlene Architektur",
+  "modules": "Kernmodule",
+  "opportunities": "Intelligence-Chancen",
+  "delivery": "Umsetzungsweg",
+  "complexity": "Komplexität",
+  "timeline": "Erster Meilenstein",
+  "cta": "Blueprint besprechen →",
+  "hint": "Dies ist eine richtungsweisende Skizze, kein Festpreisangebot. A5F validiert den Umfang gemeinsam mit dir.",
+  "placeholder": "Beispiel: Plattform für Immobilienprozesse mehrerer Standorte",
+  "select": "Auswahl treffen",
+  "audience": [
+    "Interne Teams",
+    "Kunden",
+    "Partner",
+    "Field Teams"
+  ],
+  "outcomes": [
+    "Manuelle Arbeit reduzieren",
+    "Digitales Produkt starten",
+    "Fragmentierte Abläufe verbinden",
+    "Kundenerlebnis verbessern"
+  ],
+  "connect": [
+    "CRM / Vertrieb",
+    "ERP / Finanzen",
+    "Website / App",
+    "Dokumente / Wissen",
+    "APIs / Integrationen"
+  ],
+  "scope": [
+    "Fokussiertes MVP",
+    "Modulare Plattform",
+    "Enterprise-System"
+  ],
+  "timelines": [
+    "4–8 Wochen",
+    "2–4 Monate",
+    "4–9 Monate",
+    "Laufendes Programm"
+  ],
+  "status": "BLUEPRINT BEREIT",
+  "footer": "Digitale Technologie & Softwarelösungen",
+  "spain": "Spanien · International",
+  "copyright": "© 2026 A5F · SYSTEM 02",
+  "pageTitle": "A5F — Project Architect",
+  "requiredBrief": "Beschreibe zuerst, was du bauen möchtest.",
+  "requiredProblem": "Beschreibe zuerst das Problem.",
+  "requiredAudience": "Wähle die primäre Zielgruppe.",
+  "requiredOutcome": "Wähle das wichtigste Ergebnis.",
+  "requiredConnect": "Wähle mindestens eine Verbindung.",
+  "requiredScope": "Wähle den Umfang der ersten Version.",
+  "requiredTimeline": "Wähle einen Zielzeitraum.",
+  "localeError": "Die Sprache konnte nicht geladen werden. Bitte erneut versuchen.",
+  "emailSubject": "A5F — Projekt-Blueprint",
+  "emailLabels": {
+    "project": "Projekt",
+    "problem": "Problem",
+    "audience": "Zielgruppe",
+    "outcome": "Ergebnis",
+    "connections": "Verbindungen",
+    "scope": "Umfang",
+    "timeline": "Zeitraum",
+    "architecture": "Empfohlene Architektur",
+    "complexity": "Komplexität"
+  },
+  "blueprint": {
+    "fallbackTitle": "A5F Blueprint",
+    "architectures": {
+      "default": "Modulare digitale Plattformarchitektur",
+      "mvp": "Fokussierte MVP-Architektur",
+      "enterprise": "Enterprise-Plattformarchitektur"
+    },
+    "governance": "Observability & Governance",
+    "complexity": {
+      "focused": "FOKUSSIERT",
+      "medium": "MITTEL",
+      "high": "HOCH"
+    },
+    "modules": {
+      "default": [
+        "Experience Layer",
+        "Kernanwendung",
+        "Daten & Intelligence",
+        "Integrationsschicht"
+      ],
+      "internal": [
+        "Interner Workspace",
+        "Workflow-Engine",
+        "Wissensschicht",
+        "Administration & Berechtigungen"
+      ],
+      "customer": [
+        "Customer Experience",
+        "Identity & Access",
+        "Kernanwendung",
+        "Analytics"
+      ],
+      "partner": [
+        "Partner Workspace",
+        "Identity & Access",
+        "Kollaborationsschicht",
+        "Analytics"
+      ],
+      "field": [
+        "Field Workspace",
+        "Mobile Experience",
+        "Workflow-Engine",
+        "Operations Analytics"
+      ]
+    },
+    "opportunities": {
+      "default": [
+        "Workflow-Automatisierung",
+        "KI-gestützte Abläufe",
+        "Operational Analytics"
+      ],
+      "automation": [
+        "Workflow-Automatisierung",
+        "KI-Aufgabenorchestrierung",
+        "Ausnahmebehandlung"
+      ],
+      "product": [
+        "KI-gestützte Discovery",
+        "Personalisierung",
+        "Growth Analytics"
+      ],
+      "experience": [
+        "KI-Assistent",
+        "Personalisierung",
+        "Customer-Journey-Analytics"
+      ],
+      "integration": [
+        "Integrationsorchestrierung",
+        "Unified Data Layer",
+        "Operational Analytics"
+      ]
+    },
+    "integrationHints": {
+      "crm": [
+        "CRM-Lifecycle-Automatisierung"
+      ],
+      "api": [
+        "API-Gateway & Integrationsschicht"
+      ]
+    },
+    "delivery": [
+      "Scope & Erfolgsmetriken klären",
+      "Architektur- & UX-Blueprint",
+      "Ersten Produktionsbaustein bauen",
+      "Messen, optimieren & erweitern"
+    ]
+  },
+  "menu": "MENÜ",
+  "mode": "MODUS",
+  "discovery": "DISCOVERY",
+  "output": "AUSGABE",
+  "systemBlueprint": "SYSTEM-BLUEPRINT",
+  "homeLabel": "A5F Startseite",
+  "briefEyebrow": "PROJEKT-ANFRAGE",
+  "briefTitle": "Vom Blueprint zum echten Projekt.",
+  "briefLead": "Senden Sie den erstellten Blueprint an A5F. Wir prüfen den Umfang, validieren die Architektur und melden uns mit dem passenden nächsten Schritt.",
+  "briefStatusLabel": "BEREIT ZUR PRÜFUNG",
+  "nameLabel": "Ihr Name",
+  "emailLabel": "Geschäftliche E-Mail",
+  "companyLabel": "Unternehmen",
+  "roleLabel": "Position",
+  "briefDataLabel": "Erstellte Projektzusammenfassung",
+  "namePlaceholder": "Max Mustermann",
+  "emailPlaceholder": "max@unternehmen.de",
+  "companyPlaceholder": "Unternehmensname",
+  "rolePlaceholder": "Founder / Product Lead",
+  "consent": "Ich stimme zu, zu diesem Projekt kontaktiert zu werden.",
+  "sendBrief": "Projektzusammenfassung senden →",
+  "sending": "Wird gesendet…",
+  "sent": "Projektzusammenfassung erhalten. A5F prüft sie und meldet sich bei Ihnen.",
+  "submitError": "Die Zusammenfassung konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an hello@a5f.net.",
+  "leadCenter": "Lead Center öffnen →"
+}

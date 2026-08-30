@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A5F — Proposal Engine</title>
+<link rel="icon" href="/assets/favicon-32.png">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/proposal/proposal.css">
+</head>
+<body>
+<header class="nav"><a class="mark" href="/"><img alt="A5F" src="/assets/a5f-logo-nav.png"></a><div class="proposal-nav"><a href="/dashboard/" data-i18n="back">Lead Center</a><span class="sep">/</span><strong data-i18n="engine">Proposal Engine</strong><button id="lang" type="button">EN</button></div></header>
+<main class="proposal-shell">
+<section class="proposal-toolbar no-print">
+  <div><div class="eyebrow" data-i18n="eyebrow">A5F / COMMERCIAL SYSTEM</div><h1 data-i18n="title">Proposal Engine.</h1><p data-i18n="lead">Turn the approved blueprint into a client-ready proposal without rewriting the brief.</p></div>
+  <div class="toolbar-actions"><button class="textlink" id="edit" data-i18n="edit">Edit inputs</button><button class="btn" id="print" data-i18n="print">Print / PDF</button><a class="btn secondary" id="email" href="#" data-i18n="email">Email proposal</a><a class="btn secondary" href="/client/" data-i18n="clientPortal">Client Portal</a><a class="btn secondary" href="/project/">Project Workspace</a></div>
+</section>
+<section class="proposal-grid">
+<article class="proposal-card cover"><div class="cover-top"><span>A5F</span><span data-i18n="confidential">CONFIDENTIAL</span></div><div class="cover-main"><div class="eyebrow" data-i18n="projectProposal">PROJECT PROPOSAL</div><h2 id="pProject">—</h2><p id="pClient">—</p></div><div class="cover-bottom"><span id="pDate">—</span><span data-i18n="preparedBy">Prepared by A5F</span></div></article>
+<article class="proposal-card"><div class="eyebrow" data-i18n="executive">01 / EXECUTIVE SUMMARY</div><h3 id="pSummary">—</h3><p id="pProblem">—</p></article>
+<article class="proposal-card two"><div><div class="eyebrow" data-i18n="scope">02 / SCOPE</div><ul id="pScope"></ul></div><div><div class="eyebrow" data-i18n="architecture">03 / ARCHITECTURE</div><h3 id="pArchitecture">—</h3><p id="pComplexity">—</p></div></article>
+<article class="proposal-card two"><div><div class="eyebrow" data-i18n="modules">04 / DELIVERY MODULES</div><ul id="pModules"></ul></div><div><div class="eyebrow" data-i18n="opportunities">05 / OPPORTUNITIES</div><ul id="pOpps"></ul></div></article>
+<article class="proposal-card"><div class="eyebrow" data-i18n="delivery">06 / DELIVERY PLAN</div><div class="delivery-grid"><div><strong id="pTimeline">—</strong><span data-i18n="timeline">Target timeline</span></div><div><strong id="pStatus">—</strong><span data-i18n="status">Lead status</span></div><div><strong id="pPriority">—</strong><span data-i18n="priority">Priority</span></div><div><strong id="pScore">—</strong><span data-i18n="score">Lead score</span></div></div></article>
+<article class="proposal-card investment"><div><div class="eyebrow" data-i18n="commercial">07 / COMMERCIAL FRAMEWORK</div><h3 data-i18n="commercialTitle">A structured engagement, ready for final pricing.</h3><p data-i18n="commercialText">The proposal intentionally keeps pricing flexible until scope, delivery milestones and commercial terms are approved.</p></div><div class="price-box"><span data-i18n="estimate">Estimated project value</span><strong id="pValue">€0</strong></div></article>
+<article class="proposal-card acceptance"><div class="eyebrow" data-i18n="next">08 / NEXT STEP</div><h3 data-i18n="nextTitle">Confirm scope and schedule a working session.</h3><p data-i18n="nextText">Once the scope is approved, A5F can turn this proposal into a delivery plan, milestones and project kickoff.</p><div class="signature"><span data-i18n="prepared">A5F</span><span id="pContact">hello@a5f.net</span></div></article>
+</section>
+</main>
+<script src="/proposal/proposal.js"></script>
+</body></html>
