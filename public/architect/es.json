@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "systems": "Sistemas",
+    "architect": "Arquitecto",
+    "work": "Proyectos",
+    "partners": "Partners",
+    "menu": "MENÚ",
+    "mode": "MODO",
+    "discovery": "DESCUBRIMIENTO",
+    "output": "SALIDA",
+    "systemBlueprint": "BLUEPRINT DEL SISTEMA",
+    "homeLabel": "Inicio de A5F",
+    "leadCenter": "Centro de leads"
+  },
+  "skip": "Saltar al contenido",
+  "eyebrow": "A5F / PROJECT ARCHITECT",
+  "title": "Convierte el problema en un <em>blueprint.</em>",
+  "lead": "Responde unas preguntas concretas. A5F convertirá tu briefing en una primera arquitectura, una ruta de entrega y un mapa de crecimiento.",
+  "step1": "01 / CONTEXTO",
+  "step2": "02 / RESULTADO",
+  "step3": "03 / SISTEMA",
+  "step4": "04 / ESCALA",
+  "step5": "05 / REVISIÓN",
+  "q1": "¿Qué estás construyendo?",
+  "q1h": "Describe el producto, servicio o sistema interno en una frase.",
+  "q2": "¿Qué problema importa más?",
+  "q2h": "¿Dónde están hoy la fricción, el riesgo o la oportunidad perdida?",
+  "q3": "¿Quién lo utilizará?",
+  "q3h": "Elige la audiencia principal.",
+  "q4": "¿Cuál es el resultado principal?",
+  "q4h": "Elige el resultado que más importa.",
+  "q5": "¿Qué debe conectarse?",
+  "q5h": "Selecciona los sistemas o canales implicados.",
+  "q6": "¿Qué complejidad tendrá la primera versión?",
+  "q6h": "Elige el alcance con el que quieres empezar.",
+  "q7": "¿Cuál es el plazo objetivo?",
+  "q7h": "Elige un primer hito práctico.",
+  "next": "Siguiente →",
+  "back": "← Atrás",
+  "build": "Generar blueprint",
+  "reset": "Empezar de nuevo",
+  "result": "BLUEPRINT DEL SISTEMA",
+  "architecture": "Arquitectura recomendada",
+  "modules": "Módulos principales",
+  "opportunities": "Oportunidades de inteligencia",
+  "delivery": "Ruta de entrega",
+  "complexity": "Complejidad",
+  "timeline": "Primer hito",
+  "cta": "Hablar sobre este blueprint →",
+  "hint": "Es un blueprint orientativo, no un presupuesto cerrado. A5F validará el alcance contigo.",
+  "placeholder": "Ejemplo: plataforma de operaciones inmobiliarias para equipos multi-sede",
+  "select": "Selecciona una opción",
+  "audience": [
+    "Equipos internos",
+    "Clientes",
+    "Partners",
+    "Equipos de campo"
+  ],
+  "outcomes": [
+    "Reducir trabajo manual",
+    "Lanzar un producto digital",
+    "Conectar operaciones fragmentadas",
+    "Mejorar la experiencia del cliente"
+  ],
+  "connect": [
+    "CRM / Ventas",
+    "ERP / Finanzas",
+    "Web / App",
+    "Documentos / Conocimiento",
+    "APIs / Integraciones"
+  ],
+  "scope": [
+    "MVP enfocado",
+    "Plataforma modular",
+    "Sistema enterprise"
+  ],
+  "timelines": [
+    "4–8 semanas",
+    "2–4 meses",
+    "4–9 meses",
+    "Programa continuo"
+  ],
+  "status": "BLUEPRINT LISTO",
+  "footer": "Tecnología digital y soluciones de software",
+  "spain": "España · Internacional",
+  "copyright": "© 2026 A5F · SYSTEM 02",
+  "pageTitle": "A5F — Project Architect",
+  "requiredBrief": "Describe qué estás construyendo antes de continuar.",
+  "requiredProblem": "Describe el problema antes de continuar.",
+  "requiredAudience": "Elige la audiencia principal.",
+  "requiredOutcome": "Elige el resultado principal.",
+  "requiredConnect": "Elige al menos una conexión.",
+  "requiredScope": "Elige el alcance de la primera versión.",
+  "requiredTimeline": "Elige un plazo objetivo.",
+  "localeError": "No se pudo cargar el idioma. Inténtalo de nuevo.",
+  "emailSubject": "A5F — Blueprint del proyecto",
+  "emailLabels": {
+    "project": "Proyecto",
+    "problem": "Problema",
+    "audience": "Audiencia",
+    "outcome": "Resultado",
+    "connections": "Conexiones",
+    "scope": "Alcance",
+    "timeline": "Plazo",
+    "architecture": "Arquitectura recomendada",
+    "complexity": "Complejidad"
+  },
+  "blueprint": {
+    "fallbackTitle": "Blueprint A5F",
+    "architectures": {
+      "default": "Arquitectura de plataforma digital modular",
+      "mvp": "Arquitectura MVP enfocada",
+      "enterprise": "Arquitectura de plataforma empresarial"
+    },
+    "governance": "Observabilidad y gobierno",
+    "complexity": {
+      "focused": "ENFOCADO",
+      "medium": "MEDIO",
+      "high": "ALTO"
+    },
+    "modules": {
+      "default": [
+        "Capa de experiencia",
+        "Aplicación principal",
+        "Datos e inteligencia",
+        "Capa de integración"
+      ],
+      "internal": [
+        "Espacio de trabajo interno",
+        "Motor de flujos",
+        "Capa de conocimiento",
+        "Administración y permisos"
+      ],
+      "customer": [
+        "Experiencia de cliente",
+        "Identidad y acceso",
+        "Aplicación principal",
+        "Analítica"
+      ],
+      "partner": [
+        "Espacio de partners",
+        "Identidad y acceso",
+        "Capa de colaboración",
+        "Analítica"
+      ],
+      "field": [
+        "Espacio de campo",
+        "Experiencia móvil",
+        "Motor de flujos",
+        "Analítica operativa"
+      ]
+    },
+    "opportunities": {
+      "default": [
+        "Automatización de flujos",
+        "Operaciones asistidas por IA",
+        "Analítica operativa"
+      ],
+      "automation": [
+        "Automatización de flujos",
+        "Orquestación de tareas con IA",
+        "Gestión de excepciones"
+      ],
+      "product": [
+        "Descubrimiento con IA",
+        "Personalización",
+        "Analítica de crecimiento"
+      ],
+      "experience": [
+        "Asistente de IA",
+        "Personalización",
+        "Analítica del recorrido del cliente"
+      ],
+      "integration": [
+        "Orquestación de integraciones",
+        "Capa de datos unificada",
+        "Analítica operativa"
+      ]
+    },
+    "integrationHints": {
+      "crm": [
+        "Automatización del ciclo de vida del CRM"
+      ],
+      "api": [
+        "Gateway de API y capa de integración"
+      ]
+    },
+    "delivery": [
+      "Definir alcance y métricas de éxito",
+      "Blueprint de arquitectura y UX",
+      "Construir la primera pieza en producción",
+      "Medir, optimizar y ampliar"
+    ]
+  },
+  "menu": "MENÚ",
+  "mode": "MODO",
+  "discovery": "DESCUBRIMIENTO",
+  "output": "SALIDA",
+  "systemBlueprint": "BLUEPRINT DEL SISTEMA",
+  "homeLabel": "Inicio de A5F",
+  "briefEyebrow": "DATOS DEL PROYECTO",
+  "briefTitle": "Convierte el blueprint en un proyecto real.",
+  "briefLead": "Envía el blueprint generado a A5F. Revisaremos el alcance, validaremos la arquitectura y te propondremos el siguiente paso adecuado.",
+  "briefStatusLabel": "LISTO PARA REVISIÓN",
+  "nameLabel": "Tu nombre",
+  "emailLabel": "Correo profesional",
+  "companyLabel": "Empresa",
+  "roleLabel": "Cargo",
+  "briefDataLabel": "Resumen del proyecto generado",
+  "namePlaceholder": "Ana García",
+  "emailPlaceholder": "ana@empresa.com",
+  "companyPlaceholder": "Nombre de la empresa",
+  "rolePlaceholder": "Fundador / Product Lead",
+  "consent": "Acepto ser contactado sobre este proyecto.",
+  "sendBrief": "Enviar resumen del proyecto →",
+  "sending": "Enviando…",
+  "sent": "Hemos recibido el resumen. A5F lo revisará y se pondrá en contacto contigo.",
+  "submitError": "No hemos podido enviar el resumen. Inténtalo de nuevo o escribe a hello@a5f.net.",
+  "leadCenter": "Abrir centro de leads →"
+}

@@ -1,0 +1,33 @@
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/manuale-command"
+  to = "/.netlify/functions/manuale-command"
+  status = 200
+
+[[redirects]]
+  from = "/api/manuale-execute"
+  to = "/.netlify/functions/manuale-execute"
+  status = 200
+
+[[redirects]]
+  from = "/api/business-hunter"
+  to = "/.netlify/functions/business-hunter"
+  status = 200
+
+[[redirects]]
+  from = "/api/whatsapp-webhook"
+  to = "/.netlify/functions/whatsapp-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/whatsapp-send"
+  to = "/.netlify/functions/whatsapp-send"
+  status = 200
+
+[[redirects]]
+  from = "/api/website-blueprint"
+  to = "/.netlify/functions/website-blueprint"
+  status = 200

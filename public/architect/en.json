@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "services": "Services",
+    "systems": "Systems",
+    "architect": "Architect",
+    "work": "Work",
+    "partners": "Partners",
+    "menu": "MENU",
+    "mode": "MODE",
+    "discovery": "DISCOVERY",
+    "output": "OUTPUT",
+    "systemBlueprint": "SYSTEM BLUEPRINT",
+    "homeLabel": "A5F home",
+    "leadCenter": "Lead Center"
+  },
+  "skip": "Skip to content",
+  "eyebrow": "A5F / PROJECT ARCHITECT",
+  "title": "Turn the problem into a <em>blueprint.</em>",
+  "lead": "Answer a few focused questions. A5F will shape your brief into a first system architecture, delivery path and growth map.",
+  "step1": "01 / CONTEXT",
+  "step2": "02 / OUTCOME",
+  "step3": "03 / SYSTEM",
+  "step4": "04 / SCALE",
+  "step5": "05 / REVIEW",
+  "q1": "What are you building?",
+  "q1h": "Describe the product, service or internal system in one sentence.",
+  "q2": "What problem matters most?",
+  "q2h": "Where is the current friction, risk or missed opportunity?",
+  "q3": "Who uses it?",
+  "q3h": "Choose the primary audience.",
+  "q4": "What is the main outcome?",
+  "q4h": "Choose the result that matters most.",
+  "q5": "What needs to connect?",
+  "q5h": "Select the systems or channels involved.",
+  "q6": "How complex is the first release?",
+  "q6h": "Choose the scope you want to start with.",
+  "q7": "What is the target timeline?",
+  "q7h": "Choose a practical first milestone.",
+  "next": "Next →",
+  "back": "← Back",
+  "build": "Generate blueprint",
+  "reset": "Start again",
+  "result": "SYSTEM BLUEPRINT",
+  "architecture": "Recommended architecture",
+  "modules": "Core modules",
+  "opportunities": "Intelligence opportunities",
+  "delivery": "Delivery path",
+  "complexity": "Complexity",
+  "timeline": "First milestone",
+  "cta": "Discuss this blueprint →",
+  "hint": "This is a directional blueprint, not a fixed quote. A5F will validate scope with you.",
+  "placeholder": "Example: a property operations platform for multi-site teams",
+  "select": "Select one",
+  "audience": [
+    "Internal teams",
+    "Customers",
+    "Partners",
+    "Field teams"
+  ],
+  "outcomes": [
+    "Reduce manual work",
+    "Launch a new digital product",
+    "Connect fragmented operations",
+    "Improve customer experience"
+  ],
+  "connect": [
+    "CRM / Sales",
+    "ERP / Finance",
+    "Website / App",
+    "Documents / Knowledge",
+    "APIs / Integrations"
+  ],
+  "scope": [
+    "Focused MVP",
+    "Multi-module platform",
+    "Enterprise system"
+  ],
+  "timelines": [
+    "4–8 weeks",
+    "2–4 months",
+    "4–9 months",
+    "Ongoing programme"
+  ],
+  "status": "BLUEPRINT READY",
+  "footer": "Digital Technology & Software Solutions",
+  "spain": "Spain · International",
+  "copyright": "© 2026 A5F · SYSTEM 02",
+  "pageTitle": "A5F — Project Architect",
+  "requiredBrief": "Tell us what you are building before continuing.",
+  "requiredProblem": "Describe the problem before continuing.",
+  "requiredAudience": "Choose a primary audience.",
+  "requiredOutcome": "Choose the main outcome.",
+  "requiredConnect": "Choose at least one connection.",
+  "requiredScope": "Choose a first-release scope.",
+  "requiredTimeline": "Choose a target timeline.",
+  "localeError": "The language could not be loaded. Please try again.",
+  "emailSubject": "A5F Project Blueprint — Project Discussion",
+  "emailLabels": {
+    "project": "Project",
+    "problem": "Problem",
+    "audience": "Audience",
+    "outcome": "Outcome",
+    "connections": "Connections",
+    "scope": "Scope",
+    "timeline": "Timeline",
+    "architecture": "Recommended architecture",
+    "complexity": "Complexity"
+  },
+  "blueprint": {
+    "fallbackTitle": "A5F Blueprint",
+    "architectures": {
+      "default": "Modular digital platform",
+      "mvp": "Focused MVP architecture",
+      "enterprise": "Enterprise platform architecture"
+    },
+    "governance": "Observability & governance",
+    "complexity": {
+      "focused": "FOCUSED",
+      "medium": "MEDIUM",
+      "high": "HIGH"
+    },
+    "modules": {
+      "default": [
+        "Experience layer",
+        "Core application",
+        "Data & intelligence",
+        "Integration layer"
+      ],
+      "internal": [
+        "Internal workspace",
+        "Workflow engine",
+        "Knowledge layer",
+        "Admin & permissions"
+      ],
+      "customer": [
+        "Customer experience",
+        "Identity & access",
+        "Core application",
+        "Analytics"
+      ],
+      "partner": [
+        "Partner workspace",
+        "Identity & access",
+        "Collaboration layer",
+        "Analytics"
+      ],
+      "field": [
+        "Field workspace",
+        "Mobile experience",
+        "Workflow engine",
+        "Operations analytics"
+      ]
+    },
+    "opportunities": {
+      "default": [
+        "Workflow automation",
+        "AI-assisted operations",
+        "Operational analytics"
+      ],
+      "automation": [
+        "Workflow automation",
+        "AI task orchestration",
+        "Exception handling"
+      ],
+      "product": [
+        "AI discovery",
+        "Personalization",
+        "Growth analytics"
+      ],
+      "experience": [
+        "AI assistant",
+        "Personalization",
+        "Customer journey analytics"
+      ],
+      "integration": [
+        "Integration orchestration",
+        "Unified data layer",
+        "Operational analytics"
+      ]
+    },
+    "integrationHints": {
+      "crm": [
+        "CRM lifecycle automation"
+      ],
+      "api": [
+        "API gateway & integration layer"
+      ]
+    },
+    "delivery": [
+      "Clarify scope & success metrics",
+      "Architecture + UX blueprint",
+      "Build the first production slice",
+      "Measure, optimize & expand"
+    ]
+  },
+  "menu": "MENU",
+  "mode": "MODE",
+  "discovery": "DISCOVERY",
+  "output": "OUTPUT",
+  "systemBlueprint": "SYSTEM BLUEPRINT",
+  "homeLabel": "A5F home",
+  "briefEyebrow": "PROJECT INTAKE",
+  "briefTitle": "Turn the blueprint into a real project.",
+  "briefLead": "Send the generated brief to A5F. We will review the scope, validate the architecture and follow up with the right next step.",
+  "briefStatusLabel": "READY FOR REVIEW",
+  "nameLabel": "Your name",
+  "emailLabel": "Work email",
+  "companyLabel": "Company",
+  "roleLabel": "Role",
+  "briefDataLabel": "Generated project brief",
+  "namePlaceholder": "Jane Smith",
+  "emailPlaceholder": "jane@company.com",
+  "companyPlaceholder": "Company name",
+  "rolePlaceholder": "Founder / Product Lead",
+  "consent": "I agree to be contacted about this project brief.",
+  "sendBrief": "Send project brief →",
+  "sending": "Sending…",
+  "sent": "Project brief received. A5F will review it and get back to you.",
+  "submitError": "We could not send the brief. Please try again or email hello@a5f.net.",
+  "leadCenter": "Open Lead Center →"
+}
