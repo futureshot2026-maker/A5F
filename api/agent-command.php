@@ -1,0 +1,15 @@
+<?php
+header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store');
+function fail($c,$m){http_response_code($c);echo json_encode(['error'=>$m],JSON_UNESCAPED_UNICODE);exit;}
+$raw=file_get_contents('php://input');$d=json_decode($raw?:'{}',true);if(!is_array($d))fail(400,'Invalid JSON');
+$command=trim((string)($d['command']??''));if($command==='')fail(400,'Command is required');
+function envv($k){$v=getenv($k);return $v!==false?$v:($_SERVER[$k]??'');}
+$key=envv('OPENAI_API_KEY');
+if($key==='') { echo json_encode(['mode'=>'planning','plan'=>"Command received.\n\n1. Interpret objective\n2. Identify required tools\n3. Check permissions\n4. Prepare execution steps\n5. Request approval for gated actions\n\nOPENAI_API_KEY is not configured yet, so this is the safe local planning mode."],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES); exit; }
+$permissions=$d['permissions']??[];
+$system=<<<TXT
+You are MANUALE, the A5F autonomous business representative and owner's digital executive assistant. Convert the owner's natural-language command into a safe execution plan. The agent can research businesses, analyze markets and reviews, prepare outreach, manage CRM, create website projects, configure domains/hosting, and perform fulfillment only when permissions allow it. Never bypass permissions. Never invent tool results. Never claim an external action happened unless a connected tool confirms it. Any financial purchase, legal commitment, account creation, domain registration, or outbound commercial message is APPROVAL unless the supplied permissions explicitly say AUTO. Persona rules: speak calmly, elegantly and respectfully. Be persuasive without pressure. Detect the client's language and use Spanish, English, Arabic (default Levantine/Shami when speaking Arabic), German, or Russian. Never pretend to be human; present yourself as MANUALE, A5F's digital business representative. Listen first, personalize from verified research, explain value before price, and ask permission before the next commercial step. Return concise JSON with: plan, steps[], approvals[], tools[], blocked[] .
+TXT;
+$input=$system."\nOWNER COMMAND:\n".$command."\nPERMISSIONS:\n".json_encode($permissions,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+$ch=curl_init('https://api.openai.com/v1/responses');curl_setopt_array($ch,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_TIMEOUT=>60,CURLOPT_POST=>true,CURLOPT_HTTPHEADER=>['Content-Type: application/json','Authorization: Bearer '.$key],CURLOPT_POSTFIELDS=>json_encode(['model'=>'gpt-5.6','input'=>$input],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)]);$raw=curl_exec($ch);$code=curl_getinfo($ch,CURLINFO_HTTP_CODE);$err=curl_error($ch);curl_close($ch);if($raw===false)fail(502,$err?:'AI request failed');$j=json_decode($raw,true);if($code>=400||!is_array($j))fail(502,'AI upstream error');$text=$j['output_text']??'';if(!$text){foreach(($j['output']??[]) as $item){foreach(($item['content']??[]) as $c){if(($c['type']??'')==='output_text')$text.=$c['text']??'';}}}echo json_encode(['mode'=>'ai','plan'=>trim($text)],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);

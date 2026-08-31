@@ -1,0 +1,43 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A5F — Empezar un Proyecto</title><meta name="description" content="Empieza un proyecto con A5F y recibe un briefing de proyecto estructurado y una dirección de cualificación."><meta property="og:locale" content="es_ES"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/v22.css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;500;600&display=swap" rel="stylesheet"></head><body class="v22-page"><header class="v22-nav"><a href="/"><img src="/assets/a5f-logo-nav.png" alt="A5F"></a><nav class="v22-nav-links"><a href="/services/">Servicios</a><a href="/work/">Trabajo</a><a href="/architect/">Arquitecto</a><a href="/dashboard/">Centro de leads</a></nav><a class="v22-btn" href="/">Inicio →</a></header><main><section class="v22-wrap v22-hero"><div><div class="v22-kicker">01 / EMPEZAR UN PROYECTO</div><h1 class="v22-h1">Cuéntanos la <em>parte difícil.</em></h1><p class="v22-lead">Danos suficiente contexto para entender el problema. Estructuraremos el briefing, identificaremos las capas del sistema adecuadas y definiremos el siguiente paso.</p></div><aside class="v22-side"><div class="v22-stat"><strong>08</strong><span>PREGUNTAS</span></div><div class="v22-stat"><strong>01</strong><span>BRIEFING DE PROYECTO</span></div><div class="v22-stat"><strong>24–48h</strong><span>RESPUESTA INICIAL</span></div></aside></section><section class="v22-section v22-dark"><div class="v22-wrap"><div class="v22-section-head"><div><div class="v22-kicker">02 / BRIEFING DE PROYECTO</div><h2>Define el <em>briefing.</em></h2></div><p>Respuestas breves están bien. Podemos aclarar el resto después del envío.</p></div><form class="v22-form" name="a5f-project" method="POST" action="/api/forms.php"><input type="hidden" name="form" value="a5f-project"><div class="v22-field"><label>NOMBRE</label><input required name="name" autocomplete="name"></div><div class="v22-field"><label>CORREO ELECTRÓNICO</label><input required type="email" name="email" autocomplete="email"></div><div class="v22-field"><label>EMPRESA</label><input name="company"></div><div class="v22-field"><label>CARGO</label><input name="role"></div><div class="v22-field"><label>TIPO DE PROYECTO</label><select name="project_type"><option>Producto Digital</option><option>Web / Plataforma</option><option>Software / Herramienta Interna</option><option>IA / Automatización</option><option>Datos / Inteligencia</option><option>Aún no lo sé</option></select></div><div class="v22-field"><label>PLAZO</label><select name="timeline"><option>Lo antes posible</option><option>4–8 semanas</option><option>2–3 meses</option><option>3+ meses</option><option>Explorando opciones</option></select></div><div class="v22-field full"><label>¿QUÉ ESTÁS CONSTRUYENDO?</label><textarea required name="project" placeholder="Describe el producto, sistema o experiencia en unas frases."></textarea></div><div class="v22-field full"><label>¿QUÉ PROBLEMA DEBE RESOLVER?</label><textarea required name="problem" placeholder="¿Qué está actualmente roto, es lento, fragmentado o difícil?"></textarea></div><div class="v22-field"><label>¿PARA QUIÉN ES?</label><input name="audience" placeholder="Clientes, socios, equipo…"></div><div class="v22-field"><label>RESULTADO DESEADO</label><input name="outcome" placeholder="¿Qué debería ser diferente cuando funcione?"></div><div class="v22-field full"><label>SISTEMAS / CONEXIONES EXISTENTES</label><input name="connections" placeholder="CRM, ERP, APIs, pagos, datos, etc."></div><div class="v22-field full"><label>NOTAS DE PRESUPUESTO / ALCANCE</label><input name="budget" placeholder="Opcional — un rango es suficiente."></div><div class="v22-field full"><button class="v22-btn gold" type="submit" style="border:0;cursor:pointer;width:max-content">Crear Briefing de Proyecto →</button><div class="v22-form-note">Tu envío puede pasar al Centro de Leads de A5F para su cualificación y preparación de propuesta.</div></div></form></div></section></main><footer class="v22-footer"><div>A5F — TECNOLOGÍA DIGITAL Y SOLUCIONES DE SOFTWARE</div><div>RECEPCIÓN DE PROYECTOS</div><div>© 2026 A5F</div></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector('form[name="a5f-project"]');
+  if (!form) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const button = form.querySelector('button[type="submit"], input[type="submit"]');
+    const originalText = button ? button.textContent : "";
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = "ENVIANDO…";
+    }
+
+    try {
+      const data = new FormData(form);
+      data.set("form", form.getAttribute("name"));
+
+      await fetch("/api/forms.php", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      });
+
+      window.location.assign("/start-project/sent.html");
+    } catch (error) {
+      // Even if the response is blocked by browser navigation rules,
+      // keep the user out of a broken route and show the confirmation page.
+      window.location.assign("/start-project/sent.html");
+    } finally {
+      if (button) {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    }
+  });
+});
+</script>
+
+</body></html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A5F — Espacio de Proyecto / Equipo</title>
+<style>
+:root{--ink:#17191d;--muted:#707784;--line:#e5e7eb;--bg:#f5f6f8;--paper:#fff;--soft:#eef1f4;--accent:#b98a3d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1180px;margin:auto;padding:28px 20px 70px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px}.brand{font-weight:900;letter-spacing:.14em}.back{color:var(--ink);text-decoration:none;font-weight:750}
+.hero,.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px rgba(0,0,0,.04)}.hero{padding:28px;margin-top:22px}.eyebrow{font-size:11px;letter-spacing:.14em;font-weight:800;color:var(--muted)}
+h1{font-size:42px;line-height:1.04;margin:8px 0}.muted{color:var(--muted)}.status{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--soft);font-size:12px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}.stat{padding:17px;border:1px solid #e8eaed;border-radius:14px}.stat b{display:block;font-size:24px;margin-bottom:4px}.progress{height:10px;background:#eceef1;border-radius:99px;overflow:hidden;margin-top:12px}.bar{height:100%;background:var(--ink);width:0;transition:width .2s}
+.grid{display:grid;grid-template-columns:1.18fr .82fr;gap:16px;margin-top:16px}.card{padding:22px;min-width:0;overflow:hidden}.card h2{margin:0 0 16px}.row{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:11px 14px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--ink);color:#fff}.secondary{background:#eceff2;color:var(--ink)}.danger{background:#fff0f0;color:#8b2020}
+select,input,textarea{width:100%;box-sizing:border-box;border:1px solid #dfe3e8;border-radius:10px;padding:11px;font:inherit;background:#fff;color:var(--ink)}textarea{min-height:100px;resize:vertical}label{display:block;font-size:12px;font-weight:800;margin:12px 0 6px}
+.task{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:start;width:100%;padding:14px 0;border-bottom:1px solid #eceef1}.task:last-child{border-bottom:0}.task input[type=checkbox]{width:22px;height:22px;margin:2px 0;flex:none}.task-main{min-width:0;max-width:100%}.task-title{font-weight:800;line-height:1.35;white-space:normal;overflow-wrap:anywhere;word-break:break-word}.done{text-decoration:line-through;color:#7a808a}.task-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.tag{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;background:#f0f2f4;color:#666d78;font-size:10px;font-weight:800;max-width:100%;overflow-wrap:anywhere}.task-assignee{width:132px;padding:8px;font-size:12px}
+.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.member{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:11px;align-items:center;min-width:0}.avatar{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;flex:none}.member-info{min-width:0}.member-name{font-weight:850;overflow-wrap:anywhere}.member-role{font-size:12px;color:var(--muted);margin-top:2px}.member-actions{margin-left:auto;display:flex;gap:5px}.icon-btn{border:0;background:transparent;font:inherit;font-weight:800;cursor:pointer;color:#707784;padding:5px}.role{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;color:#69707d;background:#f1f3f5;border-radius:999px;padding:4px 7px;margin-top:6px}
+.timeline{border-left:2px solid #e5e7eb;padding-left:16px}.event{margin:0 0 16px}.event b{display:block;line-height:1.35}.event small{color:#7a808a}.comment{padding:13px 0;border-bottom:1px solid #eceef1}.comment:last-child{border-bottom:0}.comment-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.comment-author{font-weight:850}.comment small{color:var(--muted)}.comment-body{margin-top:6px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.5}.mention{font-weight:800}
+.milestone{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #eceef1}.milestone:last-child{border-bottom:0}.milestone-name{min-width:0;overflow-wrap:anywhere}.empty{padding:18px 0;color:var(--muted);font-size:13px}.section-gap{margin-top:16px}.filters{display:grid;grid-template-columns:1fr 180px;gap:10px;margin-bottom:5px}
+.notice{padding:11px 13px;background:#f2f5f7;border-radius:10px;font-size:13px;font-weight:700;margin-bottom:14px}.mini{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}@media(max-width:560px){.wrap{padding:18px 12px 50px}.top{align-items:flex-start}.hero,.card{padding:18px}h1{font-size:32px}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}.task{grid-template-columns:28px minmax(0,1fr)}.task-assignee{grid-column:2;width:100%}.filters{grid-template-columns:1fr}.member{align-items:flex-start}.member-actions{margin-left:0}.team-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand">A5F</div><span style="display:flex;gap:14px;flex-wrap:wrap"><a class="back" href="/client/">← Portal del Cliente</a><a class="back" href="/files/">Archivos y Documentos</a></span></header>
+<section class="hero">
+<div class="eyebrow">A5F / ESPACIO DE PROYECTO</div><h1 id="project">Proyecto</h1><p class="muted" id="meta">—</p><span class="status" id="status">PLANIFICACIÓN</span>
+<div class="stats"><div class="stat"><b id="progressText">0%</b><span class="muted">Progreso</span></div><div class="stat"><b id="taskCount">0/0</b><span class="muted">Tareas</span></div><div class="stat"><b id="milestoneCount">0</b><span class="muted">Hitos</span></div><div class="stat"><b id="teamCount">0</b><span class="muted">Equipo</span></div><div class="stat"><b id="days">—</b><span class="muted">Plazo</span></div></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</section>
+
+<section class="grid">
+<div>
+<section class="card"><h2>Tareas</h2><div class="filters"><input id="taskSearch" placeholder="Buscar tareas…"><select id="taskFilter"><option value="ALL">Todas las tareas</option><option value="OPEN">Abiertas</option><option value="DONE">Hechas</option></select></div><div id="tasks"></div><div class="row" style="margin-top:12px"><button class="btn primary" id="addTask">Añadir tarea</button></div></section>
+<section class="card section-gap"><h2>Equipo y Colaboración</h2><div class="notice">Asigna trabajo, añade colaboradores y mantén las decisiones del proyecto en un solo lugar.</div><div id="team" class="team-grid"></div><div class="row" style="margin-top:14px"><button class="btn primary" id="addMember">Añadir miembro del equipo</button></div></section>
+<section class="card section-gap"><h2>Comentarios</h2><div id="comments"></div><label for="commentAuthor">Comentar como</label><select id="commentAuthor"></select><label for="commentInput">Mensaje</label><textarea id="commentInput" placeholder="Escribe una actualización del proyecto o menciona a un compañero con @nombre…"></textarea><div class="row" style="margin-top:10px"><button class="btn primary" id="addComment">Publicar comentario</button></div></section>
+</div>
+<div>
+<section class="card"><h2>Control del proyecto</h2><label>Estado</label><select id="statusSelect"><option>PLANIFICACIÓN</option><option>DISEÑO</option><option>DESARROLLO</option><option>QA</option><option>LANZAMIENTO</option><option>EN PAUSA</option></select><label>Próximo hito</label><input id="milestone" placeholder="p. ej. Revisión del MVP"><label>Fecha límite</label><input id="due" type="date"><div class="row" style="margin-top:14px"><button class="btn primary" id="save">Guardar proyecto</button></div><div id="milestones" style="margin-top:18px"></div></section>
+<section class="card section-gap"><h2>Actividad</h2><div class="timeline" id="timeline"></div></section>
+</div></section>
+</main>
+<script>
+(function(){
+const key='a5f-project-workspace';
+const leads=JSON.parse(localStorage.getItem('a5f-leads')||'[]');
+const id=localStorage.getItem('a5f-proposal-lead');
+const lead=leads.find(x=>x.id===id);
+const bp=lead?.blueprint?.brief||lead?.blueprint||JSON.parse(localStorage.getItem('a5f-last-blueprint')||'{}').brief||{};
+const uid=()=>crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random());
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+let project=JSON.parse(localStorage.getItem(key)||'null');
+if(!project){project={name:lead?.project||bp.project||'Proyecto A5F',status:'PLANIFICACIÓN',tasks:[
+{id:1,title:'Inicio del proyecto',done:false,assignee:null},{id:2,title:'Diseño de UX / sistema',done:false,assignee:null},{id:3,title:'Sprint de desarrollo',done:false,assignee:null},{id:4,title:'QA y revisión del cliente',done:false,assignee:null},{id:5,title:'Lanzamiento',done:false,assignee:null}],milestones:[],events:[],team:[
+{id:'owner',name:'Responsable de Proyecto A5F',role:'ADMIN',email:''},{id:'client',name:lead?.name||'Cliente',role:'CLIENT',email:lead?.email||''}
+],comments:[]};}
+project.team=Array.isArray(project.team)?project.team:[];project.comments=Array.isArray(project.comments)?project.comments:[];project.events=Array.isArray(project.events)?project.events:[];project.tasks=(project.tasks||[]).map(t=>({...t,assignee:t.assignee||null}));
+if(!project.team.length)project.team=[{id:'owner',name:'Responsable de Proyecto A5F',role:'ADMIN',email:''}];
+const $=id=>document.getElementById(id);
+$('project').textContent=project.name;$('meta').textContent=[lead?.company,lead?.email].filter(Boolean).join(' · ')||'Espacio de trabajo del proyecto A5F';$('statusSelect').value=project.status||'PLANIFICACIÓN';
+function initials(name){return String(name||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'?'}
+function addEvent(text){project.events.push({text,at:new Date().toISOString()});if(project.events.length>80)project.events=project.events.slice(-80)}
+function render(){
+ const total=project.tasks.length,done=project.tasks.filter(x=>x.done).length,p=total?Math.round(done/total*100):0;
+ $('progressText').textContent=p+'%';$('taskCount').textContent=done+'/'+total;$('milestoneCount').textContent=project.milestones.length;$('teamCount').textContent=project.team.length;$('bar').style.width=p+'%';$('status').textContent=project.status;
+ const dueDates=project.milestones.map(x=>x.due).filter(Boolean).sort();if(dueDates.length){const ms=Math.ceil((new Date(dueDates[dueDates.length-1]+'T23:59:59')-new Date())/86400000);$('days').textContent=(ms>=0?ms+'d':'Vencido')}else $('days').textContent='—';
+ const tq=($('taskSearch').value||'').toLowerCase(),tf=$('taskFilter').value;const shown=project.tasks.filter(t=>(tf==='ALL'||(tf==='DONE'?t.done:!t.done))&&(!tq||t.title.toLowerCase().includes(tq)));
+ const memberOptions='<option value="">Sin asignar</option>'+project.team.map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join('');
+ $('tasks').innerHTML=shown.length?shown.map(t=>{const member=project.team.find(m=>m.id===t.assignee);return `<div class="task"><input type="checkbox" data-id="${esc(t.id)}" ${t.done?'checked':''}><div class="task-main"><div class="task-title ${t.done?'done':''}">${esc(t.title)}</div><div class="task-meta"><span class="tag">${t.done?'HECHA':'ABIERTA'}</span>${member?`<span class="tag">${esc(member.name)}</span>`:''}</div></div><select class="task-assignee" data-assignee="${esc(t.id)}">${memberOptions}</select></div>`}).join(''):'<div class="empty">Ninguna tarea coincide con este filtro.</div>';
+ $('tasks').querySelectorAll('input[type=checkbox]').forEach(cb=>cb.onchange=()=>{const t=project.tasks.find(x=>String(x.id)===cb.dataset.id);if(!t)return;t.done=cb.checked;addEvent((t.done?'Completada: ':'Reabierta: ')+t.title);save()});
+ $('tasks').querySelectorAll('[data-assignee]').forEach(sel=>{const t=project.tasks.find(x=>String(x.id)===sel.dataset.assignee);if(t)sel.value=t.assignee||'';sel.onchange=()=>{const m=project.team.find(x=>x.id===sel.value);t.assignee=sel.value||null;addEvent((m?'Asignada '+t.title+' a '+m.name:'Tarea sin asignar: '+t.title));save()}});
+ $('team').innerHTML=project.team.map(m=>`<div class="member"><div class="avatar">${esc(initials(m.name))}</div><div class="member-info"><div class="member-name">${esc(m.name)}</div><div class="member-role">${esc(m.email||'Sin email')}</div><span class="role">${esc(m.role)}</span></div><div class="member-actions"><button class="icon-btn" data-edit-member="${esc(m.id)}" aria-label="Editar miembro">Editar</button></div></div>`).join('');
+ $('team').querySelectorAll('[data-edit-member]').forEach(btn=>btn.onclick=()=>editMember(btn.dataset.editMember));
+ $('commentAuthor').innerHTML=project.team.map(m=>`<option value="${esc(m.id)}">${esc(m.name)} · ${esc(m.role)}</option>`).join('');
+ $('comments').innerHTML=project.comments.length?project.comments.slice().reverse().map(c=>{const a=project.team.find(m=>m.id===c.authorId);return `<div class="comment"><div class="comment-head"><span class="comment-author">${esc(a?.name||'Miembro del equipo')}</span><small>${new Date(c.at).toLocaleString()}</small></div><div class="comment-body">${esc(c.text).replace(/(@[^\s@]+)/g,'<span class="mention">$1</span>')}</div></div>`}).join(''):'<div class="empty">Todavía no hay comentarios. Empieza aquí la conversación del proyecto.</div>';
+ $('milestones').innerHTML=project.milestones.length?'<div class="eyebrow">HITOS</div>'+project.milestones.map(m=>`<div class="milestone"><b class="milestone-name">${esc(m.name)}</b><small class="muted">${esc(m.due||'Sin fecha')}</small></div>`).join(''):'<div class="muted" style="font-size:13px">Todavía no hay hitos.</div>';
+ const events=project.events.length?project.events:[{text:'Espacio de proyecto creado',at:new Date().toISOString()}];$('timeline').innerHTML=events.slice().reverse().map(e=>`<div class="event"><b>${esc(e.text)}</b><small>${new Date(e.at).toLocaleString()}</small></div>`).join('');
+}
+function save(){localStorage.setItem(key,JSON.stringify(project));render()}
+function editMember(memberId){const m=project.team.find(x=>x.id===memberId);if(!m)return;const name=prompt('Nombre del miembro',m.name);if(name===null)return;const role=prompt('Rol: ADMIN, TEAM, CLIENT',m.role);if(role===null)return;const email=prompt('Email',m.email||'');if(email===null)return;m.name=name.trim()||m.name;m.role=role.trim().toUpperCase()||m.role;m.email=email.trim();addEvent('Miembro del equipo actualizado: '+m.name);save()}
+$('statusSelect').onchange=()=>{project.status=$('statusSelect').value;addEvent('Estado cambiado a '+project.status);save()};
+$('save').onclick=()=>{const m=$('milestone').value.trim(),d=$('due').value;if(m){project.milestones.push({id:uid(),name:m,due:d});addEvent('Hito añadido: '+m);$('milestone').value='';$('due').value=''}save()};
+$('addTask').onclick=()=>{const title=prompt('Nombre de la tarea');if(!title?.trim())return;project.tasks.push({id:uid(),title:title.trim(),done:false,assignee:null});addEvent('Tarea añadida: '+title.trim());save()};
+$('addMember').onclick=()=>{const name=prompt('Nombre del miembro');if(!name?.trim())return;const role=prompt('Rol: ADMIN, TEAM, CLIENT','TEAM');if(!role?.trim())return;const email=prompt('Email (opcional)','')??'';const m={id:uid(),name:name.trim(),role:role.trim().toUpperCase(),email:email.trim()};project.team.push(m);addEvent('Miembro del equipo añadido: '+m.name);save()};
+$('addComment').onclick=()=>{const text=$('commentInput').value.trim(),authorId=$('commentAuthor').value;if(!text)return;$('commentInput').value='';project.comments.push({id:uid(),authorId,text,at:new Date().toISOString()});const a=project.team.find(x=>x.id===authorId);addEvent((a?.name||'Miembro del equipo')+' publicó un comentario');save()};
+$('taskSearch').oninput=render;$('taskFilter').onchange=render;
+render();
+})();
+</script></body></html>

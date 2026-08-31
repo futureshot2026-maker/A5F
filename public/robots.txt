@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://a5f.es/sitemap.xml

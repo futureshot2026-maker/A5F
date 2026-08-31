@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A5F — Operaciones de Cliente con IA</title>
+<meta name="description" content="A5F diseña sistemas de Operaciones de Cliente con IA que conectan conversaciones, agentes de IA, CRM, automatización de flujos, traspaso a personas, voz y analítica."><meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/v22.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171714;--paper:#eeece3;--line:#c9c5b8;--muted:#79776e;--accent:#cbbf8a}
+*{box-sizing:border-box}.a5f-ai{background:var(--paper);color:var(--ink);font-family:Arial,sans-serif}.a5f-ai a{color:inherit}.ai-wrap{width:min(1180px,calc(100% - 48px));margin:auto}.ai-hero{padding:90px 0 72px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.4fr .6fr;gap:70px}.ai-kicker{font:600 11px/1.2 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}.ai-h1{font:500 clamp(58px,8vw,112px);line-height:.92;letter-spacing:-.055em;margin:22px 0}.ai-h1 em,.ai-section h2 em{font-family:Fraunces,serif;font-weight:400}.ai-lead{font-size:21px;line-height:1.55;max-width:720px;color:#4f4d46}.ai-hero-panel{border:1px solid var(--line);padding:24px;align-self:end}.ai-hero-panel .row{padding:17px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-family:"IBM Plex Mono",monospace;font-size:12px}.ai-hero-panel .row:last-child{border-bottom:0}.ai-section{padding:90px 0;border-bottom:1px solid var(--line)}.ai-section.dark{background:#171714;color:#eeece3;border-color:#34332e}.ai-section h2{font-size:clamp(44px,6vw,78px);line-height:.96;letter-spacing:-.04em;margin:12px 0 20px}.ai-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:48px}.ai-head>p{font-size:18px;line-height:1.65;color:var(--muted);margin-top:40px}.dark .ai-head>p,.dark .muted{color:#aaa79c}.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}.dark .ai-grid{background:#3a3934}.ai-card{background:var(--paper);padding:30px;min-height:270px}.dark .ai-card{background:#171714}.ai-card .num{font:600 11px "IBM Plex Mono",monospace;color:var(--muted);letter-spacing:.1em}.ai-card h3{font-size:27px;line-height:1.05;margin:28px 0 13px}.ai-card p{color:#66645c;line-height:1.65;margin:0}.dark .ai-card p{color:#aaa79c}.ai-points{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.dark .ai-points{border-color:#3a3934}.ai-points div{font:500 12px/1.5 "IBM Plex Mono",monospace;padding:6px 0}.flow{display:grid;grid-template-columns:repeat(8,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.flow .step{padding:22px 13px;border-right:1px solid var(--line);min-height:145px}.flow .step:last-child{border-right:0}.flow b{display:block;font:600 10px "IBM Plex Mono",monospace;margin-bottom:18px}.flow span{font-size:18px;line-height:1.2}.arch{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}.arch div{border:1px solid #3a3934;padding:22px}.arch b{font:600 11px "IBM Plex Mono",monospace}.arch span{display:block;font-size:20px;margin-top:25px;line-height:1.2}.table{width:100%;border-collapse:collapse;margin-top:30px}.table th,.table td{text-align:left;padding:18px 14px;border-bottom:1px solid var(--line);vertical-align:top}.table th{font:600 11px "IBM Plex Mono",monospace;text-transform:uppercase}.table td{line-height:1.5}.use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}.use{background:var(--paper);padding:28px}.use h3{margin:0 0 10px;font-size:25px}.use p{color:#66645c;line-height:1.6;margin:0}.process{counter-reset:item}.process-item{display:grid;grid-template-columns:90px 1fr 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}.process-item:first-child{border-top:1px solid var(--line)}.process-no{font:600 12px "IBM Plex Mono",monospace}.process h3{margin:0;font-size:25px}.process p{margin:0;color:#66645c;line-height:1.6}.cta{text-align:center;max-width:800px;margin:auto}.cta h2{font-size:clamp(48px,7vw,92px);line-height:.94;margin:18px 0}.cta p{font-size:18px;line-height:1.65;color:#aaa79c}.ai-btn{display:inline-block;margin-top:18px;padding:16px 24px;background:var(--accent);text-decoration:none;font:600 12px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em}.mini{font:600 11px "IBM Plex Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.metric{padding:26px 18px;border-right:1px solid var(--line)}.metric:last-child{border-right:0}.metric strong{display:block;font-size:35px}.metric span{font:600 10px "IBM Plex Mono",monospace;color:var(--muted)}@media(max-width:900px){.ai-hero,.ai-head{grid-template-columns:1fr;gap:35px}.ai-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:repeat(4,1fr)}.flow .step:nth-child(4){border-right:0}.arch{grid-template-columns:1fr 1fr}.process-item{grid-template-columns:60px 1fr}.process-item p{grid-column:2}.metric-grid{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}}@media(max-width:600px){.ai-wrap{width:min(100% - 28px,1180px)}.ai-hero{padding-top:55px}.ai-grid,.use-grid,.arch{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow .step{border-bottom:1px solid var(--line)}.metric-grid{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body class="a5f-ai">
+<header class="v22-nav">
+<a href="/"><img src="/assets/a5f-logo-nav.png" alt="A5F"></a>
+<nav class="v22-nav-links">
+<a href="/services/">Servicios</a><a href="/work/">Trabajo</a><a href="/architect/">Arquitecto</a><a href="/dashboard/">Centro de leads</a>
+</nav>
+<a class="v22-btn" href="/start-project/">Empezar un proyecto →</a>
+</header>
+
+<main>
+<section class="ai-wrap ai-hero">
+<div>
+<div class="ai-kicker">07 / OPERACIONES DE CLIENTE CON IA</div>
+<h1 class="ai-h1">IA que <em>opera</em>, no solo responde.</h1>
+<p class="ai-lead">A5F diseña sistemas de operaciones de cliente donde la IA puede entender conversaciones, usar el conocimiento del negocio, cualificar oportunidades, activar flujos de trabajo, actualizar el CRM y traspasar casos complejos a personas.</p>
+</div>
+<div class="ai-hero-panel">
+<div class="row"><span>CANALES</span><strong>WEB · WHATSAPP · EMAIL</strong></div>
+<div class="row"><span>INTELIGENCIA</span><strong>AGENTE + CONOCIMIENTO</strong></div>
+<div class="row"><span>ACCIÓN</span><strong>CRM · API · FLUJO</strong></div>
+<div class="row"><span>CONTROL</span><strong>TRASPASO A PERSONAS</strong></div>
+</div>
+</section>
+
+<section class="ai-section">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">01 / EL SISTEMA</div><h2>Una sola capa de cliente.<br><em>Cada acción conectada.</em></h2></div>
+<p>La mayoría de las empresas tienen conversaciones en una herramienta, datos de clientes en otra, citas en un tercer sitio y tareas internas en un cuarto. A5F conecta todas esas piezas en una capa operativa alrededor del recorrido del cliente.</p>
+</div>
+<div class="metric-grid">
+<div class="metric"><strong>01</strong><span>AGENTE DE IA</span></div>
+<div class="metric"><strong>02</strong><span>CAPA DE CONOCIMIENTO</span></div>
+<div class="metric"><strong>03</strong><span>AUTOMATIZACIÓN</span></div>
+<div class="metric"><strong>04</strong><span>CONTROL HUMANO</span></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section dark">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">02 / CAPACIDADES</div><h2>Lo que el sistema<br><em>realmente hace.</em></h2></div>
+<p class="muted">Cada componente está diseñado alrededor de un resultado operativo — no de una demo genérica de IA.</p>
+</div>
+<div class="ai-grid">
+<article class="ai-card"><span class="num">01 / AGENTE</span><h3>Agente de Cliente con IA</h3><p>Un agente configurado alrededor de tu empresa, ofertas, políticas y recorridos de cliente.</p><div class="ai-points"><div>→ Entender la intención y el contexto</div><div>→ Responder desde conocimiento aprobado</div><div>→ Hacer preguntas de seguimiento</div><div>→ Cualificar y enrutar clientes</div></div></article>
+<article class="ai-card"><span class="num">02 / CONOCIMIENTO</span><h3>Base de Conocimiento</h3><p>Convierte tu información existente en una fuente controlada que el agente puede usar.</p><div class="ai-points"><div>→ Web y preguntas frecuentes</div><div>→ PDFs y documentos</div><div>→ Catálogo de producto / servicio</div><div>→ Políticas y guías internas</div></div></article>
+<article class="ai-card"><span class="num">03 / CANALES</span><h3>Canales de Cliente</h3><p>Reúne las conversaciones en un solo modelo operativo en lugar de flujos aislados por canal.</p><div class="ai-points"><div>→ Chat del sitio web</div><div>→ WhatsApp</div><div>→ Email</div><div>→ Redes sociales / mensajería</div></div></article>
+<article class="ai-card"><span class="num">04 / LEADS</span><h3>Cualificación de Leads</h3><p>Recopila la información que el equipo de ventas necesita antes de que un lead llegue a una persona.</p><div class="ai-points"><div>→ Necesidad / tipo de proyecto</div><div>→ Presupuesto y plazos</div><div>→ Ubicación y requisitos</div><div>→ Puntuación y enrutamiento del lead</div></div></article>
+<article class="ai-card"><span class="num">05 / FLUJOS</span><h3>Automatización de Flujos</h3><p>Convierte una conversación en una secuencia de acciones a través de tus sistemas de negocio.</p><div class="ai-points"><div>→ Crear / actualizar registros</div><div>→ Reservar citas</div><div>→ Enviar notificaciones</div><div>→ Activar APIs y tareas</div></div></article>
+<article class="ai-card"><span class="num">06 / CRM</span><h3>Operaciones de CRM</h3><p>Mantén los datos de cliente sincronizados a medida que ocurren las conversaciones.</p><div class="ai-points"><div>→ Creación de contactos y leads</div><div>→ Actualización de fases del pipeline</div><div>→ Etiquetas y asignaciones</div><div>→ Historial de conversación</div></div></article>
+<article class="ai-card"><span class="num">07 / TRASPASO</span><h3>Traspaso a Personas</h3><p>Entrega a las personas los casos adecuados con el contexto ya recopilado.</p><div class="ai-points"><div>→ Reglas de escalado</div><div>→ Resumen de la conversación</div><div>→ Perfil del cliente</div><div>→ Motivo del traspaso</div></div></article>
+<article class="ai-card"><span class="num">08 / VOZ</span><h3>Operaciones de Voz con IA</h3><p>Extiende la misma lógica a las llamadas telefónicas cuando la voz es el mejor canal.</p><div class="ai-points"><div>→ Detección de intención</div><div>→ Captura de información</div><div>→ Reserva de citas</div><div>→ Transferencia a personas</div></div></article>
+<article class="ai-card"><span class="num">09 / ANALÍTICA</span><h3>Inteligencia de Operaciones</h3><p>Mide dónde la IA genera valor y dónde el flujo de trabajo necesita mejorar.</p><div class="ai-points"><div>→ Tasa de resolución</div><div>→ Tasa de traspaso</div><div>→ Leads cualificados</div><div>→ Principales intenciones y puntos de fallo</div></div></article>
+</div>
+</div>
+</section>
+
+<section class="ai-section">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">03 / RECORRIDO DEL CLIENTE</div><h2>Del mensaje<br>a la <em>acción de negocio.</em></h2></div>
+<p>Una conversación se vuelve útil cuando el sistema puede hacer algo con ella. Esta es la cadena operativa que diseñamos.</p>
+</div>
+<div class="flow">
+<div class="step"><b>01</b><span>Mensaje del cliente</span></div>
+<div class="step"><b>02</b><span>Identidad y contexto</span></div>
+<div class="step"><b>03</b><span>Detección de intención</span></div>
+<div class="step"><b>04</b><span>Recuperación de conocimiento</span></div>
+<div class="step"><b>05</b><span>Respuesta de la IA</span></div>
+<div class="step"><b>06</b><span>Acción de flujo</span></div>
+<div class="step"><b>07</b><span>Actualización de CRM</span></div>
+<div class="step"><b>08</b><span>Persona / siguiente paso</span></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section dark">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">04 / ARQUITECTURA</div><h2>Las capas detrás<br><em>de la experiencia.</em></h2></div>
+<p class="muted">A5F trata la IA como una capa dentro de un sistema de software más amplio. Eso hace la solución más fácil de controlar, integrar y evolucionar.</p>
+</div>
+<div class="arch">
+<div><b>CANALES</b><span>Web<br>WhatsApp<br>Email<br>Voz</span></div>
+<div><b>ORQUESTACIÓN</b><span>Intención<br>Reglas<br>Enrutamiento<br>Barreras de control</span></div>
+<div><b>CAPA DE IA</b><span>LLM<br>RAG<br>Memoria<br>Herramientas</span></div>
+<div><b>SISTEMAS DE NEGOCIO</b><span>CRM<br>Calendario<br>ERP<br>APIs</span></div>
+<div><b>CONTROL</b><span>Persona<br>Revisión<br>Registros<br>Analítica</span></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">05 / MOTOR DE LEADS</div><h2>Cualificar antes<br>de que <em>ventas intervenga.</em></h2></div>
+<p>En lugar de derivar cada conversación a un comercial, el agente puede recopilar la información mínima necesaria para determinar si la oportunidad merece una respuesta humana.</p>
+</div>
+<table class="table">
+<thead><tr><th>Señal</th><th>Qué captura la IA</th><th>Qué ocurre después</th></tr></thead>
+<tbody>
+<tr><td>Intención</td><td>Qué quiere el cliente y por qué ahora.</td><td>Enrutar al recorrido correspondiente.</td></tr>
+<tr><td>Encaje</td><td>Servicio, producto, ubicación, empresa o detalles del proyecto.</td><td>Aplicar reglas de cualificación.</td></tr>
+<tr><td>Valor</td><td>Presupuesto, tamaño, volumen o potencial comercial.</td><td>Calcular la prioridad del lead.</td></tr>
+<tr><td>Plazo</td><td>Urgencia, fecha límite y cita preferida.</td><td>Reservar o activar seguimiento.</td></tr>
+<tr><td>Disposición</td><td>Preguntas, objeciones y señales de compra.</td><td>Asignar estado caliente / templado / frío.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="ai-section">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">06 / CASOS DE USO REALES</div><h2>Dónde esto se vuelve<br><em>valioso.</em></h2></div>
+<p>Empezamos por un proceso de negocio, no por una función de IA. El sistema se diseña alrededor de una fricción operativa medible.</p>
+</div>
+<div class="use-grid">
+<div class="use"><h3>Ventas</h3><p>Captura leads entrantes, cualifícalos, responde objeciones, crea registros en el CRM y enruta las oportunidades de mayor intención.</p></div>
+<div class="use"><h3>Atención al Cliente</h3><p>Resuelve preguntas repetitivas, recupera información aprobada y escala los casos que requieren una persona.</p></div>
+<div class="use"><h3>Citas</h3><p>Entiende la solicitud, comprueba disponibilidad, recoge los datos del cliente y reserva el siguiente paso.</p></div>
+<div class="use"><h3>Negocios de Servicios</h3><p>Convierte las conversaciones entrantes en solicitudes estructuradas, presupuestos, tareas y seguimientos.</p></div>
+<div class="use"><h3>E-commerce</h3><p>Responde preguntas sobre productos, ayuda a elegir, capta intención y da soporte a los recorridos post-compra.</p></div>
+<div class="use"><h3>Operaciones Internas</h3><p>Usa la misma arquitectura de agente para conocimiento interno, triaje, enrutamiento y solicitudes operativas repetitivas.</p></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section dark">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">07 / CONTROL HUMANO</div><h2>La IA gestiona lo rutinario.<br><em>Las personas gestionan lo importante.</em></h2></div>
+<p class="muted">El objetivo no es eliminar a las personas del recorrido del cliente. Es hacer que la atención humana sea más valiosa.</p>
+</div>
+<div class="process">
+<div class="process-item"><div class="process-no">REGLA 01</div><h3>Escalar la incertidumbre</h3><p>Si la confianza es baja, la solicitud queda fuera del conocimiento aprobado, o una política exige revisión, se enruta a una persona.</p></div>
+<div class="process-item"><div class="process-no">REGLA 02</div><h3>Conservar el contexto</h3><p>La persona recibe un resumen conciso, los datos del cliente, la intención, los datos recopilados y el motivo de la escalada.</p></div>
+<div class="process-item"><div class="process-no">REGLA 03</div><h3>Mantener un registro de auditoría</h3><p>Las acciones importantes de la IA pueden registrarse para que los equipos entiendan lo ocurrido y mejoren el flujo.</p></div>
+<div class="process-item"><div class="process-no">REGLA 04</div><h3>Medir las carencias</h3><p>Los traspasos y las respuestas fallidas se convierten en señales para mejorar el conocimiento, las reglas y los recorridos de cliente.</p></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section">
+<div class="ai-wrap">
+<div class="ai-head">
+<div><div class="ai-kicker">08 / ENTREGA</div><h2>Cómo lo lleva A5F<br>de la idea a la <em>operación.</em></h2></div>
+<p>No empezamos construyendo una gran plataforma de IA. Empezamos con un flujo de trabajo valioso, lo validamos y luego ampliamos el sistema.</p>
+</div>
+<div class="process">
+<div class="process-item"><div class="process-no">01</div><h3>Mapear el recorrido</h3><p>Identificamos canales, intenciones de cliente, cuellos de botella, trabajo repetitivo, puntos de escalado y los sistemas ya en uso.</p></div>
+<div class="process-item"><div class="process-no">02</div><h3>Diseñar el agente</h3><p>Definimos personalidad, límites de conocimiento, intenciones, reglas, herramientas, acciones, barreras de control y criterios de traspaso a personas.</p></div>
+<div class="process-item"><div class="process-no">03</div><h3>Conectar los sistemas</h3><p>Integramos el CRM, calendario, canales de mensajería, APIs y fuentes de datos internas relevantes.</p></div>
+<div class="process-item"><div class="process-no">04</div><h3>Lanzar un piloto controlado</h3><p>Empezamos con un recorrido de cliente concreto, monitorizamos conversaciones reales y ajustamos el sistema antes de ampliarlo.</p></div>
+<div class="process-item"><div class="process-no">05</div><h3>Escalar lo que funciona</h3><p>Añadimos canales, agentes, flujos y analítica a medida que se demuestra el caso de negocio.</p></div>
+</div>
+</div>
+</section>
+
+<section class="ai-section dark">
+<div class="ai-wrap">
+<div class="cta">
+<div class="ai-kicker">09 / CONSTRUYE TU CAPA OPERATIVA DE CLIENTE</div>
+<h2>¿Qué debería <em>hacer</em> tu IA?</h2>
+<p>Tráenos un proceso repetitivo, un recorrido de cliente o un canal que le esté costando tiempo a tu equipo. A5F lo convertirá en un sistema práctico de operaciones con IA.</p>
+<a class="ai-btn" href="/start-project/">Empezar un Proyecto de Operaciones de IA →</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="v22-footer">
+<div>A5F — TECNOLOGÍA DIGITAL Y SOLUCIONES DE SOFTWARE</div>
+<div>OPERACIONES DE CLIENTE CON IA</div>
+<div>© 2026 A5F</div>
+</footer>
+</body>
+</html>
