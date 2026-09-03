@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+app/build/
+functions/lib/
+functions/node_modules/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Never commit real Firebase config or signing material
+app/google-services.json
+*.jks
+*.keystore
+keystore.properties
+
+# OS
+.DS_Store

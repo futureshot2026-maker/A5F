@@ -1,0 +1,20 @@
+{
+  "_comment": "Placeholder. Download the REAL google-services.json from your Firebase project (Project settings > Your apps > Android app com.a5f.social) and save it as app/google-services.json. It is gitignored on purpose - never commit real Firebase credentials.",
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "a5f-social",
+    "storage_bucket": "a5f-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "android_client_info": { "package_name": "com.a5f.social" }
+      },
+      "oauth_client": [],
+      "api_key": [{ "current_key": "REPLACE_ME" }],
+      "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+    }
+  ],
+  "configuration_version": "1"
+}

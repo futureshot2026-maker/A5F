@@ -1,0 +1,8 @@
+# Copy this to gradle.properties in this same directory (or, better, to
+# ~/.gradle/gradle.properties so it never lands in version control) and fill
+# in your real release-signing values. See README.md -> "Building a signed
+# release APK".
+A5F_RELEASE_STORE_FILE=/absolute/path/to/a5f-release.jks
+A5F_RELEASE_STORE_PASSWORD=changeit
+A5F_RELEASE_KEY_ALIAS=a5f
+A5F_RELEASE_KEY_PASSWORD=changeit

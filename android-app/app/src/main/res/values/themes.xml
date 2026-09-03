@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.A5FSocial" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
