@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "future-academy",
+  "name": "future-academy-yatta",
   "main": "worker.js",
   "compatibility_date": "2026-09-01",
   "assets": {
@@ -9,7 +9,10 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
   },
+  "vars": {
+    "PAYPAL_ENV": "sandbox"
+  },
   "observability": { "enabled": true }
-  // للتخزين الاختياري للحجوزات، أنشئ KV Namespace ثم فعّل السطر التالي:
+  // للتخزين الاختياري للطلبات، أنشئ KV Namespace ثم فعّل السطر التالي:
   // ,"kv_namespaces": [{ "binding": "BOOKINGS", "id": "<KV_NAMESPACE_ID>" }]
 }

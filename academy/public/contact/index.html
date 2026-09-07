@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>التسجيل والدفع | أكاديمية المستقبل للتدريب المهني — يطا</title>
-<meta name="description" content="نموذج التسجيل في دورات الكوافير والتجميل بأكاديمية المستقبل في يطا، مع الدفع عبر PayPal أو تحويل بنكي أو نقدًا في المقر: دفع كامل أو عربون 30%.">
+<title>حجز استشارة | أكاديمية المستقبل للتدريب المهني — يطا</title>
+<meta name="description" content="نموذج حجز استشارة مهنية مع أكاديمية المستقبل للتدريب المهني في يطا: استشارة تعريفية مجانية، استشارة مسار مهني، أو استشارة افتتاح صالون، مع دفع عبر PayPal أو تحويل بنكي.">
 <meta name="theme-color" content="#0E3B38">
-<meta name="robots" content="index,follow">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="التسجيل والدفع | أكاديمية المستقبل للتدريب المهني — يطا">
-<meta property="og:description" content="نموذج التسجيل في دورات الكوافير والتجميل بأكاديمية المستقبل في يطا، مع الدفع عبر PayPal أو تحويل بنكي أو نقدًا في المقر: دفع كامل أو عربون 30%.">
+<meta property="og:title" content="حجز استشارة | أكاديمية المستقبل للتدريب المهني — يطا">
+<meta property="og:description" content="نموذج حجز استشارة مهنية مع أكاديمية المستقبل للتدريب المهني في يطا: استشارة تعريفية مجانية، استشارة مسار مهني، أو استشارة افتتاح صالون، مع دفع عبر PayPal أو تحويل بنكي.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_PS">
 <meta property="og:image" content="/assets/logo-full.svg">
@@ -34,8 +33,8 @@
       <a href="/">الرئيسية</a>
       <a href="/about/">عن الأكاديمية</a>
       <a href="/services/">الدورات والخدمات</a>
-      <a href="/contact/">حجز استشارة</a>
-      <a href="/booking/" class="active">التسجيل والدفع</a>
+      <a href="/contact/" class="active">حجز استشارة</a>
+      <a href="/booking/">التسجيل والدفع</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="/booking/">احجزي مقعدك</a>
@@ -48,9 +47,9 @@
 
   <section class="page-hero">
     <div class="container">
-      <div class="crumbs"><a href="/">الرئيسية</a> ← <a href="/services/">الدورات</a> ← <span>التسجيل والدفع</span></div>
-      <h1>تسجيل في دورة ودفع الرسوم</h1>
-      <p>عبّئي البيانات التالية واختاري طريقة الدفع المناسبة. يصلك تأكيد التسجيل ورقم مرجعي فور إتمام العملية.</p>
+      <div class="crumbs"><a href="/">الرئيسية</a> ← <span>حجز استشارة</span></div>
+      <h1>احجزي استشارة مهنية</h1>
+      <p>املئي النموذج وسنؤكد لك الموعد خلال ساعات العمل. الاستشارة التعريفية مجانية، والاستشارات المتخصصة تُدفع أونلاين عبر PayPal أو بتحويل بنكي.</p>
     </div>
   </section>
 
@@ -62,10 +61,10 @@
         <div class="form-alert error" id="formError" role="alert"></div>
         <div class="form-alert info" id="formInfo" role="status"></div>
 
-        <form id="bookingForm" novalidate>
+        <form id="consultForm" novalidate>
 
           <fieldset class="fieldset">
-            <legend><b>1</b> بيانات المتدربة</legend>
+            <legend><b>1</b> بياناتك</legend>
             <div class="row">
               <div class="field">
                 <label for="fullName">الاسم الكامل <span class="req">*</span></label>
@@ -75,6 +74,7 @@
               <div class="field">
                 <label for="phone">رقم الجوال / واتساب <span class="req">*</span></label>
                 <input type="tel" id="phone" name="phone" dir="ltr" autocomplete="tel" placeholder="0599000000">
+                <span class="hint">رقم فلسطيني أو دولي مع رمز الدولة.</span>
                 <span class="error-msg">يرجى إدخال رقم جوال صحيح.</span>
               </div>
             </div>
@@ -82,7 +82,7 @@
               <div class="field">
                 <label for="email">البريد الإلكتروني <span class="req">*</span></label>
                 <input type="email" id="email" name="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
-                <span class="hint">يُرسل إليه إيصال الدفع وتأكيد التسجيل.</span>
+                <span class="hint">يصلك عليه تأكيد الموعد وإيصال الدفع إن وُجد.</span>
                 <span class="error-msg">يرجى إدخال بريد إلكتروني صحيح.</span>
               </div>
               <div class="field">
@@ -91,152 +91,120 @@
                 <span class="error-msg">يرجى كتابة المدينة.</span>
               </div>
             </div>
-            <div class="field">
-              <label for="level">مستواك الحالي</label>
-              <select id="level" name="level">
-                <option value="مبتدئة تمامًا">مبتدئة تمامًا</option>
-                <option value="لدي خبرة بسيطة">لدي خبرة بسيطة</option>
-                <option value="أعمل في المجال">أعمل في المجال وأريد التطوير</option>
-              </select>
-            </div>
           </fieldset>
 
           <fieldset class="fieldset">
-            <legend><b>2</b> تفاصيل الدورة</legend>
+            <legend><b>2</b> تفاصيل الاستشارة</legend>
             <div class="field">
-              <label for="course">الدورة المطلوبة <span class="req">*</span></label>
-              <select id="course" name="course"><option value="">جارٍ تحميل الدورات…</option></select>
-              <span class="error-msg">يرجى اختيار الدورة.</span>
+              <label for="type">نوع الاستشارة <span class="req">*</span></label>
+              <select id="type" name="type"><option value="">جارٍ تحميل الخيارات…</option></select>
+              <span class="error-msg">يرجى اختيار نوع الاستشارة.</span>
             </div>
+            <p class="hint" id="typeDesc" style="margin:-8px 0 18px;color:var(--muted)"></p>
+
             <div class="row">
               <div class="field">
-                <label for="session">الفترة المفضلة</label>
-                <select id="session" name="session">
-                  <option value="صباحية">صباحية (9ص – 12ظ)</option>
-                  <option value="مسائية">مسائية (3م – 6م)</option>
-                  <option value="نهاية الأسبوع">نهاية الأسبوع (سبت)</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="startDate">تاريخ البدء المفضل <span class="req">*</span></label>
-                <input type="date" id="startDate" name="startDate">
+                <label for="date">التاريخ المفضل <span class="req">*</span></label>
+                <input type="date" id="date" name="date">
                 <span class="error-msg">يرجى اختيار تاريخ لاحق لتاريخ اليوم.</span>
               </div>
+              <div class="field">
+                <label for="slot">الفترة المفضلة</label>
+                <select id="slot" name="slot">
+                  <option value="صباحية (9 – 12)">صباحية (9 – 12)</option>
+                  <option value="ظهيرة (12 – 3)">ظهيرة (12 – 3)</option>
+                  <option value="مسائية (3 – 6)">مسائية (3 – 6)</option>
+                </select>
+              </div>
             </div>
+
             <div class="field">
-              <label for="seats">عدد المقاعد</label>
-              <select id="seats" name="seats">
-                <option value="1">مقعد واحد</option>
-                <option value="2">مقعدان</option>
-                <option value="3">3 مقاعد — خصم مجموعة 10%</option>
-                <option value="4">4 مقاعد — خصم مجموعة 10%</option>
-                <option value="5">5 مقاعد — خصم مجموعة 10%</option>
+              <label for="channel">طريقة التواصل المفضلة</label>
+              <select id="channel" name="channel">
+                <option value="واتساب">واتساب</option>
+                <option value="مكالمة هاتفية">مكالمة هاتفية</option>
+                <option value="حضور في المقر">حضور في مقر الأكاديمية بيطا</option>
+                <option value="اجتماع أونلاين">اجتماع أونلاين (زوم / ميت)</option>
               </select>
-              <span class="hint">خصم 10% تلقائيًا عند حجز 3 مقاعد فأكثر.</span>
             </div>
+
             <div class="field">
-              <label for="notes">ملاحظات إضافية</label>
-              <textarea id="notes" name="notes" placeholder="مثال: أحتاج جدولًا مسائيًا فقط، أو لدي استفسار عن التقسيط."></textarea>
+              <label for="message">موضوع الاستشارة <span class="req">*</span></label>
+              <textarea id="message" name="message" placeholder="اكتبي باختصار ما الذي تريدين مناقشته: اختيار دورة، تطوير مهارة، افتتاح صالون، تأهيل فريق عمل…"></textarea>
+              <span class="error-msg">يرجى كتابة 10 أحرف على الأقل.</span>
             </div>
           </fieldset>
 
-          <fieldset class="fieldset">
-            <legend><b>3</b> المبلغ المطلوب الآن</legend>
+          <fieldset class="fieldset" id="paySection" hidden>
+            <legend><b>3</b> طريقة الدفع</legend>
             <div class="options" id="payOptions">
               <label class="option selected">
-                <input type="radio" name="payment" value="full" checked>
+                <input type="radio" name="payment" value="paypal" checked>
                 <span>
-                  <b>دفع كامل الرسوم</b>
-                  <span>سدّدي رسوم الدورة كاملة الآن واحصلي على خصم تثبيت السعر.</span>
+                  <b>الدفع عبر PayPal</b>
+                  <span>ادفعي ببطاقتك أو من رصيد PayPal. يتم تحويلك لصفحة PayPal الآمنة ولا نحفظ بيانات بطاقتك.</span>
                 </span>
-                <span class="tag" data-pay-full>—</span>
+                <span class="tag" data-pay-amount>—</span>
               </label>
               <label class="option">
-                <input type="radio" name="payment" value="deposit">
+                <input type="radio" name="payment" value="bank">
                 <span>
-                  <b>عربون 30% لتثبيت المقعد</b>
-                  <span>ادفعي العربون الآن وسدّدي المتبقي أول يوم تدريب.</span>
+                  <b>تحويل بنكي</b>
+                  <span>تصلك تفاصيل حساب الأكاديمية ورقم مرجعي، ويُثبَّت الموعد بعد إرسال صورة الإيصال.</span>
                 </span>
-                <span class="tag" data-pay-deposit>—</span>
-              </label>
-              <label class="option">
-                <input type="radio" name="payment" value="cash">
-                <span>
-                  <b>حجز الآن والدفع في المقر</b>
-                  <span>نحجز مقعدك مبدئيًا 48 ساعة، ويلزم إتمام الدفع في مقر الأكاديمية بيطا خلالها لتثبيته.</span>
-                </span>
-                <span class="tag">0 ₪</span>
+                <span class="tag" data-pay-amount>—</span>
               </label>
             </div>
           </fieldset>
 
-          <fieldset class="fieldset" id="methodSection">
-            <legend><b>4</b> طريقة الدفع</legend>
-            <div class="options" id="methodOptions">
-              <label class="option selected">
-                <input type="radio" name="method" value="paypal" checked>
-                <span>
-                  <b>PayPal — بطاقة أو رصيد</b>
-                  <span>تحويل فوري إلى صفحة PayPal المؤمّنة. يتم التحصيل بالدولار الأمريكي وفق سعر التحويل المعروض بالأسفل.</span>
-                </span>
-                <span class="tag" data-method-usd>—</span>
-              </label>
-              <label class="option">
-                <input type="radio" name="method" value="bank">
-                <span>
-                  <b>تحويل بنكي محلي</b>
-                  <span>تصلك تفاصيل حساب الأكاديمية ورقم مرجعي، ويُثبَّت المقعد بعد إرسال صورة الإيصال عبر واتساب.</span>
-                </span>
-                <span class="tag" data-method-ils>—</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <label class="option">
+          <label class="option" style="margin-bottom:18px">
             <input type="checkbox" id="terms" name="terms">
             <span>
-              <b>أوافق على الشروط وسياسة الاسترجاع</b>
-              <span>الاسترجاع كامل قبل 7 أيام من بدء الدورة، و50% قبل 48 ساعة، ولا يُسترجع بعد بدء التدريب.</span>
+              <b>أوافق على سياسة المواعيد</b>
+              <span>يمكن تأجيل الموعد أو إلغاؤه مجانًا قبل 24 ساعة. الاستشارات المدفوعة غير قابلة للاسترداد بعد بدء الجلسة.</span>
             </span>
           </label>
-          <span class="error-msg" id="termsError">يجب الموافقة على الشروط للمتابعة.</span>
+          <span class="error-msg" id="termsError">يجب الموافقة على سياسة المواعيد للمتابعة.</span>
 
           <button class="btn btn-primary btn-block" type="submit" id="submitBtn" style="margin-top:18px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19"/></svg>
-            <span id="submitLabel">المتابعة إلى الدفع الآمن</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-4.2-7.6"/><path d="M20 7 9 18l-5-5"/></svg>
+            <span id="submitLabel">إرسال طلب الاستشارة</span>
           </button>
           <p class="hint center" style="margin-top:14px;color:var(--muted);font-size:.85rem">
-            عند اختيار PayPal يتم تحويلك إلى صفحة الدفع المؤمّنة. لا نحفظ بيانات بطاقتك على خوادمنا إطلاقًا.
+            بإرسال النموذج توافقين على تواصل فريق الأكاديمية معك على الرقم والبريد المدخلين.
           </p>
         </form>
       </div>
 
-      <!-- الملخص -->
+      <!-- الشريط الجانبي -->
       <aside class="summary">
         <div class="summary-head">
-          <span>ملخص التسجيل</span>
-          <h3 id="sumTitle">اختاري دورة للبدء</h3>
+          <span>ملخص الطلب</span>
+          <h3 id="sumTitle">اختاري نوع الاستشارة</h3>
         </div>
         <div class="panel">
-          <div class="sum-row"><span>القسم</span><b id="sumCat">—</b></div>
           <div class="sum-row"><span>المدة</span><b id="sumDuration">—</b></div>
-          <div class="sum-row"><span>ساعات التدريب</span><b id="sumHours">—</b></div>
-          <div class="sum-row"><span>عدد المقاعد</span><b id="sumSeats">1</b></div>
-          <div class="sum-row"><span>رسوم الدورة</span><b id="sumSubtotal">—</b></div>
-          <div class="sum-row" id="discountRow" style="display:none"><span>خصم المجموعة</span><b id="sumDiscount">—</b></div>
-          <div class="sum-total"><span>الإجمالي</span><b id="sumTotal">—</b></div>
-          <div class="sum-row" style="border:0"><span>المطلوب دفعه الآن</span><b id="sumNow">—</b></div>
-          <div class="sum-row" id="usdRow" style="display:none;border:0"><span>ما يعادله بالدولار (PayPal)</span><b id="sumUsd">—</b></div>
-          <div class="sum-row" id="remainingRow" style="display:none;border:0"><span>يُسدّد لاحقًا</span><b id="sumRemaining">—</b></div>
+          <div class="sum-row"><span>طريقة العقد</span><b id="sumMode">—</b></div>
+          <div class="sum-row"><span>التاريخ المطلوب</span><b id="sumDate">—</b></div>
+          <div class="sum-total"><span>الرسوم</span><b id="sumPrice">—</b></div>
+          <div class="sum-row" id="usdRow" style="display:none;border:0"><span>ما يعادلها بالدولار (PayPal)</span><b id="sumUsd">—</b></div>
 
           <div class="secure-note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            <span>الدفع الإلكتروني يتم داخل صفحة PayPal المؤمّنة (حماية المشتري + تشفير TLS)، ولا تمرّ بيانات بطاقتك عبر خوادمنا.</span>
+            <span>الدفع الإلكتروني يتم داخل صفحة PayPal المؤمّنة، ولا تمرّ بيانات بطاقتك عبر خوادمنا إطلاقًا.</span>
           </div>
           <div class="pay-logos">
             <span>PayPal</span><span>VISA</span><span>Mastercard</span><span>تحويل بنكي</span><span>نقدًا في المقر</span>
           </div>
-          <p class="muted" style="font-size:.82rem;margin:12px 0 0" id="rateNote"></p>
+        </div>
+
+        <div class="panel" style="margin-top:18px">
+          <h4 style="margin-bottom:14px;color:var(--brand)">بيانات التواصل</h4>
+          <div class="sum-row"><span>العنوان</span><b style="font-weight:600;font-size:.9rem">شارع القدس، وسط مدينة يطا — محافظة الخليل، فلسطين</b></div>
+          <div class="sum-row"><span>الهاتف</span><b dir="ltr"><a href="tel:+970590000000">+970 59 000 0000</a></b></div>
+          <div class="sum-row"><span>البريد</span><b style="font-size:.9rem"><a href="mailto:info@futureacademy.ps">info@futureacademy.ps</a></b></div>
+          <div class="sum-row" style="border:0"><span>الدوام</span><b style="font-weight:600;font-size:.9rem">السبت – الخميس: 9:00 ص – 6:00 م</b></div>
+          <a class="btn btn-ghost btn-block" style="margin-top:16px" href="https://wa.me/970590000000" target="_blank" rel="noopener">تواصل سريع عبر واتساب</a>
         </div>
 
         <div class="panel" style="margin-top:18px">
@@ -245,19 +213,44 @@
           <div class="sum-row"><span>اسم الحساب</span><b id="bankAccountName" style="font-size:.9rem">—</b></div>
           <div class="sum-row"><span>رقم الحساب</span><b id="bankAccountNo" dir="ltr">—</b></div>
           <div class="sum-row"><span>IBAN</span><b id="bankIban" dir="ltr" style="font-size:.82rem">—</b></div>
-          <div class="sum-row" style="border:0"><span>SWIFT</span><b id="bankSwift" dir="ltr">—</b></div>
-          <p class="muted" style="font-size:.84rem;margin:14px 0 0">اكتبي الرقم المرجعي في خانة البيان عند التحويل، ثم أرسلي صورة الإيصال عبر واتساب.</p>
-        </div>
-
-        <div class="panel" style="margin-top:18px">
-          <h4 style="margin-bottom:12px;color:var(--brand)">تحتاجين مساعدة؟</h4>
-          <p class="muted" style="font-size:.92rem;margin-bottom:14px">فريق القبول يجيبك خلال دقائق طوال أيام العمل.</p>
-          <a class="btn btn-ghost btn-block" href="https://wa.me/970590000000" target="_blank" rel="noopener">تواصلي عبر واتساب</a>
+          <div class="sum-row" style="border:0"><span>العملات المقبولة</span><b id="bankCurrencies" style="font-size:.88rem">—</b></div>
+          <p class="muted" style="font-size:.84rem;margin:14px 0 0">بعد التحويل أرسلي صورة الإيصال مع الرقم المرجعي عبر واتساب لتثبيت الموعد.</p>
         </div>
       </aside>
 
     </div>
   </section>
+
+  <!-- الموقع وطرق أخرى للتواصل -->
+  <section class="section" style="background:var(--sand)">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><i></i> زورينا</span>
+        <h2>مقر الأكاديمية في يطا</h2>
+        <p>نستقبلك في مقرنا وسط مدينة يطا خلال أيام الدوام، ويسهل الوصول إلينا من الخليل والسموع والظاهرية.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <h3>العنوان</h3>
+          <p>شارع القدس، وسط مدينة يطا — محافظة الخليل، فلسطين</p>
+        </div>
+        <div class="card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg></div>
+          <h3>الهاتف والواتساب</h3>
+          <p dir="ltr" style="text-align:start"><a href="tel:+970590000000">+970 59 000 0000</a></p>
+          <p><a href="https://wa.me/970590000000" target="_blank" rel="noopener">مراسلتنا على واتساب</a></p>
+        </div>
+        <div class="card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <h3>البريد والدوام</h3>
+          <p><a href="mailto:info@futureacademy.ps">info@futureacademy.ps</a></p>
+          <p>السبت – الخميس: 9:00 ص – 6:00 م — الجمعة عطلة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -318,6 +311,6 @@
 </a>
 
 <script src="/js/site.js"></script>
-<script src="/js/booking.js"></script>
+<script src="/js/consultation.js"></script>
 </body>
 </html>

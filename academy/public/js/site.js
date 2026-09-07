@@ -1,4 +1,4 @@
-/* أكاديمية المستقبل — سكربت مشترك */
+/* أكاديمية المستقبل للتدريب المهني — يطا، فلسطين — سكربت مشترك */
 (function () {
   'use strict';
 
@@ -60,7 +60,17 @@ window.Academy = {
 
   money(value, symbol) {
     const n = Number(value) || 0;
-    return n.toLocaleString('ar-EG-u-nu-latn', { maximumFractionDigits: 0 }) + ' ' + (symbol || 'ر.س');
+    return n.toLocaleString('ar-EG-u-nu-latn', { maximumFractionDigits: 0 }) + ' ' + (symbol || '\u20AA');
+  },
+
+  /* تحويل الشيكل إلى الدولار لعرض مبلغ PayPal (PayPal لا يدعم ILS كعملة تحصيل) */
+  toUsd(ils, meta) {
+    const rate = Number((meta || {}).usdRate) || 3.7;
+    return (Math.round((Number(ils) || 0) / rate * 100) / 100).toFixed(2);
+  },
+
+  usdText(ils, meta) {
+    return this.toUsd(ils, meta) + ' USD';
   },
 
   icon(name) {
@@ -70,7 +80,8 @@ window.Academy = {
       sparkle: '<path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/>',
       polish: '<rect x="8" y="9" width="8" height="12" rx="2.5"/><path d="M10 9V5a2 2 0 0 1 4 0v4"/><path d="M9 14h6"/>',
       chart: '<path d="M4 20h16"/><rect x="6" y="11" width="3.4" height="9" rx="1"/><rect x="12" y="6" width="3.4" height="14" rx="1"/><rect x="17.6" y="14" width="3" height="6" rx="1"/>',
-      crown: '<path d="M4 18h16l1-9-5 3-4-6-4 6-5-3 1 9Z"/><path d="M5 21h14"/>'
+      crown: '<path d="M4 18h16l1-9-5 3-4-6-4 6-5-3 1 9Z"/><path d="M5 21h14"/>',
+      chat: '<path d="M20 12a7 7 0 0 1-7 7H8l-4 3v-5.5A7 7 0 0 1 8 5h5a7 7 0 0 1 7 7Z"/><path d="M9 11h6M9 14h4"/>'
     };
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">' + (paths[name] || paths.sparkle) + '</svg>';
   },
@@ -97,7 +108,7 @@ window.Academy = {
       '</div>',
       '<div class="course-foot">',
       '<div class="price-tag"><b>' + this.money(course.price, meta.symbol) + '</b>' + old + '<span>شامل المواد والشهادة</span></div>',
-      '<a class="btn btn-primary" href="/booking/?course=' + course.id + '">احجزي مقعدك</a>',
+      '<a class="btn btn-primary" href="/booking/?course=' + course.id + '">سجّلي الآن</a>',
       '</div>',
       '</article>'
     ].join('');

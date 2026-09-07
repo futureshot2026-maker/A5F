@@ -3,4 +3,4 @@ Allow: /
 Disallow: /booking/success.html
 Disallow: /booking/cancel.html
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://futureacademy.ps/sitemap.xml

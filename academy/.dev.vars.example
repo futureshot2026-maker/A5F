@@ -1,11 +1,27 @@
 # انسخ هذا الملف إلى .dev.vars للتجربة المحلية (لا تضعه في Git)
 # وفي الإنتاج استخدم: npx wrangler secret put <NAME>
 
-# مفتاح Stripe السري — بدونه يعمل الموقع في وضع تجريبي ويسجّل الطلب بلا دفع
-STRIPE_SECRET_KEY=
+# ---- PayPal (Orders v2) ----
+# أنشئ تطبيق REST من https://developer.paypal.com ثم انسخ المفتاحين
+PAYPAL_CLIENT_ID=
+PAYPAL_SECRET=
+# sandbox للتجربة، live للإنتاج
+PAYPAL_ENV=sandbox
+# معرّف الويب هوك (اختياري لكن مستحسن لتأكيد الدفعات تلقائيًا)
+PAYPAL_WEBHOOK_ID=
 
-# سر التحقق من الويب هوك (اختياري لكن مستحسن في الإنتاج)
-STRIPE_WEBHOOK_SECRET=
+# ---- سعر التحويل ----
+# PayPal لا يدعم الشيكل كعملة تحصيل، لذا يُحصَّل بالدولار وفق هذا السعر
+USD_RATE=3.7
 
-# رابط اختياري يستقبل بيانات كل حجز جديد (Zapier / Make / n8n / سكربت خاص)
+# ---- بيانات التحويل البنكي (تتجاوز القيم في public/data/courses.json) ----
+BANK_NAME=
+BANK_ACCOUNT_NAME=
+BANK_ACCOUNT_NO=
+BANK_IBAN=
+BANK_SWIFT=
+BANK_CURRENCIES=
+
+# ---- إشعارات ----
+# رابط اختياري يستقبل بيانات كل طلب جديد (Zapier / Make / n8n / سكربت خاص)
 NOTIFY_WEBHOOK_URL=

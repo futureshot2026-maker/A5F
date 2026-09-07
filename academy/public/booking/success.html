@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تم تأكيد الحجز | أكاديمية المستقبل</title>
-<meta name="description" content="صفحة تأكيد حجز مقعد في أكاديمية المستقبل للتعليم المهني.">
-<meta name="theme-color" content="#4A1F52">
+<title>تأكيد الطلب | أكاديمية المستقبل للتدريب المهني</title>
+<meta name="description" content="صفحة تأكيد التسجيل والدفع في أكاديمية المستقبل للتدريب المهني — يطا، فلسطين.">
+<meta name="theme-color" content="#0E3B38">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="تأكيد الطلب | أكاديمية المستقبل للتدريب المهني">
+<meta property="og:description" content="صفحة تأكيد التسجيل والدفع في أكاديمية المستقبل للتدريب المهني — يطا، فلسطين.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_PS">
+<meta property="og:image" content="/assets/logo-full.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -19,16 +24,18 @@
 <header class="nav scrolled">
   <div class="container nav-inner">
     <a class="brand" href="/">
-      <img src="/assets/logo-mark.svg" alt="شعار أكاديمية المستقبل">
-      <span class="brand-text"><b>أكاديمية المستقبل</b><span>للتعليم المهني</span></span>
+      <img src="/assets/logo-mark.svg" alt="شعار أكاديمية المستقبل للتدريب المهني" width="52" height="52">
+      <span class="brand-text">
+        <b>أكاديمية المستقبل</b>
+        <span>للتدريب المهني — يطا</span>
+      </span>
     </a>
     <nav class="nav-links" aria-label="القائمة الرئيسية">
       <a href="/">الرئيسية</a>
+      <a href="/about/">عن الأكاديمية</a>
       <a href="/services/">الدورات والخدمات</a>
-      <a href="/#why">لماذا نحن</a>
-      <a href="/#testimonials">آراء المتدربات</a>
-      <a href="/#faq">الأسئلة الشائعة</a>
-      <a href="/booking/" class="active">الحجز والدفع</a>
+      <a href="/contact/">حجز استشارة</a>
+      <a href="/booking/" class="active">التسجيل والدفع</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="/booking/">احجزي مقعدك</a>
@@ -43,25 +50,37 @@
       <div class="status-icon" id="statusIcon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <h1 id="statusTitle">تم استلام حجزك بنجاح</h1>
-      <p class="muted" id="statusText">شكرًا لثقتك بأكاديمية المستقبل. سيتواصل معك فريق القبول خلال ساعات العمل لتأكيد موعد بدء الدورة.</p>
+      <h1 id="statusTitle">تم استلام طلبك بنجاح</h1>
+      <p class="muted" id="statusText">شكرًا لثقتك بأكاديمية المستقبل للتدريب المهني. سيتواصل معك فريق القبول خلال ساعات العمل لتأكيد التفاصيل.</p>
 
       <div class="ref-box">
-        <span>الرقم المرجعي للحجز</span>
+        <span>الرقم المرجعي</span>
         <b id="refCode">—</b>
       </div>
 
       <div style="text-align:start" id="detailsBox">
-        <div class="sum-row"><span>الدورة</span><b id="detCourse">—</b></div>
+        <div class="sum-row"><span>الطلب</span><b id="detCourse">—</b></div>
         <div class="sum-row"><span>حالة الدفع</span><b id="detStatus">—</b></div>
-        <div class="sum-row" style="border:0"><span>المبلغ المدفوع</span><b id="detAmount">—</b></div>
+        <div class="sum-row" style="border:0"><span>المبلغ</span><b id="detAmount">—</b></div>
+      </div>
+
+      <div class="panel" id="bankBox" hidden style="text-align:start;margin-top:24px">
+        <h4 style="margin-bottom:14px;color:var(--brand)">تعليمات التحويل البنكي</h4>
+        <div class="sum-row"><span>البنك</span><b id="bankName">—</b></div>
+        <div class="sum-row"><span>اسم الحساب</span><b id="bankAccountName" style="font-size:.9rem">—</b></div>
+        <div class="sum-row"><span>رقم الحساب</span><b id="bankAccountNo" dir="ltr">—</b></div>
+        <div class="sum-row"><span>IBAN</span><b id="bankIban" dir="ltr" style="font-size:.82rem">—</b></div>
+        <div class="sum-row" style="border:0"><span>SWIFT</span><b id="bankSwift" dir="ltr">—</b></div>
+        <p class="muted" style="font-size:.88rem;margin:14px 0 0">
+          اكتبي الرقم المرجعي أعلاه في خانة البيان عند التحويل، ثم أرسلي صورة الإيصال عبر واتساب لتثبيت الحجز خلال 48 ساعة.
+        </p>
       </div>
 
       <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px">
-        <a class="btn btn-primary" href="https://wa.me/966500000000" target="_blank" rel="noopener">تأكيد عبر واتساب</a>
+        <a class="btn btn-primary" id="waBtn" href="https://wa.me/970590000000" target="_blank" rel="noopener">إرسال الإيصال / التأكيد عبر واتساب</a>
         <a class="btn btn-ghost" href="/services/">تصفّح دورات أخرى</a>
       </div>
-      <p class="muted" style="margin-top:22px;font-size:.88rem">احتفظي بالرقم المرجعي — ستحتاجينه عند مراجعة الأكاديمية أو الاستفسار عن حجزك.</p>
+      <p class="muted" style="margin-top:22px;font-size:.88rem">احتفظي بالرقم المرجعي — ستحتاجينه عند مراجعة الأكاديمية أو الاستفسار عن طلبك.</p>
     </div>
   </div>
 </main>
@@ -72,17 +91,23 @@
       <div>
         <div class="brand">
           <img src="/assets/logo-mark.svg" alt="" width="52" height="52">
-          <span class="brand-text"><b>أكاديمية المستقبل</b><span>للتعليم المهني</span></span>
+          <span class="brand-text"><b>أكاديمية المستقبل</b><span>للتدريب المهني — يطا</span></span>
         </div>
-        <p class="about">أكاديمية متخصصة في تدريب الكوافير وفنون التجميل، نحوّل الشغف إلى مهنة بدخل حقيقي عبر تدريب عملي وشهادات معتمدة.</p>
+        <p class="about">أكاديمية تدريب مهني في مدينة يطا بمحافظة الخليل، متخصصة في مهن الكوافير وفنون التجميل، تحوّل المهارة إلى مصدر دخل عبر تدريب عملي وشهادة مهنية معتمدة.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="إنستغرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="فيسبوك"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" width="20" height="20"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h2.5l.5-4h-3V8.6c0-.4.3-.6.6-.6Z"/></svg></a>
+          <a href="https://wa.me/970590000000" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" width="20" height="20"><path d="M21 12a9 9 0 1 1-4.2-7.6L21 4l-1.4 4.2A8.9 8.9 0 0 1 21 12Z"/><path d="M8.5 9.5c.4 3 2.9 5.5 6 6l1.2-1.6-2-1.1-1 .8c-1-.5-1.9-1.4-2.4-2.4l.8-1L10 8.3 8.5 9.5Z"/></svg></a>
+        </div>
       </div>
       <div>
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="/">الرئيسية</a></li>
+          <li><a href="/about/">عن الأكاديمية</a></li>
           <li><a href="/services/">الدورات والخدمات</a></li>
-          <li><a href="/booking/">الحجز والدفع</a></li>
-          <li><a href="/#faq">الأسئلة الشائعة</a></li>
+          <li><a href="/contact/">حجز استشارة</a></li>
+          <li><a href="/booking/">التسجيل والدفع</a></li>
         </ul>
       </div>
       <div>
@@ -98,21 +123,22 @@
       <div>
         <h4>تواصلي معنا</h4>
         <ul>
-          <li>📍 شارع الأمير سلطان، الرياض</li>
-          <li>📞 <a href="tel:+966500000000" dir="ltr">+966 50 000 0000</a></li>
-          <li>✉️ <a href="mailto:info@future-academy.example">info@future-academy.example</a></li>
-          <li>🕐 السبت – الخميس: 9 صباحًا – 9 مساءً</li>
+          <li>📍 شارع القدس، وسط مدينة يطا — محافظة الخليل، فلسطين</li>
+          <li>📞 <a href="tel:+970590000000" dir="ltr">+970 59 000 0000</a></li>
+          <li>✉️ <a href="mailto:info@futureacademy.ps">info@futureacademy.ps</a></li>
+          <li>🕐 السبت – الخميس: 9:00 ص – 6:00 م</li>
+          <li>💳 PayPal · تحويل بنكي · دفع في المقر</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> أكاديمية المستقبل للتعليم المهني — جميع الحقوق محفوظة.</span>
-      <span>الدفع الإلكتروني مؤمّن ومشفّر</span>
+      <span>© <span data-year>2026</span> أكاديمية المستقبل للتدريب المهني — يطا، فلسطين. جميع الحقوق محفوظة.</span>
+      <span>الدفع الإلكتروني عبر PayPal — لا نحفظ بيانات بطاقتك على خوادمنا.</span>
     </div>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+<a class="wa" href="https://wa.me/970590000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
   <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.52 3.76 1.44 5.33L2 22l4.95-1.6a9.8 9.8 0 0 0 5.09 1.4h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.76 13.9c-.24.68-1.4 1.3-1.94 1.34-.5.05-.98.23-3.3-.7-2.77-1.1-4.53-3.94-4.67-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.24-.28.53-.35.7-.35h.5c.16 0 .38-.06.6.46.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.19-.13.3-.26.47l-.4.46c-.13.13-.27.28-.11.55.15.28.68 1.12 1.46 1.82 1 .89 1.85 1.17 2.12 1.3.27.14.42.12.58-.07.16-.19.67-.78.85-1.05.18-.28.36-.23.6-.14.25.09 1.58.75 1.85.88.27.14.45.21.51.32.07.11.07.63-.17 1.31Z"/></svg>
 </a>
 
@@ -120,49 +146,96 @@
 <script>
 (async function () {
   const p = new URLSearchParams(location.search);
-  const ref = p.get('ref') || '—';
-  const mode = p.get('mode') || 'full';
-  const amount = Number(p.get('amount') || 0);
-  const course = p.get('course') || '—';
-  const sessionId = p.get('session_id');
+  const q = function (k) { return p.get(k) || ''; };
+  const ref = q('ref') || '—';
+  const mode = q('mode') || 'full';
+  const kind = q('kind') || 'booking';
+  const token = q('token');            // معرّف طلب PayPal عند العودة من البوابة
+  const amount = Number(q('amount') || 0);
+  const title = q('course') || q('title') || (kind === 'consultation' ? 'استشارة مهنية' : '—');
 
-  document.getElementById('refCode').textContent = ref;
-  document.getElementById('detCourse').textContent = course;
+  const el = function (id) { return document.getElementById(id); };
+  el('refCode').textContent = ref;
+  el('detCourse').textContent = title;
 
   const labels = {
     full: 'مدفوع بالكامل',
     deposit: 'عربون مدفوع — المتبقي يُسدّد أول يوم تدريب',
     cash: 'بانتظار الدفع في مقر الأكاديمية (خلال 48 ساعة)',
-    demo: 'حجز مبدئي — بانتظار تفعيل بوابة الدفع'
+    bank: 'بانتظار التحويل البنكي',
+    free: 'استشارة مجانية — لا يوجد مبلغ مستحق',
+    demo: 'طلب مسجّل — بانتظار تفعيل بوابة الدفع'
   };
-  document.getElementById('detStatus').textContent = labels[mode] || 'قيد المعالجة';
-  document.getElementById('detAmount').textContent =
-    amount > 0 ? Academy.money(amount) : (mode === 'cash' ? 'يُدفع في المقر' : '—');
+  el('detStatus').textContent = labels[mode] || 'قيد المعالجة';
+  el('detAmount').textContent = amount > 0
+    ? Academy.money(amount, q('symbol') || '₪')
+    : (mode === 'cash' ? 'يُدفع في المقر' : (mode === 'free' ? 'مجانًا' : '—'));
 
-  if (mode === 'cash') {
-    document.getElementById('statusTitle').textContent = 'تم حجز مقعدك مبدئيًا';
-    document.getElementById('statusText').textContent =
-      'مقعدك محجوز لمدة 48 ساعة. يرجى مراجعة مقر الأكاديمية أو التواصل معنا لإتمام الدفع وتثبيت الحجز.';
-    document.getElementById('statusIcon').classList.add('warn');
+  function warn(title, text) {
+    el('statusTitle').textContent = title;
+    el('statusText').textContent = text;
+    el('statusIcon').classList.add('warn');
   }
 
-  // تأكيد حالة الدفع من الخادم عند العودة من بوابة الدفع
-  if (sessionId) {
+  if (mode === 'cash') {
+    warn('تم حجز مقعدك مبدئيًا',
+      'مقعدك محجوز لمدة 48 ساعة. يرجى مراجعة مقر الأكاديمية بيطا أو التواصل معنا لإتمام الدفع وتثبيت الحجز.');
+  }
+
+  // عرض تعليمات التحويل البنكي
+  if (mode === 'bank') {
+    warn('تم تسجيل طلبك — بانتظار التحويل',
+      'أكملي التحويل البنكي باستخدام البيانات أدناه خلال 48 ساعة، ثم أرسلي صورة الإيصال لتثبيت الحجز.');
     try {
-      const res = await fetch('/api/booking/status?session_id=' + encodeURIComponent(sessionId));
-      const data = await res.json();
-      if (data && data.ok) {
-        document.getElementById('detStatus').textContent =
-          data.paid ? (labels[data.payment] || 'مدفوع') : 'لم يكتمل الدفع بعد';
-        if (data.amount) document.getElementById('detAmount').textContent = Academy.money(data.amount, data.symbol);
-        if (data.reference) document.getElementById('refCode').textContent = data.reference;
-        if (data.course) document.getElementById('detCourse').textContent = data.course;
-        if (!data.paid) {
-          document.getElementById('statusTitle').textContent = 'لم يكتمل الدفع';
-          document.getElementById('statusIcon').classList.add('warn');
-        }
+      let b = null;
+      try { b = JSON.parse(sessionStorage.getItem('fa_bank') || 'null'); } catch (e) { b = null; }
+      if (!b) {
+        const data = await Academy.load();
+        b = (data.meta || {}).bank || {};
       }
-    } catch (e) { /* نُبقي البيانات القادمة من الرابط */ }
+      el('bankName').textContent = b.name || '—';
+      el('bankAccountName').textContent = b.accountName || '—';
+      el('bankAccountNo').textContent = b.accountNo || '—';
+      el('bankIban').textContent = b.iban || '—';
+      el('bankSwift').textContent = b.swift || '—';
+      el('bankBox').hidden = false;
+    } catch (e) { /* تجاهل */ }
+    el('waBtn').href = 'https://wa.me/970590000000?text=' +
+      encodeURIComponent('مرحبًا، أرفقت إيصال التحويل البنكي للطلب رقم ' + ref);
+  }
+
+  // العودة من PayPal: تنفيذ التحصيل (capture)
+  if (token) {
+    el('statusTitle').textContent = 'جارٍ تأكيد الدفع…';
+    el('statusText').textContent = 'لحظة من فضلك، نتحقق من عملية الدفع لدى PayPal.';
+    try {
+      const res = await fetch('/api/paypal/capture', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ orderId: token, reference: ref, kind: kind })
+      });
+      const data = await res.json().catch(function () { return {}; });
+
+      if (res.ok && data.ok && data.paid) {
+        el('statusTitle').textContent = 'تم الدفع بنجاح';
+        el('statusText').textContent = 'وصلنا مبلغك وتم تثبيت طلبك. يصلك إيصال PayPal على بريدك الإلكتروني.';
+        el('statusIcon').classList.remove('warn');
+        if (data.reference) el('refCode').textContent = data.reference;
+        if (data.title) el('detCourse').textContent = data.title;
+        el('detStatus').textContent = labels[data.mode] || 'مدفوع';
+        if (data.amountIls) {
+          el('detAmount').textContent = Academy.money(data.amountIls, '₪') +
+            (data.amountUsd ? ' (' + data.amountUsd + ' USD)' : '');
+        } else if (data.amountUsd) {
+          el('detAmount').textContent = data.amountUsd + ' USD';
+        }
+      } else {
+        warn('لم يكتمل الدفع',
+          (data && data.error) || 'لم نتمكن من تأكيد الدفع لدى PayPal. لم يُخصم أي مبلغ غالبًا — يمكنك إعادة المحاولة أو التواصل معنا.');
+      }
+    } catch (e) {
+      warn('تعذّر تأكيد الدفع', 'حدث خطأ في الاتصال. يرجى التواصل معنا عبر واتساب مع الرقم المرجعي أعلاه.');
+    }
   }
 })();
 </script>

@@ -1,10 +1,12 @@
 {
-  "name": "future-academy-website",
+  "name": "future-academy-yatta-website",
   "version": "1.0.0",
   "private": true,
-  "description": "موقع أكاديمية المستقبل للتعليم المهني — كوافير ودورات التجميل، مع نظام حجز ودفع إلكتروني.",
+  "description": "موقع أكاديمية المستقبل للتدريب المهني — يطا، فلسطين: دورات ونموذج حجز استشارة وتسجيل مع دفع عبر PayPal أو تحويل بنكي.",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "wrangler dev",
     "start": "wrangler dev",
