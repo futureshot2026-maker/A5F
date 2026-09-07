@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدورات والخدمات | أكاديمية المستقبل</title>
+<meta name="description" content="تصفحي دورات ودبلومات الكوافير والتجميل في أكاديمية المستقبل واحجزي مقعدكِ فورًا مع الدفع الآمن أونلاين.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="شعار أكاديمية المستقبل">
+      <span class="brand-text"><strong>أكاديمية المستقبل</strong><span>FUTURE ACADEMY</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html" class="active">الدورات والخدمات</a>
+      <a href="index.html#about">عن الأكاديمية</a>
+      <a href="index.html#testimonials">آراء الطالبات</a>
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#booking-form" class="btn btn-primary">احجزي الآن</a>
+      <button class="nav-toggle" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:70px 0 60px;">
+  <div class="container reveal in" style="text-align:center;">
+    <span class="eyebrow">الدورات والخدمات</span>
+    <h1>اختاري دورتكِ وابدئي رحلتكِ المهنية اليوم</h1>
+    <p class="lead" style="margin:0 auto;">جميع الدورات تشمل تدريبًا عمليًا وشهادة معتمدة عند التخرج. اختاري الدورة المناسبة واحجزي مقعدكِ بالدفع الآمن أونلاين أو بالحجز مع الدفع لاحقًا.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3" id="courses-list">
+      <!-- Injected by js/booking.js from /api/courses -->
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="booking-form-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">الحجز والدفع</span>
+      <h2>احجزي مقعدكِ الآن</h2>
+      <p>عبّئي بياناتكِ أدناه، ثم أكملي الدفع الآمن أونلاين أو احجزي مع خيار الدفع لاحقًا.</p>
+    </div>
+
+    <div style="max-width:720px;margin:0 auto;">
+      <form class="form-card" id="booking-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="course-select">الدورة / الخدمة</label>
+            <select id="course-select" name="courseId" required></select>
+          </div>
+          <div class="field">
+            <label for="preferredDate">التاريخ المفضل لبدء الدورة</label>
+            <input type="date" id="preferredDate" name="preferredDate">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" placeholder="مثال: سارة أحمد" required>
+          </div>
+          <div class="field">
+            <label for="phone">رقم الجوال</label>
+            <input type="tel" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+          <small>سيُستخدم لإرسال تأكيد الحجز وإيصال الدفع.</small>
+        </div>
+
+        <div class="field">
+          <label for="notes">ملاحظات إضافية (اختياري)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="أي استفسار أو طلب خاص..."></textarea>
+        </div>
+
+        <div class="payment-summary" id="payment-summary" style="display:none;"></div>
+
+        <div style="display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;">
+          <button type="button" id="pay-btn" class="btn btn-primary btn-lg" style="flex:1;">💳 ادفعي وأكدي الحجز</button>
+          <button type="button" id="later-btn" class="btn btn-outline btn-lg" style="flex:1;">📌 احجزي والدفع لاحقًا</button>
+        </div>
+
+        <div class="form-msg" id="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <img src="assets/logo.svg" alt="شعار أكاديمية المستقبل" style="width:40px;height:40px;">
+          <strong style="color:#E8C08A;">أكاديمية المستقبل</strong>
+        </div>
+        <p style="color:#B7ABB0;font-size:14px;">صرح تعليمي متخصص في تأهيل الكوادر النسائية في مجالات الكوافير والتجميل بأعلى معايير الجودة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">الدورات والخدمات</a>
+        <a href="index.html#about">عن الأكاديمية</a>
+        <a href="index.html#contact">تواصل معنا</a>
+      </div>
+      <div>
+        <h4>الدورات</h4>
+        <a href="services.html">دبلوم الكوافير</a>
+        <a href="services.html">دبلوم المكياج</a>
+        <a href="services.html">دبلوم العرائس</a>
+        <a href="services.html">العناية بالبشرة</a>
+      </div>
+      <div>
+        <h4>تابعينا</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Snapchat</a>
+        <a href="https://wa.me/966500000000">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> أكاديمية المستقبل. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/966500000000" target="_blank" aria-label="واتساب">🟢</a>
+
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>
