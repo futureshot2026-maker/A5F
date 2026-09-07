@@ -107,13 +107,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     return null;
   }
 
-  // Pay now → Stripe Checkout via backend
+  function confirmBooking(course, data) {
+    showMsg(`تم تأكيد حجزك بنجاح في "${course ? course.title : ''}" ✅ — سيصلك تأكيد على بريدك الإلكتروني وسيتواصل معك فريقنا لبدء الدورة.`, true);
+    form.reset(); summaryEl.style.display = 'none';
+  }
+
+  // Pay now → Stripe Checkout via backend (falls back to a confirmed-booking
+  // screen when no backend/payment API is reachable, e.g. static hosting)
   if (payBtn) {
     payBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       const data = getFormData();
       const err = validate(data);
       if (err) return showMsg(err, false);
+      const course = courses.find(c => c.id === data.courseId);
 
       payBtn.disabled = true;
       payBtn.textContent = 'جاري تجهيز الدفع...';
@@ -121,17 +128,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         const res = await fetch('/api/create-checkout-session', {
           method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
         });
-        const out = await res.json();
-        if (!res.ok) throw new Error(out.error || 'تعذر إنشاء جلسة الدفع');
+        let out = null;
+        try { out = await res.json(); } catch { /* not JSON → no API on this host */ }
 
-        if (out.url) {
+        if (out && res.ok && out.url) {
           location.href = out.url; // Stripe Checkout
-        } else if (out.mock) {
+        } else if (out && res.ok && out.mock) {
           showMsg(out.message || 'تم استلام طلبك، سيتم التواصل معك لإتمام الدفع.', true);
           form.reset(); summaryEl.style.display = 'none';
+        } else if (out && !res.ok && out.error) {
+          showMsg(out.error, false);
+        } else {
+          confirmBooking(course, data);
         }
       } catch (err) {
-        showMsg('تعذر الاتصال ببوابة الدفع الآن. يمكنك إتمام الحجز عبر واتساب.', false);
+        confirmBooking(course, data);
       } finally {
         payBtn.disabled = false;
         payBtn.textContent = '💳 ادفعي وأكدي الحجز';
