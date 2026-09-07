@@ -1,0 +1,17 @@
+{
+  "name": "future-academy-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "موقع أكاديمية المستقبل للتعليم المهني — كوافير ودورات التجميل، مع نظام حجز ودفع إلكتروني.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "npx --yes serve public -l 4173"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

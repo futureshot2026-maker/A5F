@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="شعار أكاديمية المستقبل للتعليم المهني">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A1F52"/>
+      <stop offset="55%" stop-color="#7A2A63"/>
+      <stop offset="100%" stop-color="#C4416F"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5D9A8"/>
+      <stop offset="45%" stop-color="#E3B778"/>
+      <stop offset="100%" stop-color="#C1863F"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#FFE6C7"/>
+      <stop offset="50%" stop-color="#F2A6B4"/>
+      <stop offset="100%" stop-color="#E2537B"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="112" height="112" rx="34" fill="url(#badge)"/>
+  <rect x="10.5" y="10.5" width="99" height="99" rx="28" fill="none" stroke="url(#gold)" stroke-opacity=".45" stroke-width="1.5"/>
+
+  <!-- مرآة التجميل -->
+  <ellipse cx="60" cy="51" rx="26" ry="30" fill="none" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M60 28c13 13.5 13 27.5 0 41-13-13.5-13-27.5 0-41Z" fill="url(#petal)"/>
+  <path d="M60 34c7.5 9 7.5 18 0 27" fill="none" stroke="#7A2A63" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M60 82v13" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M49 99h22" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- بريق -->
+  <path d="M93 22c1.2 5.4 2.4 6.6 7.8 7.8-5.4 1.2-6.6 2.4-7.8 7.8-1.2-5.4-2.4-6.6-7.8-7.8 5.4-1.2 6.6-2.4 7.8-7.8Z" fill="url(#gold)"/>
+  <path d="M25 80c.8 3.4 1.5 4.1 4.9 4.9-3.4.8-4.1 1.5-4.9 4.9-.8-3.4-1.5-4.1-4.9-4.9 3.4-.8 4.1-1.5 4.9-4.9Z" fill="url(#gold)" fill-opacity=".8"/>
+</svg>

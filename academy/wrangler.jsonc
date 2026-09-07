@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "future-academy",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+  // للتخزين الاختياري للحجوزات، أنشئ KV Namespace ثم فعّل السطر التالي:
+  // ,"kv_namespaces": [{ "binding": "BOOKINGS", "id": "<KV_NAMESPACE_ID>" }]
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حجز ودفع | أكاديمية المستقبل للتعليم المهني</title>
+<meta name="description" content="نموذج حجز مقعد في دورات الكوافير والتجميل مع الدفع الإلكتروني الآمن: دفع كامل، عربون 30%، أو الدفع في المقر.">
+<meta name="theme-color" content="#4A1F52">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<header class="nav scrolled">
+  <div class="container nav-inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo-mark.svg" alt="شعار أكاديمية المستقبل">
+      <span class="brand-text"><b>أكاديمية المستقبل</b><span>للتعليم المهني</span></span>
+    </a>
+    <nav class="nav-links" aria-label="القائمة الرئيسية">
+      <a href="/">الرئيسية</a>
+      <a href="/services/">الدورات والخدمات</a>
+      <a href="/#why">لماذا نحن</a>
+      <a href="/#testimonials">آراء المتدربات</a>
+      <a href="/#faq">الأسئلة الشائعة</a>
+      <a href="/booking/" class="active">الحجز والدفع</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/booking/">احجزي مقعدك</a>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="/">الرئيسية</a> ← <a href="/services/">الدورات</a> ← <span>الحجز والدفع</span></div>
+      <h1>حجز مقعد ودفع الرسوم</h1>
+      <p>عبّئي البيانات التالية واختاري طريقة الدفع المناسبة. يصلك تأكيد الحجز ورقم مرجعي فور إتمام العملية.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-shell">
+
+      <!-- النموذج -->
+      <div class="panel">
+        <div class="form-alert error" id="formError" role="alert"></div>
+        <div class="form-alert info" id="formInfo" role="status"></div>
+
+        <form id="bookingForm" novalidate>
+
+          <fieldset class="fieldset">
+            <legend><b>1</b> بيانات المتدربة</legend>
+            <div class="row">
+              <div class="field">
+                <label for="fullName">الاسم الكامل <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="مثال: نورة عبدالله">
+                <span class="error-msg">يرجى كتابة الاسم الثلاثي.</span>
+              </div>
+              <div class="field">
+                <label for="phone">رقم الجوال / واتساب <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" dir="ltr" autocomplete="tel" placeholder="05xxxxxxxx">
+                <span class="error-msg">يرجى إدخال رقم جوال صحيح.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="email">البريد الإلكتروني <span class="req">*</span></label>
+                <input type="email" id="email" name="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
+                <span class="hint">يُرسل إليه إيصال الدفع وتأكيد الحجز.</span>
+                <span class="error-msg">يرجى إدخال بريد إلكتروني صحيح.</span>
+              </div>
+              <div class="field">
+                <label for="city">المدينة <span class="req">*</span></label>
+                <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="الرياض">
+                <span class="error-msg">يرجى كتابة المدينة.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="level">مستواك الحالي</label>
+              <select id="level" name="level">
+                <option value="مبتدئة تمامًا">مبتدئة تمامًا</option>
+                <option value="لدي خبرة بسيطة">لدي خبرة بسيطة</option>
+                <option value="أعمل في المجال">أعمل في المجال وأريد التطوير</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend><b>2</b> تفاصيل الدورة</legend>
+            <div class="field">
+              <label for="course">الدورة المطلوبة <span class="req">*</span></label>
+              <select id="course" name="course"><option value="">جارٍ تحميل الدورات…</option></select>
+              <span class="error-msg">يرجى اختيار الدورة.</span>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="session">الفترة المفضلة</label>
+                <select id="session" name="session">
+                  <option value="صباحية">صباحية (9ص – 12ظ)</option>
+                  <option value="مسائية">مسائية (5م – 8م)</option>
+                  <option value="نهاية الأسبوع">نهاية الأسبوع (جمعة/سبت)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="startDate">تاريخ البدء المفضل <span class="req">*</span></label>
+                <input type="date" id="startDate" name="startDate">
+                <span class="error-msg">يرجى اختيار تاريخ لاحق لتاريخ اليوم.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="seats">عدد المقاعد</label>
+              <select id="seats" name="seats">
+                <option value="1">مقعد واحد</option>
+                <option value="2">مقعدان</option>
+                <option value="3">3 مقاعد — خصم مجموعة 10%</option>
+                <option value="4">4 مقاعد — خصم مجموعة 10%</option>
+                <option value="5">5 مقاعد — خصم مجموعة 10%</option>
+              </select>
+              <span class="hint">خصم 10% تلقائيًا عند حجز 3 مقاعد فأكثر.</span>
+            </div>
+            <div class="field">
+              <label for="notes">ملاحظات إضافية</label>
+              <textarea id="notes" name="notes" placeholder="مثال: أحتاج جدولًا مسائيًا فقط، أو لدي استفسار عن التقسيط."></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend><b>3</b> طريقة الدفع</legend>
+            <div class="options" id="payOptions">
+              <label class="option selected">
+                <input type="radio" name="payment" value="full" checked>
+                <span>
+                  <b>دفع كامل الرسوم أونلاين</b>
+                  <span>ادفعي المبلغ كاملًا الآن عبر بوابة دفع مشفّرة (مدى، فيزا، ماستركارد، Apple Pay).</span>
+                </span>
+                <span class="tag" data-pay-full>—</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="payment" value="deposit">
+                <span>
+                  <b>عربون 30% لتثبيت المقعد</b>
+                  <span>ادفعي العربون الآن وسدّدي المتبقي أول يوم تدريب.</span>
+                </span>
+                <span class="tag" data-pay-deposit>—</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="payment" value="cash">
+                <span>
+                  <b>حجز الآن والدفع في المقر</b>
+                  <span>نحجز مقعدك مبدئيًا 48 ساعة، ويلزم إتمام الدفع خلالها لتثبيته.</span>
+                </span>
+                <span class="tag">0 ر.س</span>
+              </label>
+            </div>
+
+            <label class="option" style="margin-top:16px">
+              <input type="checkbox" id="terms" name="terms">
+              <span>
+                <b>أوافق على الشروط وسياسة الاسترجاع</b>
+                <span>الاسترجاع كامل قبل 7 أيام من بدء الدورة، و50% قبل 48 ساعة، ولا يُسترجع بعد بدء التدريب.</span>
+              </span>
+            </label>
+            <span class="error-msg" id="termsError">يجب الموافقة على الشروط للمتابعة.</span>
+          </fieldset>
+
+          <button class="btn btn-primary btn-block" type="submit" id="submitBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19"/></svg>
+            <span id="submitLabel">المتابعة إلى الدفع الآمن</span>
+          </button>
+          <p class="hint center" style="margin-top:14px;color:var(--muted);font-size:.85rem">
+            بالضغط على الزر يتم تحويلك إلى صفحة الدفع المؤمّنة. لا نحفظ بيانات بطاقتك على خوادمنا إطلاقًا.
+          </p>
+        </form>
+      </div>
+
+      <!-- الملخص -->
+      <aside class="summary">
+        <div class="summary-head">
+          <span>ملخص الحجز</span>
+          <h3 id="sumTitle">اختاري دورة للبدء</h3>
+        </div>
+        <div class="panel">
+          <div class="sum-row"><span>القسم</span><b id="sumCat">—</b></div>
+          <div class="sum-row"><span>المدة</span><b id="sumDuration">—</b></div>
+          <div class="sum-row"><span>ساعات التدريب</span><b id="sumHours">—</b></div>
+          <div class="sum-row"><span>عدد المقاعد</span><b id="sumSeats">1</b></div>
+          <div class="sum-row"><span>رسوم الدورة</span><b id="sumSubtotal">—</b></div>
+          <div class="sum-row" id="discountRow" style="display:none"><span>خصم المجموعة</span><b id="sumDiscount">—</b></div>
+          <div class="sum-total"><span>الإجمالي</span><b id="sumTotal">—</b></div>
+          <div class="sum-row" style="border:0"><span>المطلوب دفعه الآن</span><b id="sumNow">—</b></div>
+          <div class="sum-row" id="remainingRow" style="display:none;border:0"><span>يُسدّد لاحقًا</span><b id="sumRemaining">—</b></div>
+
+          <div class="secure-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <span>الدفع يتم عبر بوابة Stripe المشفّرة بمعيار PCI-DSS، وبياناتك محمية بتشفير TLS.</span>
+          </div>
+          <div class="pay-logos">
+            <span>mada</span><span>VISA</span><span>Mastercard</span><span>Apple Pay</span><span>تحويل بنكي</span>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:18px">
+          <h4 style="margin-bottom:12px;color:var(--plum)">تحتاجين مساعدة؟</h4>
+          <p class="muted" style="font-size:.92rem;margin-bottom:14px">فريق القبول يجيبك خلال دقائق طوال أيام العمل.</p>
+          <a class="btn btn-ghost btn-block" href="https://wa.me/966500000000" target="_blank" rel="noopener">تواصلي عبر واتساب</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/logo-mark.svg" alt="" width="52" height="52">
+          <span class="brand-text"><b>أكاديمية المستقبل</b><span>للتعليم المهني</span></span>
+        </div>
+        <p class="about">أكاديمية متخصصة في تدريب الكوافير وفنون التجميل، نحوّل الشغف إلى مهنة بدخل حقيقي عبر تدريب عملي وشهادات معتمدة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="/">الرئيسية</a></li>
+          <li><a href="/services/">الدورات والخدمات</a></li>
+          <li><a href="/booking/">الحجز والدفع</a></li>
+          <li><a href="/#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>أقسامنا</h4>
+        <ul>
+          <li><a href="/services/#hair">الشعر والكوافير</a></li>
+          <li><a href="/services/#makeup">المكياج</a></li>
+          <li><a href="/services/#skin">العناية بالبشرة</a></li>
+          <li><a href="/services/#nails">الأظافر</a></li>
+          <li><a href="/services/#diploma">الدبلومات الشاملة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصلي معنا</h4>
+        <ul>
+          <li>📍 شارع الأمير سلطان، الرياض</li>
+          <li>📞 <a href="tel:+966500000000" dir="ltr">+966 50 000 0000</a></li>
+          <li>✉️ <a href="mailto:info@future-academy.example">info@future-academy.example</a></li>
+          <li>🕐 السبت – الخميس: 9 صباحًا – 9 مساءً</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> أكاديمية المستقبل للتعليم المهني — جميع الحقوق محفوظة.</span>
+      <span>الدفع الإلكتروني مؤمّن ومشفّر</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.52 3.76 1.44 5.33L2 22l4.95-1.6a9.8 9.8 0 0 0 5.09 1.4h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.76 13.9c-.24.68-1.4 1.3-1.94 1.34-.5.05-.98.23-3.3-.7-2.77-1.1-4.53-3.94-4.67-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.24-.28.53-.35.7-.35h.5c.16 0 .38-.06.6.46.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.19-.13.3-.26.47l-.4.46c-.13.13-.27.28-.11.55.15.28.68 1.12 1.46 1.82 1 .89 1.85 1.17 2.12 1.3.27.14.42.12.58-.07.16-.19.67-.78.85-1.05.18-.28.36-.23.6-.14.25.09 1.58.75 1.85.88.27.14.45.21.51.32.07.11.07.63-.17 1.31Z"/></svg>
+</a>
+
+<script src="/js/site.js"></script>
+<script src="/js/booking.js"></script>
+</body>
+</html>
