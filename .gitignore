@@ -1,0 +1,75 @@
+# Legacy files from A5F project
+A5F_AGENT_BUILD.md
+AI_CUSTOMER_OPERATIONS_README.md
+CLOUDFLARE_DEPLOY.md
+MANUALE_BUILD03.md
+MANUALE_BUILD05.md
+MANUALE_NETLIFY_SETUP.md
+NOMINALIA_DEPLOY.md
+SUPABASE_LEADS_EXPECTED_SCHEMA.md
+V17_FIX_NOTES.md
+V17_NOTES.md
+A5F_MANUALE_CLOUDFLARE_BUILD08.zip
+
+# Old project directories
+api/
+netlify/
+public/about/
+public/agent/
+public/approach/
+public/architect/
+public/assets/
+public/client/
+public/contact/
+public/cookies/
+public/dashboard/
+public/data/
+public/files/
+public/founder/
+public/insights/
+public/js/
+public/locales/
+public/manuale/
+public/partners/
+public/privacy/
+public/project/
+public/proposal/
+public/services/
+public/sitemap/
+public/start-project/
+public/terms/
+public/work/
+
+# Old project files
+public/index.html
+public/404.html
+public/robots.txt
+public/sitemap.xml
+worker.js
+wrangler.jsonc
+netlify.toml
+package.json
+README.md
+
+# Environment files
+.dev.vars.example
+.env.example
+
+# Node modules
+node_modules/
+.npm
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
