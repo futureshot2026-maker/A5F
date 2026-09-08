@@ -1,32 +1,32 @@
 /* ==========================================================================
-   أكاديمية المستقبل — يطا، فلسطين
-   نظام تصميم مبني على ألوان الشعار: كحلي + ذهبي + زيتوني + كريمي
+   أكاديمية المستقبل — تدريب مهني في الكوافير وأدوات التجميل، يطا، فلسطين
+   نظام تصميم مبني على ألوان الشعار: عنّابي (خمري) + ذهبي + وردي + كريمي
    ========================================================================== */
 
 :root {
   /* الألوان المستخرجة من الشعار */
-  --navy: #10263f;
-  --navy-dark: #081627;
-  --navy-light: #1d3a5f;
-  --gold: #e3a83b;
-  --gold-light: #f4c976;
-  --olive: #6b8e4e;
-  --olive-dark: #4f6b39;
-  --cream: #fbf8f2;
-  --cream-dark: #f2ecdf;
+  --navy: #6b1f3d;
+  --navy-dark: #3a0f20;
+  --navy-light: #8c3057;
+  --gold: #c9973e;
+  --gold-light: #e9b96c;
+  --olive: #c97a8b;
+  --olive-dark: #8c4a5c;
+  --cream: #fbf5f0;
+  --cream-dark: #f3e7dd;
   --white: #ffffff;
-  --ink: #1d2733;
-  --muted: #5b6672;
+  --ink: #2a1c22;
+  --muted: #6b5b61;
   --danger: #c0392b;
   --success: #2f7d5b;
-  --border: #e4ddca;
+  --border: #e8d9ce;
 
   --radius-sm: 10px;
   --radius: 16px;
   --radius-lg: 26px;
-  --shadow-sm: 0 4px 14px rgba(8, 22, 39, 0.08);
-  --shadow: 0 14px 34px rgba(8, 22, 39, 0.14);
-  --shadow-gold: 0 10px 24px rgba(227, 168, 59, 0.35);
+  --shadow-sm: 0 4px 14px rgba(58, 15, 32, 0.08);
+  --shadow: 0 14px 34px rgba(58, 15, 32, 0.14);
+  --shadow-gold: 0 10px 24px rgba(201, 151, 62, 0.35);
   --container: 1180px;
   --font: "Cairo", "Tajawal", "Segoe UI", Tahoma, sans-serif;
 }

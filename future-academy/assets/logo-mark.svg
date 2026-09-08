@@ -1,55 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">شعار أكاديمية المستقبل</title>
+  <title id="logoTitle">شعار أكاديمية المستقبل لتدريب الكوافير وأدوات التجميل</title>
   <defs>
-    <radialGradient id="navyGrad" cx="35%" cy="28%" r="78%">
-      <stop offset="0%" stop-color="#1D3A5F"/>
-      <stop offset="100%" stop-color="#081627"/>
+    <radialGradient id="wineGrad" cx="35%" cy="28%" r="78%">
+      <stop offset="0%" stop-color="#8C3057"/>
+      <stop offset="100%" stop-color="#4A1229"/>
     </radialGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F4C976"/>
-      <stop offset="100%" stop-color="#E3A83B"/>
-    </linearGradient>
   </defs>
 
   <!-- الخلفية الدائرية -->
-  <circle cx="120" cy="120" r="116" fill="url(#navyGrad)"/>
-  <circle cx="120" cy="120" r="111" fill="none" stroke="#E3A83B" stroke-width="2" opacity="0.55"/>
+  <circle cx="120" cy="120" r="116" fill="url(#wineGrad)"/>
+  <circle cx="120" cy="120" r="111" fill="none" stroke="#D9A657" stroke-width="2" opacity="0.6"/>
 
-  <!-- نجمة التميّز -->
-  <path d="M120,24 L124,33 L133,37 L124,41 L120,50 L116,41 L107,37 L116,33 Z" fill="url(#goldGrad)"/>
+  <!-- نجمة التألق (بريق الجمال والمستقبل) -->
+  <path d="M120,26 L124,36 L134,40 L124,44 L120,54 L116,44 L106,40 L116,36 Z" fill="#E9B96C"/>
 
-  <!-- أشعة الشمس (المستقبل المشرق) -->
-  <g stroke="#E9B24E" stroke-width="5" stroke-linecap="round">
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(-75 120 98)"/>
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(-50 120 98)"/>
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(-25 120 98)"/>
-    <line x1="120" y1="70" x2="120" y2="52"/>
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(25 120 98)"/>
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(50 120 98)"/>
-    <line x1="120" y1="70" x2="120" y2="52" transform="rotate(75 120 98)"/>
+  <!-- بريق زخرفي صغير على الجانبين -->
+  <g fill="#E9B96C">
+    <path d="M52,150 L54.5,156 L60,158 L54.5,160 L52,166 L49.5,160 L44,158 L49.5,156 Z"/>
+    <circle cx="66" cy="132" r="3"/>
+    <path d="M188,150 L190.5,156 L196,158 L190.5,160 L188,166 L185.5,160 L180,158 L185.5,156 Z"/>
+    <circle cx="174" cy="132" r="3"/>
   </g>
 
-  <!-- قرص الشمس -->
-  <circle cx="120" cy="98" r="22" fill="url(#goldGrad)"/>
-
-  <!-- أغصان زيتون رمز لفلسطين -->
-  <g fill="#6B8E4E">
-    <ellipse cx="52" cy="150" rx="9" ry="4" transform="rotate(-40 52 150)"/>
-    <ellipse cx="44" cy="168" rx="9" ry="4" transform="rotate(-65 44 168)"/>
-    <ellipse cx="46" cy="188" rx="9" ry="4" transform="rotate(-95 46 188)"/>
-    <ellipse cx="188" cy="150" rx="9" ry="4" transform="rotate(40 188 150)"/>
-    <ellipse cx="196" cy="168" rx="9" ry="4" transform="rotate(65 196 168)"/>
-    <ellipse cx="194" cy="188" rx="9" ry="4" transform="rotate(95 194 188)"/>
+  <!-- مقص الكوافير -->
+  <g fill="none" stroke="#E9B96C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80,62 L120,130 L158,194"/>
+    <path d="M160,62 L120,130 L82,194"/>
   </g>
-
-  <!-- الكتاب المفتوح: رمز المعرفة -->
-  <path d="M60,198 Q60,150 120,140 L120,198 Z" fill="#FBF8F2"/>
-  <path d="M180,198 Q180,150 120,140 L120,198 Z" fill="#FBF8F2"/>
-  <line x1="120" y1="140" x2="120" y2="198" stroke="#0F2A4A" stroke-width="2" opacity="0.45"/>
-  <g stroke="#0F2A4A" stroke-width="1.5" opacity="0.28" stroke-linecap="round">
-    <line x1="72" y1="175" x2="108" y2="172"/>
-    <line x1="72" y1="185" x2="104" y2="183"/>
-    <line x1="168" y1="175" x2="132" y2="172"/>
-    <line x1="168" y1="185" x2="136" y2="183"/>
+  <g fill="none" stroke="#E9B96C" stroke-width="7">
+    <circle cx="158" cy="194" r="16"/>
+    <circle cx="82" cy="194" r="16"/>
   </g>
+  <circle cx="120" cy="130" r="5.5" fill="#E9B96C"/>
 </svg>

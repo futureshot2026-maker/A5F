@@ -162,7 +162,7 @@
 
       const mailSubject = encodeURIComponent("طلب حجز جديد - أكاديمية المستقبل");
       const mailBody = encodeURIComponent(
-        `الاسم: ${data.fullName}\nالجوال: ${data.phone}\nالبريد: ${data.email || "-"}\nالخدمة: ${serviceLabel}\nالفئة العمرية: ${ageGroupLabel || "-"}\nطريقة الحضور: ${attendanceLabel || "-"}\nالموعد المفضل: ${data.preferredDate || "-"} (${timeSlotLabel || "-"})\nطريقة الدفع: ${payLabel}\nملاحظات: ${data.notes || "-"}`
+        `الاسم: ${data.fullName}\nالجوال: ${data.phone}\nالبريد: ${data.email || "-"}\nالخدمة: ${serviceLabel}\nالمستوى: ${ageGroupLabel || "-"}\nنوع الحضور: ${attendanceLabel || "-"}\nالموعد المفضل: ${data.preferredDate || "-"} (${timeSlotLabel || "-"})\nطريقة الدفع: ${payLabel}\nملاحظات: ${data.notes || "-"}`
       );
       const mailLink = document.getElementById("mailConfirmLink");
       if (mailLink) mailLink.href = `mailto:booking@future-academy-yatta.ps?subject=${mailSubject}&body=${mailBody}`;
