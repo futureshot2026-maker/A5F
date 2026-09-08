@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الصالات - القصور الذهبية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --orange: #E67E22;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: #333;
+            background: var(--white);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 3rem;
+        }
+
+        .hall-detail {
+            background: var(--light-gray);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .hall-detail h2 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hall-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-box {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-right: 5px solid var(--gold);
+        }
+
+        .detail-box h4 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-box p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .hall-features {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .hall-features h3 {
+            color: var(--black);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .features-list li {
+            list-style: none;
+            padding: 0.7rem 0 0.7rem 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .compare-section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .compare-section h2 {
+            text-align: center;
+            color: var(--black);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-x: auto;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light-gray);
+        }
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hall-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            nav a {
+                margin-right: 1rem;
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/golden-palaces.html" class="logo">👑 القصور الذهبية</a>
+            <nav>
+                <a href="/golden-palaces.html">الرئيسية</a>
+                <a href="/gallery.html">المعرض</a>
+                <a href="/packages.html">الباقات</a>
+                <a href="/golden-palaces.html#contact">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>تفاصيل الصالات والقاعات 🏛️</h1>
+
+        <!-- الصالة الذهبية -->
+        <div class="hall-detail">
+            <h2>💎 الصالة الذهبية</h2>
+
+            <div class="hall-detail-grid">
+                <div class="detail-box">
+                    <h4>المساحة</h4>
+                    <p>1200 متر مربع</p>
+                </div>
+                <div class="detail-box">
+                    <h4>السعة</h4>
+                    <p>حتى 500 ضيف</p>
+                </div>
+                <div class="detail-box">
+                    <h4>الارتفاع</h4>
+                    <p>8 أمتار</p>
+                </div>
+                <div class="detail-box">
+                    <h4>الموقف</h4>
+                    <p>200 سيارة</p>
+                </div>
+            </div>
+
+            <div class="hall-features">
+                <h3>المميزات والتجهيزات:</h3>
+                <ul class="features-list">
+                    <li>أرضيات رخام فاخرة</li>
+                    <li>جدران بديكور حديث</li>
+                    <li>نظام إضاءة LED متقدم</li>
+                    <li>نظام صوتيات محترف</li>
+                    <li>مكيفات هواء قوية</li>
+                    <li>دورات مياه حديثة</li>
+                    <li>مطبخ كامل التجهيز</li>
+                    <li>غرفة تجهيز العروس والعريس</li>
+                    <li>موقف سيارات مخصص</li>
+                    <li>نظام أمان وحراسة</li>
+                </ul>
+            </div>
+
+            <button class="book-btn" onclick="alert('للحجز: +970 594 504 908')">احجز الصالة الذهبية الآن</button>
+        </div>
+
+        <!-- القصر الملكي -->
+        <div class="hall-detail">
+            <h2>🏛️ القصر الملكي</h2>
+
+            <div class="hall-detail-grid">
+                <div class="detail-box">
+                    <h4>المساحة</h4>
+                    <p>800 متر مربع</p>
+                </div>
+                <div class="detail-box">
+                    <h4>السعة</h4>
+                    <p>حتى 300 ضيف</p>
+                </div>
+                <div class="detail-box">
+                    <h4>الارتفاع</h4>
+                    <p>7 أمتار</p>
+                </div>
+                <div class="detail-box">
+                    <h4>الموقف</h4>
+                    <p>150 سيارة</p>
+                </div>
+            </div>
+
+            <div class="hall-features">
+                <h3>المميزات والتجهيزات:</h3>
+                <ul class="features-list">
+                    <li>ديكور كلاسيكي أنيق</li>
+                    <li>أعمدة معمارية جميلة</li>
+                    <li>إضاءة ساحرة وملونة</li>
+                    <li>نظام صوتي عالي الجودة</li>
+                    <li>مكيفات هواء مركزية</li>
+                    <li>دورات مياه فاخرة</li>
+                    <li>مطبخ مجهز بكامل المعدات</li>
+                    <li>غرفة انتظار الضيوف</li>
+                    <li>موقف آمن للسيارات</li>
+                    <li>حراسة أمنية</li>
+                </ul>
+            </div>
+
+            <button class="book-btn" onclick="alert('للحجز: +970 594 504 908')">احجز القصر الملكي الآن</button>
+        </div>
+
+        <!-- حديقة النوارة -->
+        <div class="hall-detail">
+            <h2>👸 حديقة النوارة (خارجية)</h2>
+
+            <div class="hall-detail-grid">
+                <div class="detail-box">
+                    <h4>المساحة</h4>
+                    <p>500 متر مربع</p>
+                </div>
+                <div class="detail-box">
+                    <h4>السعة</h4>
+                    <p>حتى 200 ضيف</p>
+                </div>
+                <div class="detail-box">
+                    <h4>النوع</h3>
+                    <p>حديقة خارجية</p>
+                </div>
+                <div class="detail-box">
+                    <h4>الموقف</h4>
+                    <p>100 سيارة</p>
+                </div>
+            </div>
+
+            <div class="hall-features">
+                <h3>المميزات والتجهيزات:</h3>
+                <ul class="features-list">
+                    <li>حديقة طبيعية خضراء</li>
+                    <li>إضاءة رومانسية ليلية</li>
+                    <li>خيم كبيرة وفخمة</li>
+                    <li>جلسات وكراسي مريحة</li>
+                    <li>نافورات مضاءة جميلة</li>
+                    <li>طاولات وترتيبات أنيقة</li>
+                    <li>دورات مياه حديثة</li>
+                    <li>مطبخ مؤقت</li>
+                    <li>موقف آمن</li>
+                    <li>حراسة وتأمين كامل</li>
+                </ul>
+            </div>
+
+            <button class="book-btn" onclick="alert('للحجز: +970 594 504 908')">احجز حديقة النوارة الآن</button>
+        </div>
+
+        <!-- جدول المقارنة -->
+        <div class="compare-section">
+            <h2>مقارنة الصالات 📊</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>الخاصية</th>
+                        <th>الصالة الذهبية</th>
+                        <th>القصر الملكي</th>
+                        <th>حديقة النوارة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>المساحة</strong></td>
+                        <td>1200 م²</td>
+                        <td>800 م²</td>
+                        <td>500 م²</td>
+                    </tr>
+                    <tr>
+                        <td><strong>السعة</strong></td>
+                        <td>500 ضيف</td>
+                        <td>300 ضيف</td>
+                        <td>200 ضيف</td>
+                    </tr>
+                    <tr>
+                        <td><strong>النوع</strong></td>
+                        <td>داخلية فاخرة</td>
+                        <td>داخلية أنيقة</td>
+                        <td>خارجية رومانسية</td>
+                    </tr>
+                    <tr>
+                        <td><strong>الديكور</strong></td>
+                        <td>عصري وفاخر</td>
+                        <td>كلاسيكي أنيق</td>
+                        <td>طبيعي رومانسي</td>
+                    </tr>
+                    <tr>
+                        <td><strong>الإضاءة</strong></td>
+                        <td>LED متقدمة</td>
+                        <td>ملونة وساحرة</td>
+                        <td>رومانسية وناعمة</td>
+                    </tr>
+                    <tr>
+                        <td><strong>مواقف السيارات</strong></td>
+                        <td>200 سيارة</td>
+                        <td>150 سيارة</td>
+                        <td>100 سيارة</td>
+                    </tr>
+                    <tr>
+                        <td><strong>السعر (تقريبي)</strong></td>
+                        <td>من 8000 ₪</td>
+                        <td>من 6000 ₪</td>
+                        <td>من 5000 ₪</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 1.3rem; color: var(--gold); font-weight: 700; margin-bottom: 1rem;">👑 القصور الذهبية 👑</p>
+        <p>للحجز والاستفسارات | +970 594 504 908</p>
+        <p style="margin-top: 1rem; color: #999;">© 2026 جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

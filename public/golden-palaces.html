@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القصور الذهبية - منتجع وصالات أفراح | Yatta Palestine</title>
+    <meta name="description" content="منتجع وصالات أفراح فاخر في يطا - فلسطين. حفلات زفاف لا تُنسى في أرقى الأماكن مع أفضل الخدمات">
+    <meta name="keywords" content="صالات أفراح، منتجع، حفل زفاف، يطا، فلسطين، حدادية">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #9B7F1F;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --orange: #E67E22;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "👑";
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -50px;
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            bottom: -50px;
+            left: 10%;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-crown {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            display: block;
+            font-size: 1.2em;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--white);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--black);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .section-title span {
+            color: var(--gold);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--black);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== HALLS SECTION ===== */
+        .halls {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .halls-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .halls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .hall-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .hall-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow);
+        }
+
+        .hall-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .hall-content {
+            padding: 2rem;
+        }
+
+        .hall-content h3 {
+            color: var(--black);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hall-info {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .hall-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hall-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .view-btn {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-btn:hover {
+            gap: 1rem;
+            color: var(--orange);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(230, 126, 34, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            border-left-color: var(--orange);
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .service-item h4 {
+            color: var(--black);
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-info h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--orange);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: var(--gold);
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--orange);
+            transform: translateY(-5px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .hall-card, .service-item {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(2) { animation-delay: 0.1s; }
+        .feature-card:nth-child(3) { animation-delay: 0.2s; }
+        .feature-card:nth-child(4) { animation-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 3rem 1rem;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .features, .halls, .services, .contact {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid, .halls-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">القصور الذهبية</a>
+            <nav>
+                <ul>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#halls">الصالات</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="contact-btn">احجز الآن</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-crown">👑</div>
+            <h1>
+                القصور الذهبية
+                <span>تحقيق حلم حفل الزفاف الخاص بك</span>
+            </h1>
+            <p>
+                منتجع فاخر وصالات أفراح متميزة في قلب يطا - فلسطين<br>
+                حيث تتحول أحلامك إلى واقع لا يُنسى
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">احجز حفلتك الآن</a>
+                <a href="#halls" class="btn-secondary">استكشف صالاتنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>لماذا <span>القصور الذهبية</span>؟</h2>
+            <p>نحن نوفر لك تجربة فريدة من نوعها مع أفضل الخدمات والأسعار المنافسة</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>صالات فاخرة</h3>
+                <p>تصاميم عصرية وديكور رائع يتماشى مع كل الأذواق والميزانيات</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👨‍💼</div>
+                <h3>فريق محترف</h3>
+                <p>متخصصون في تنظيم الأفراح وضمان نجاح حفلتك من البداية للنهاية</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+                <h3>خدمات متكاملة</h3>
+                <p>من الطعام والشراب إلى الديكور والإضاءة والتصوير والفيديو</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>موقع متميز</h3>
+                <p>في قلب يطا - الحدادية بموقع سهل الوصول وآمن وهادئ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALLS SECTION -->
+    <section class="halls" id="halls">
+        <div class="halls-container">
+            <div class="section-title">
+                <h2>صالاتنا <span>المتميزة</span></h2>
+                <p>اختر من بين عدة صالات فاخرة تناسب جميع الاحتياجات والأحجام</p>
+            </div>
+
+            <div class="halls-grid">
+                <div class="hall-card">
+                    <div class="hall-image">💎</div>
+                    <div class="hall-content">
+                        <h3>الصالة الذهبية</h3>
+                        <div class="hall-info">
+                            <span>👥 500 ضيف</span>
+                            <span>📏 1200 م²</span>
+                        </div>
+                        <div class="hall-description">
+                            أكبر صالاتنا وأفخمها، مزودة بأحدث التجهيزات والإضاءة المتقدمة
+                        </div>
+                        <a href="#contact" class="view-btn">اعرف المزيد →</a>
+                    </div>
+                </div>
+
+                <div class="hall-card">
+                    <div class="hall-image">🏛️</div>
+                    <div class="hall-content">
+                        <h3>القصر الملكي</h3>
+                        <div class="hall-info">
+                            <span>👥 300 ضيف</span>
+                            <span>📏 800 م²</span>
+                        </div>
+                        <div class="hall-description">
+                            صالة فخمة مثالية للحفلات المتوسطة مع ديكور راقي وأنيق
+                        </div>
+                        <a href="#contact" class="view-btn">اعرف المزيد →</a>
+                    </div>
+                </div>
+
+                <div class="hall-card">
+                    <div class="hall-image">👸</div>
+                    <div class="hall-content">
+                        <h3>حديقة النوارة</h3>
+                        <div class="hall-info">
+                            <span>👥 200 ضيف</span>
+                            <span>📏 500 م²</span>
+                        </div>
+                        <div class="hall-description">
+                            صالة رومانسية خارجية مع إضاءة ساحرة وطبيعة خلابة
+                        </div>
+                        <a href="#contact" class="view-btn">اعرف المزيد →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-title">
+                <h2>خدمات <span>متكاملة</span></h2>
+                <p>نوفر لك كل ما تحتاج لحفل ناجح وذكريات جميلة</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>🍽️ خدمات الطعام والشراب</h4>
+                    <p>أطباق شهية متنوعة وقوائم طعام مخصصة حسب رغبتك</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>💐 الديكور والزينة</h4>
+                    <p>تصاميم فريدة وزينة راقية تناسب ذوقك الخاص</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>📸 التصوير والفيديو</h4>
+                    <p>توثيق احترافي لأجمل لحظات حفلتك بجودة عالية</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>🎵 الموسيقى والفن</h4>
+                    <p>فنانون محترفون وفرق موسيقية لتحيي حفلتك</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>💡 الإضاءة والصوتيات</h4>
+                    <p>نظام إضاءة حديث وصوتيات متقدمة لأفضل أداء</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>👔 الخدمات الإضافية</h4>
+                    <p>مواقف سيارات، أماكن تجهز، استقبال ضيوف، وأكثر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-title" style="color: white;">
+                <h2>تواصل معنا<span style="display: none;"></span></h2>
+                <p style="color: #ccc;">جاهزون للإجابة على جميع استفساراتك والبدء بتخطيط حفلتك</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h4>📞 الهاتف</h4>
+                    <p>
+                        <a href="tel:+970594504908">+970 594 504 908</a>
+                    </p>
+                    <p style="font-size: 0.9rem; color: #999;">متاح: من الساعة 10 صباحاً إلى 10 مساءً</p>
+                </div>
+
+                <div class="contact-info">
+                    <h4>📍 الموقع</h4>
+                    <p>
+                        يطا - السهل - الكرمل - الحدادية<br>
+                        <a href="https://maps.app.goo.gl/KQnxBeZjcZcDWr6M7?g_st=ic" target="_blank">
+                            عرض على الخريطة
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <h4>💬 تواصل سريع</h4>
+                    <p>
+                        <a href="https://wa.me/970594504908" target="_blank">واتس آب</a>
+                    </p>
+                    <p style="font-size: 0.9rem; color: #999;">للاستفسارات والحجوزات الفورية</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid rgba(212, 175, 55, 0.3);">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">تفاصيل الحجز</h3>
+                <form style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <input type="text" placeholder="اسمك الكريم" required style="padding: 0.8rem; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: Cairo;">
+                    <input type="email" placeholder="بريدك الإلكتروني" required style="padding: 0.8rem; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: Cairo;">
+                    <input type="tel" placeholder="رقم هاتفك" required style="padding: 0.8rem; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: Cairo;">
+                    <input type="date" required style="padding: 0.8rem; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: Cairo;">
+                    <textarea placeholder="رسالتك أو استفسارك" rows="3" style="grid-column: 1 / -1; padding: 0.8rem; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: Cairo;"></textarea>
+                    <button type="submit" class="btn-primary" style="grid-column: 1 / -1;">إرسال الاستفسار</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-size: 1.3rem; color: var(--gold); font-weight: 700;">👑 القصور الذهبية 👑</p>
+        <p>منتجع وصالات أفراح فاخر في يطا - فلسطين</p>
+        <p style="color: #999; margin: 1.5rem 0; font-size: 0.9rem;">
+            العنوان: يطا - السهل - الكرمل - الحدادية | الهاتف: +970 594 504 908
+        </p>
+        <div class="social-links">
+            <a href="https://wa.me/970594504908" title="واتس آب">💬</a>
+            <a href="https://maps.app.goo.gl/KQnxBeZjcZcDWr6M7?g_st=ic" title="الموقع على الخريطة">📍</a>
+            <a href="tel:+970594504908" title="اتصل بنا">☎️</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+            © 2026 القصور الذهبية | جميع الحقوق محفوظة
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .hall-card, .service-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

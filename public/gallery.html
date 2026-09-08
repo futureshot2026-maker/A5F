@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور - القصور الذهبية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #9B7F1F;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --orange: #E67E22;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: #333;
+            background: var(--white);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(26, 26, 26, 0.9));
+            padding: 2rem 1rem 1rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            nav a {
+                margin-right: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/golden-palaces.html" class="logo">👑 القصور الذهبية</a>
+            <nav>
+                <a href="/golden-palaces.html">الرئيسية</a>
+                <a href="/golden-palaces.html#halls">الصالات</a>
+                <a href="/golden-palaces.html#services">الخدمات</a>
+                <a href="/golden-palaces.html#contact">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>معرض الصور ✨</h1>
+        <p class="gallery-intro">تصفح صور حفلاتنا السابقة والتصاميم الرائعة لصالاتنا</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image">💎</div>
+                <div class="gallery-overlay">
+                    <h3>الصالة الذهبية</h3>
+                    <p>تصاميم فاخرة وإضاءة ساحرة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">👰</div>
+                <div class="gallery-overlay">
+                    <h3>حفل زفاف تقليدي</h3>
+                    <p>احتفالية راقية وأنيقة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">🎊</div>
+                <div class="gallery-overlay">
+                    <h3>حفل عصري</h3>
+                    <p>تصاميم عصرية ومبتكرة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">💐</div>
+                <div class="gallery-overlay">
+                    <h3>الديكور الزهري</h3>
+                    <p>أزهار طبيعية وخضرة رائعة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">✨</div>
+                <div class="gallery-overlay">
+                    <h3>إضاءة ساحرة</h3>
+                    <p>نظام إضاءة متقدم وحديث</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">🎭</div>
+                <div class="gallery-overlay">
+                    <h3>الفنون والترفيه</h3>
+                    <p>فنانون محترفون وفرق موسيقية</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">🍽️</div>
+                <div class="gallery-overlay">
+                    <h3>الطعام والشراب</h3>
+                    <p>أطباق شهية وقوائم متنوعة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">📸</div>
+                <div class="gallery-overlay">
+                    <h3>التصوير الاحترافي</h3>
+                    <p>توثيق كل اللحظات الجميلة</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image">🏛️</div>
+                <div class="gallery-overlay">
+                    <h3>حديقة النوارة</h3>
+                    <p>طبيعة خلابة ورومانسية</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 1.3rem; color: var(--gold); font-weight: 700; margin-bottom: 1rem;">👑 القصور الذهبية 👑</p>
+        <p>+970 594 504 908 | يطا - فلسطين</p>
+        <p style="margin-top: 1rem; color: #999;">© 2026 جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
