@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="بوابة المريض - عرض النتائج والملفات الطبية بشكل آمن">
+    <title>بوابة المريض - مركز طبي يطا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            direction: rtl;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .logo h1 {
+            color: #0066cc;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #0066cc;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .forgot-password a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .two-factor-box {
+            display: none;
+            background: #fff9e6;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .security-features {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            margin-top: 20px;
+            border-top: 2px solid #0066cc;
+        }
+
+        .security-features h4 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .security-features ul {
+            list-style: none;
+        }
+
+        .security-features li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 25px;
+            }
+
+            .logo h1 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-icon">🏥</div>
+            <h1>بوابة المريض</h1>
+            <p>مركز طبي يطا</p>
+        </div>
+
+        <div class="info-box">
+            🔐 بوابة آمنة لعرض ملفاتك الطبية والنتائج
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember" style="display: inline; margin-left: 8px;">تذكرني</label>
+            </div>
+
+            <button type="submit" class="login-btn">دخول الآن</button>
+
+            <div id="twoFactorBox" class="two-factor-box">
+                <label for="otp">أدخل رمز التحقق الثنائي:</label>
+                <input type="text" id="otp" placeholder="000000" maxlength="6" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 2px solid #ff9800;">
+                <button type="button" onclick="verifyOTP()" style="width: 100%; padding: 10px; margin-top: 10px; background: #ff9800; color: white; border: none; border-radius: 5px; cursor: pointer;">تحقق</button>
+            </div>
+
+            <div class="forgot-password">
+                <a href="javascript:void(0)" onclick="showForgotPassword()">هل نسيت كلمة المرور؟</a>
+            </div>
+        </form>
+
+        <div class="security-features">
+            <h4>🔒 ميزات الأمان</h4>
+            <ul>
+                <li>✓ تشفير 256-bit SSL/TLS</li>
+                <li>✓ مصادقة قوية Two-Factor</li>
+                <li>✓ حماية ضد الهجمات</li>
+                <li>✓ تسجيل جميع الوصولات</li>
+                <li>✓ توافق HIPAA</li>
+                <li>✓ نسخ احتياطية يومية</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; color: #999; font-size: 0.85em;">
+            <p>ليس لديك حساب؟ <a href="index.html" style="color: #0066cc; text-decoration: none;">احجز موعدك الآن</a></p>
+            <p style="margin-top: 10px;">للدعم: <a href="mailto:info@yatta-medical.ps" style="color: #0066cc; text-decoration: none;">info@yatta-medical.ps</a></p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate email and password
+            if (!email || !password) {
+                alert('يرجى ملء جميع الحقول');
+                return;
+            }
+
+            // In production, send to backend
+            console.log('Login attempt:', { email, password });
+
+            // Simulate Two-Factor Authentication
+            alert('تم إرسال رمز التحقق إلى بريدك الإلكتروني');
+            document.getElementById('twoFactorBox').style.display = 'block';
+
+            // In production:
+            // fetch('/api/login', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email, password })
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     if (data.success) {
+            //         localStorage.setItem('authToken', data.token);
+            //         window.location.href = '/dashboard.html';
+            //     }
+            // });
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('otp').value;
+            if (otp.length !== 6) {
+                alert('يرجى إدخال الرمز الصحيح');
+                return;
+            }
+
+            alert('تم التحقق بنجاح! سيتم التوجيه الآن...');
+            // window.location.href = '/dashboard.html';
+        }
+
+        function showForgotPassword() {
+            const email = prompt('أدخل بريدك الإلكتروني:');
+            if (email) {
+                alert('تم إرسال رابط استعادة كلمة المرور إلى: ' + email);
+            }
+        }
+
+        // Set minimum date for birthday
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('🏥 Medical Center Portal Loaded');
+        });
+    </script>
+</body>
+</html>

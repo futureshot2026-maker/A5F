@@ -1,0 +1,112 @@
+# Configuration and Environment
+config.php
+.env
+.env.local
+.env.*.local
+
+# Sensitive Data
+credentials.json
+secrets/
+*.pem
+*.key
+
+# Database
+*.sql
+!database.sql
+backups/
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# Uploads and Temporary Files
+uploads/
+temp/
+tmp/
+*.tmp
+.DS_Store
+
+# Node and Package Managers
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# Composer
+vendor/
+composer.lock
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build and Distribution
+dist/
+build/
+*.min.js
+*.min.css
+.cache/
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+
+# IDE Specific
+.phpstorm.meta.php
+.phpunit.result.cache
+.phpintel/
+
+# Development
+local/
+dev/
+staging/
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+*#
+.#*
+
+# Security
+.htpasswd
+.htaccess (if sensitive)
+private_keys/
+
+# Large Files
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Temporary Build Artifacts
+.tmp/
+*.o
+*.a
+*.so
+
+# Version Control
+.git
+.gitmodules
+
+# CI/CD
+.github/workflows/secrets.yml
+.gitlab-ci.yml (secrets)
+.travis.yml (secrets)

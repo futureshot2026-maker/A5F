@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مركز طبي يطا - خدمات صحية شاملة - الطوارئ، المختبرات، الأشعات">
+    <meta name="keywords" content="مركز طبي، يطا، طبيب، فحص، أشعة، حجز موعد">
+    <meta name="author" content="مركز طبي يطا">
+    <meta name="theme-color" content="#0066cc">
+    <title>مركز طبي يطا - خدمات صحية متميزة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span class="logo-text">مركز يطا الطبي</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li class="dropdown">
+                    <a href="#services">الخدمات ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#emergency">🚑 الطوارئ</a>
+                        <a href="#laboratory">🧪 المختبرات</a>
+                        <a href="#radiology">🖼️ الأشعات</a>
+                    </div>
+                </li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#pricing">الأسعار</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="portal.html" target="_blank">🔐 بوابة المريض</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>مرحباً بك في مركز يطا الطبي</h1>
+            <p>خدمات صحية شاملة بأعلى معايير الجودة والأمان</p>
+            <p class="hero-subtitle">متخصصون في الطوارئ، المختبرات، والأشعات الطبية</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToBooking()">احجز موعد الآن 📅</button>
+                <button class="btn btn-secondary" onclick="showCallUs()">اتصل بنا ☎️</button>
+                <button class="btn btn-emergency">طوارئ 24/7 🚑</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا الرئيسية</h2>
+            <div class="services-grid">
+                <!-- Emergency Service -->
+                <div id="emergency" class="service-card emergency-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>قسم الطوارئ</h3>
+                    <p class="badge badge-emergency">متاح 24/7</p>
+                    <p class="service-description">
+                        فريق طبي متخصص وخبير في التعامل مع الحالات الطارئة والحرجة على مدار الساعة
+                    </p>
+                    <ul class="features">
+                        <li>✓ فريق طبي مؤهل</li>
+                        <li>✓ معدات حديثة</li>
+                        <li>✓ استجابة فورية</li>
+                        <li>✓ رعاية كاملة</li>
+                    </ul>
+                    <button class="btn btn-emergency" onclick="callEmergency()">استدعاء الطوارئ</button>
+                </div>
+
+                <!-- Laboratory Service -->
+                <div id="laboratory" class="service-card lab-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>قسم المختبرات</h3>
+                    <p class="badge badge-lab">فحوصات دقيقة</p>
+                    <p class="service-description">
+                        أجهزة حديثة وكوادر متخصصة تضمن دقة عالية في جميع الفحوصات الطبية
+                    </p>
+                    <ul class="features">
+                        <li>✓ أجهزة مجهرية حديثة</li>
+                        <li>✓ نتائج سريعة وموثوقة</li>
+                        <li>✓ معايير عالمية</li>
+                        <li>✓ خصوصية تامة</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToBooking()">احجز فحص</button>
+                </div>
+
+                <!-- Radiology Service -->
+                <div id="radiology" class="service-card radiology-card">
+                    <div class="service-icon">🖼️</div>
+                    <h3>قسم الأشعات</h3>
+                    <p class="badge badge-radiology">تصوير متقدم</p>
+                    <p class="service-description">
+                        أحدث تقنيات التصوير الطبي (X-ray، Ultrasound، CT، MRI) بسرعة وأمان عاليين
+                    </p>
+                    <ul class="features">
+                        <li>✓ تقنيات عالمية</li>
+                        <li>✓ تصوير عالي الدقة</li>
+                        <li>✓ إشعاع منخفض</li>
+                        <li>✓ نتائج فورية</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="scrollToBooking()">احجز أشعة</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">احجز موعدك الآن</h2>
+            <p class="booking-subtitle">في 3 خطوات بسيطة فقط</p>
+
+            <form class="booking-form" id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service">اختر الخدمة *</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- اختر الخدمة --</option>
+                            <option value="emergency">🚑 الطوارئ (فوري)</option>
+                            <option value="lab">🧪 فحص مختبري</option>
+                            <option value="xray">🖼️ أشعة عادية (X-ray)</option>
+                            <option value="ultrasound">🖼️ موجات فوق صوتية</option>
+                            <option value="ct">🖼️ أشعة مقطعية (CT)</option>
+                            <option value="mri">🖼️ رنين مغناطيسي (MRI)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">اختر التاريخ *</label>
+                        <input type="date" id="date" name="date" required min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">اختر الوقت *</label>
+                        <select id="time" name="time" required>
+                            <option value="">-- اختر الوقت --</option>
+                            <option value="08:00">08:00 صباحاً</option>
+                            <option value="09:00">09:00 صباحاً</option>
+                            <option value="10:00">10:00 صباحاً</option>
+                            <option value="11:00">11:00 صباحاً</option>
+                            <option value="14:00">14:00 مساءً</option>
+                            <option value="15:00">15:00 مساءً</option>
+                            <option value="16:00">16:00 مساءً</option>
+                            <option value="17:00">17:00 مساءً</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">اسمك الكامل *</label>
+                        <input type="text" id="name" name="name" placeholder="مثال: محمد أحمد" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+970..." pattern="[+0-9\-\s()]{10,}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="أي معلومات إضافية تود تزويدنا بها..."></textarea>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">أوافق على <a href="privacy.html" target="_blank">سياسة الخصوصية</a> وشروط الاستخدام</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1em;">
+                    تأكيد الحجز ✓
+                </button>
+                <div id="bookingMessage" class="message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">عن مركزنا</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>من نحن</h3>
+                    <p>
+                        مركز طبي يطا هو مؤسسة صحية رائدة في فلسطين متخصصة في تقديم خدمات طبية عالية الجودة.
+                    </p>
+                    <p>
+                        تأسس المركز برؤية واضحة وهي توفير خدمات صحية شاملة وآمنة لجميع سكان المحافظة.
+                    </p>
+                    <p>
+                        نعتمد على أحدث التقنيات الطبية وفريق من الأطباء والفنيين المتخصصين والمؤهلين.
+                    </p>
+
+                    <h3 style="margin-top: 25px;">رسالتنا</h3>
+                    <p>تقديم خدمات صحية متميزة وآمنة برعاية إنسانية مستدامة.</p>
+
+                    <h3 style="margin-top: 25px;">رؤيتنا</h3>
+                    <p>أن نكون المركز الطبي الأول المفضل للمجتمع الفلسطيني.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">+5000</div>
+                        <div class="stat-label">مريض سنوياً</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">خدمة الطوارئ</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">كادر متخصص</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">آمان البيانات</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">الأسعار والخدمات</h2>
+            <p class="section-subtitle">أسعار منافسة وخدمات متميزة</p>
+
+            <div class="pricing-grid">
+                <!-- Emergency Service Pricing -->
+                <div class="pricing-card emergency-pricing">
+                    <h3>🚑 خدمة الطوارئ</h3>
+                    <div class="price">حسب الحالة</div>
+                    <ul class="pricing-features">
+                        <li>✓ فحص أولي</li>
+                        <li>✓ معالجة فورية</li>
+                        <li>✓ متابعة 24 ساعة</li>
+                        <li>✓ تحويل آمن</li>
+                    </ul>
+                </div>
+
+                <!-- Lab Service Pricing -->
+                <div class="pricing-card lab-pricing">
+                    <h3>🧪 قسم المختبرات</h3>
+                    <ul class="pricing-list">
+                        <li><span>فحص الدم العام</span> <span>50 ₪</span></li>
+                        <li><span>فحص البول</span> <span>30 ₪</span></li>
+                        <li><span>الكوليسترول</span> <span>60 ₪</span></li>
+                        <li><span>السكري</span> <span>40 ₪</span></li>
+                        <li><span>الكبد والكلى</span> <span>70 ₪</span></li>
+                        <li><span>الفحص الشامل</span> <span>200 ₪</span></li>
+                    </ul>
+                </div>
+
+                <!-- Radiology Service Pricing -->
+                <div class="pricing-card radiology-pricing">
+                    <h3>🖼️ قسم الأشعات</h3>
+                    <ul class="pricing-list">
+                        <li><span>أشعة عادية (X-ray)</span> <span>40 ₪</span></li>
+                        <li><span>الموجات فوق الصوتية</span> <span>100 ₪</span></li>
+                        <li><span>أشعة مقطعية (CT)</span> <span>300 ₪</span></li>
+                        <li><span>رنين مغناطيسي (MRI)</span> <span>500 ₪</span></li>
+                        <li><span>تقرير الأشعة</span> <span>20 ₪</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insurance-info">
+                <h4>💳 وسائل الدفع</h4>
+                <p>نقبل: بطاقات ائتمان • محافظ رقمية • تحويلات بنكية • نقد</p>
+                <p style="font-size: 0.95em; margin-top: 10px;">جميع المعاملات محمية بتشفير 256-bit وتوافق PCI DSS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        كيف أحجز موعداً؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يمكنك الحجز بثلاث طرق:</p>
+                        <ul>
+                            <li>🌐 عبر الموقع الإلكتروني (نموذج الحجز أعلاه)</li>
+                            <li>📞 اتصل بنا مباشرة على +970-XXXXX</li>
+                            <li>📱 WhatsApp على نفس الرقم</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        هل البيانات آمنة؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، جميع البيانات محمية بـ:</p>
+                        <ul>
+                            <li>🔐 تشفير SSL/TLS 256-bit</li>
+                            <li>🛡️ معايير HIPAA الدولية</li>
+                            <li>🔑 مصادقة قوية وTwo-Factor Auth</li>
+                            <li>🗄️ نسخ احتياطية يومية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        كم تستغرق النتائج؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>المدة تختلف حسب الفحص:</p>
+                        <ul>
+                            <li>🧪 المختبرات: 24 - 48 ساعة</li>
+                            <li>🖼️ الأشعات: فوري - 24 ساعة</li>
+                            <li>📞 نوديك عند اكتمال النتائج</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        هل تقبلون التأمين الصحي؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، نتعاون مع معظم شركات التأمين الصحي في فلسطين.</p>
+                        <p>تواصل معنا للمزيد من التفاصيل.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        ماذا لو كان لدي حالة طارئة؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>🚑 خدمة الطوارئ متاحة 24/7</p>
+                        <ul>
+                            <li>☎️ اتصل بنا فوراً على الرقم الطارئ</li>
+                            <li>⏱️ فريق الطوارئ جاهز دائماً</li>
+                            <li>🚗 توفر خدمة الإسعاف حسب الحاجة</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        كيف أدخل بوابة المريض؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>💼 سجل بريدك الإلكتروني عند أول حجز.</p>
+                        <p>ستتلقى بيانات الدخول عبر البريد.</p>
+                        <p>يمكنك عرض النتائج والملفات الطبية بشكل آمن.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📞 الهاتف</h3>
+                    <p>+970 (XXXXXXX)</p>
+                    <p style="font-size: 0.9em; color: #666;">متاح من 8 صباحاً إلى 8 مساءً</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📧 البريد الإلكتروني</h3>
+                    <p>info@yatta-medical.ps</p>
+                    <p style="font-size: 0.9em; color: #666;">رد في خلال 24 ساعة</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📍 الموقع</h3>
+                    <p>يطا، فلسطين</p>
+                    <p style="font-size: 0.9em; color: #666;">خريطة موقعنا</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>🕐 الساعات</h3>
+                    <p>السبت - الخميس: 8 ص - 8 م</p>
+                    <p style="font-size: 0.9em; color: #666;">الطوارئ: 24/7</p>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="اسمك الكامل" required>
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                </div>
+                <input type="text" placeholder="الموضوع" required>
+                <textarea placeholder="رسالتك..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>🏥 مركز يطا الطبي</h4>
+                    <p>خدمات صحية متميزة بمعايير عالمية</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#pricing">الأسعار</a></li>
+                        <li><a href="portal.html">بوابة المريض</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>السياسات</h4>
+                    <ul>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p>☎️ +970-XXXXXXX</p>
+                    <p>📧 info@yatta-medical.ps</p>
+                    <p>📍 يطا، فلسطين</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 مركز طبي يطا. جميع الحقوق محفوظة.</p>
+                <p style="font-size: 0.9em;">مركز متخصص في الطوارئ والمختبرات والأشعات</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">▲</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
