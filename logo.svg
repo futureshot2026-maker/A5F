@@ -1,0 +1,57 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#f0e6ff" stroke="#9c27b0" stroke-width="2"/>
+
+  <!-- Jasmine Flower - Center -->
+  <g transform="translate(100, 80)">
+    <!-- Center of flower -->
+    <circle cx="0" cy="0" r="8" fill="#ffd700" stroke="#ffb300" stroke-width="1"/>
+
+    <!-- 5 Petals -->
+    <g id="petal">
+      <ellipse cx="0" cy="-25" rx="10" ry="18" fill="#fff" stroke="#e6ccff" stroke-width="1"/>
+    </g>
+
+    <!-- Rotate petals -->
+    <use href="#petal" transform="rotate(72)"/>
+    <use href="#petal" transform="rotate(144)"/>
+    <use href="#petal" transform="rotate(216)"/>
+    <use href="#petal" transform="rotate(288)"/>
+  </g>
+
+  <!-- Jasmine Flower - Left -->
+  <g transform="translate(60, 110)">
+    <circle cx="0" cy="0" r="5" fill="#ffd700"/>
+    <ellipse cx="0" cy="-15" rx="6" ry="11" fill="#fff" stroke="#e6ccff" stroke-width="0.5"/>
+    <use href="#petal" transform="rotate(72) scale(0.6)"/>
+    <use href="#petal" transform="rotate(144) scale(0.6)"/>
+    <use href="#petal" transform="rotate(216) scale(0.6)"/>
+    <use href="#petal" transform="rotate(288) scale(0.6)"/>
+  </g>
+
+  <!-- Jasmine Flower - Right -->
+  <g transform="translate(140, 110)">
+    <circle cx="0" cy="0" r="5" fill="#ffd700"/>
+    <ellipse cx="0" cy="-15" rx="6" ry="11" fill="#fff" stroke="#e6ccff" stroke-width="0.5"/>
+    <use href="#petal" transform="rotate(72) scale(0.6)"/>
+    <use href="#petal" transform="rotate(144) scale(0.6)"/>
+    <use href="#petal" transform="rotate(216) scale(0.6)"/>
+    <use href="#petal" transform="rotate(288) scale(0.6)"/>
+  </g>
+
+  <!-- Leaves -->
+  <ellipse cx="75" cy="95" rx="8" ry="15" fill="#4caf50" stroke="#2e7d32" stroke-width="0.5" transform="rotate(-30 75 95)"/>
+  <ellipse cx="125" cy="95" rx="8" ry="15" fill="#4caf50" stroke="#2e7d32" stroke-width="0.5" transform="rotate(30 125 95)"/>
+
+  <!-- Medical Symbol -->
+  <g transform="translate(100, 150)">
+    <rect x="-2" y="-12" width="4" height="24" fill="#9c27b0" stroke="#6a1b9a" stroke-width="1"/>
+    <rect x="-12" y="-2" width="24" height="4" fill="#9c27b0" stroke="#6a1b9a" stroke-width="1"/>
+  </g>
+
+  <!-- Text Background -->
+  <rect x="20" y="170" width="160" height="20" fill="#9c27b0" rx="10"/>
+
+  <!-- Text -->
+  <text x="100" y="183" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">الياسمين الطبي</text>
+</svg>
