@@ -21,7 +21,7 @@ import { ProfileScreen } from './src/screens/ProfileScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const AuthStack = () => {
+const AuthStack = ({ onAuthenticated }) => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -29,8 +29,12 @@ const AuthStack = () => {
         animationEnabled: true,
       }}
     >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="Login">
+        {(props) => <LoginScreen {...props} onAuthenticated={onAuthenticated} />}
+      </Stack.Screen>
+      <Stack.Screen name="SignUp">
+        {(props) => <SignUpScreen {...props} onAuthenticated={onAuthenticated} />}
+      </Stack.Screen>
     </Stack.Navigator>
   );
 };
@@ -245,11 +249,12 @@ export default function App() {
           ) : (
             <RootStack.Screen
               name="Auth"
-              component={AuthStack}
               options={{
                 animationEnabled: false,
               }}
-            />
+            >
+              {() => <AuthStack onAuthenticated={() => setIsLoggedIn(true)} />}
+            </RootStack.Screen>
           )}
         </RootStack.Navigator>
       </NavigationContainer>

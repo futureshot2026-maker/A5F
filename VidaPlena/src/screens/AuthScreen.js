@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-export const LoginScreen = ({ navigation }) => {
+export const LoginScreen = ({ navigation, onAuthenticated }) => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,10 +32,7 @@ export const LoginScreen = ({ navigation }) => {
       // Simulate login
       setTimeout(() => {
         setLoading(false);
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'MainApp' }],
-        });
+        onAuthenticated && onAuthenticated();
       }, 1500);
     } catch (err) {
       setError(err.message);
@@ -113,7 +110,7 @@ export const LoginScreen = ({ navigation }) => {
   );
 };
 
-export const SignUpScreen = ({ navigation }) => {
+export const SignUpScreen = ({ navigation, onAuthenticated }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
@@ -144,10 +141,7 @@ export const SignUpScreen = ({ navigation }) => {
       // TODO: Implement Firebase authentication
       setTimeout(() => {
         setLoading(false);
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'MainApp' }],
-        });
+        onAuthenticated && onAuthenticated();
       }, 1500);
     } catch (err) {
       setError(err.message);
