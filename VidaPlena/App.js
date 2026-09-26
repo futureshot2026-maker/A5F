@@ -12,6 +12,7 @@ import { TherapyScreen } from './src/screens/TherapyScreen';
 import { LoginScreen, SignUpScreen } from './src/screens/AuthScreen';
 import { BookingScreen } from './src/screens/BookingScreen';
 import { PaymentScreen } from './src/screens/PaymentScreen';
+import { PaymentSuccessScreen } from './src/screens/PaymentSuccessScreen';
 import { MySessionsScreen } from './src/screens/MySessionsScreen';
 import { CommunityScreen } from './src/screens/CommunityScreen';
 import { ProfileScreen } from './src/screens/ProfileScreen';
@@ -59,6 +60,14 @@ const TherapyStack = () => {
         component={PaymentScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="PaymentSuccess"
+        component={PaymentSuccessScreen}
+        options={{
+          headerShown: false,
+          animationEnabled: false,
         }}
       />
     </Stack.Navigator>
