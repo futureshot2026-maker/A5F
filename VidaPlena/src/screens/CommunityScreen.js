@@ -48,7 +48,7 @@ export const CommunityScreen = ({ navigation }) => {
     },
   ];
 
-  const weeklyChalllenges = [
+  const weeklyChallenges = [
     {
       id: '1',
       title: '7-Day Meditation Challenge',
@@ -232,7 +232,7 @@ export const CommunityScreen = ({ navigation }) => {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>{t('common.currentChallenges')}</Text>
           </View>
-          {weeklyChalllenges.map((challenge) => renderChallenge(challenge))}
+          {weeklyChallenges.map((challenge) => renderChallenge(challenge))}
         </View>
       )}
 

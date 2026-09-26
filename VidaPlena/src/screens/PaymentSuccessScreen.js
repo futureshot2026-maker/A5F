@@ -204,12 +204,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#E0E5DD',
   },
-  detailCard: {
-    marginBottom: 16,
-    paddingBottom: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E5DD',
-  },
   detailLabel: {
     fontSize: 12,
     fontWeight: '600',

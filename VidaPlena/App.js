@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import './src/i18n/config';
+import { ErrorBoundary } from './src/components/ErrorBoundary';
 
 import { DashboardScreen } from './src/screens/DashboardScreen';
 import { TherapyScreen } from './src/screens/TherapyScreen';
@@ -20,8 +21,21 @@ import { ProfileScreen } from './src/screens/ProfileScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+const AuthStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animationEnabled: true,
+      }}
+    >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
+    </Stack.Navigator>
+  );
+};
+
 const DashboardStack = () => {
-  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -37,7 +51,6 @@ const DashboardStack = () => {
 };
 
 const TherapyStack = () => {
-  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -74,16 +87,38 @@ const TherapyStack = () => {
   );
 };
 
-const AuthStack = () => {
+const SessionsStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        animationEnabled: true,
       }}
     >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="SessionsList" component={MySessionsScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const CommunityStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="CommunityList" component={CommunityScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="ProfileSettings" component={ProfileScreen} />
     </Stack.Navigator>
   );
 };
@@ -166,42 +201,6 @@ const BottomTabNavigator = () => {
   );
 };
 
-const SessionsStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="SessionsList" component={MySessionsScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const CommunityStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="CommunityList" component={CommunityScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const ProfileStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="ProfileSettings" component={ProfileScreen} />
-    </Stack.Navigator>
-  );
-};
-
 const RootStack = createNativeStackNavigator();
 
 export default function App() {
@@ -227,32 +226,34 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <RootStack.Navigator
-        screenOptions={{
-          headerShown: false,
-          animationEnabled: false,
-        }}
-      >
-        {isLoggedIn ? (
-          <RootStack.Screen
-            name="MainApp"
-            component={BottomTabNavigator}
-            options={{
-              animationEnabled: false,
-            }}
-          />
-        ) : (
-          <RootStack.Screen
-            name="Auth"
-            component={AuthStack}
-            options={{
-              animationEnabled: false,
-            }}
-          />
-        )}
-      </RootStack.Navigator>
-    </NavigationContainer>
+    <ErrorBoundary>
+      <NavigationContainer>
+        <RootStack.Navigator
+          screenOptions={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+        >
+          {isLoggedIn ? (
+            <RootStack.Screen
+              name="MainApp"
+              component={BottomTabNavigator}
+              options={{
+                animationEnabled: false,
+              }}
+            />
+          ) : (
+            <RootStack.Screen
+              name="Auth"
+              component={AuthStack}
+              options={{
+                animationEnabled: false,
+              }}
+            />
+          )}
+        </RootStack.Navigator>
+      </NavigationContainer>
+    </ErrorBoundary>
   );
 }
 
