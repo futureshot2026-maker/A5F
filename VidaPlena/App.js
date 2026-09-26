@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
@@ -9,6 +9,12 @@ import './src/i18n/config';
 
 import { DashboardScreen } from './src/screens/DashboardScreen';
 import { TherapyScreen } from './src/screens/TherapyScreen';
+import { LoginScreen, SignUpScreen } from './src/screens/AuthScreen';
+import { BookingScreen } from './src/screens/BookingScreen';
+import { PaymentScreen } from './src/screens/PaymentScreen';
+import { MySessionsScreen } from './src/screens/MySessionsScreen';
+import { CommunityScreen } from './src/screens/CommunityScreen';
+import { ProfileScreen } from './src/screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -41,6 +47,34 @@ const TherapyStack = () => {
         name="TherapyList"
         component={TherapyScreen}
       />
+      <Stack.Screen
+        name="Booking"
+        component={BookingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Payment"
+        component={PaymentScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const AuthStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animationEnabled: true,
+      }}
+    >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
     </Stack.Navigator>
   );
 };
@@ -91,7 +125,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Sessions"
-        component={SessionsPlaceholder}
+        component={SessionsStack}
         options={{
           title: t('tabs.bookings'),
           tabBarIcon: ({ color, size }) => (
@@ -101,7 +135,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Community"
-        component={CommunityPlaceholder}
+        component={CommunityStack}
         options={{
           title: t('tabs.community'),
           tabBarIcon: ({ color, size }) => (
@@ -111,7 +145,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfilePlaceholder}
+        component={ProfileStack}
         options={{
           title: t('tabs.profile'),
           tabBarIcon: ({ color, size }) => (
@@ -123,40 +157,92 @@ const BottomTabNavigator = () => {
   );
 };
 
-const SessionsPlaceholder = () => {
-  const { t } = useTranslation();
+const SessionsStack = () => {
   return (
-    <View style={styles.placeholderContainer}>
-      <Text style={styles.placeholderText}>📅 {t('tabs.bookings')}</Text>
-      <Text style={styles.placeholderSubtext}>Coming Soon</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="SessionsList" component={MySessionsScreen} />
+    </Stack.Navigator>
   );
 };
 
-const CommunityPlaceholder = () => {
-  const { t } = useTranslation();
+const CommunityStack = () => {
   return (
-    <View style={styles.placeholderContainer}>
-      <Text style={styles.placeholderText}>👥 {t('tabs.community')}</Text>
-      <Text style={styles.placeholderSubtext}>Coming Soon</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="CommunityList" component={CommunityScreen} />
+    </Stack.Navigator>
   );
 };
 
-const ProfilePlaceholder = () => {
-  const { t } = useTranslation();
+const ProfileStack = () => {
   return (
-    <View style={styles.placeholderContainer}>
-      <Text style={styles.placeholderText}>👤 {t('tabs.profile')}</Text>
-      <Text style={styles.placeholderSubtext}>Coming Soon</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="ProfileSettings" component={ProfileScreen} />
+    </Stack.Navigator>
   );
 };
+
+const RootStack = createNativeStackNavigator();
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      // TODO: Check if user is already logged in (from AsyncStorage or Firebase)
+      // For now, start with login screen
+      setIsLoggedIn(false);
+      setIsLoading(false);
+    };
+    checkAuth();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>Vida Plena</Text>
+      </View>
+    );
+  }
+
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
+      <RootStack.Navigator
+        screenOptions={{
+          headerShown: false,
+          animationEnabled: false,
+        }}
+      >
+        {isLoggedIn ? (
+          <RootStack.Screen
+            name="MainApp"
+            component={BottomTabNavigator}
+            options={{
+              animationEnabled: false,
+            }}
+          />
+        ) : (
+          <RootStack.Screen
+            name="Auth"
+            component={AuthStack}
+            options={{
+              animationEnabled: false,
+            }}
+          />
+        )}
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 }
@@ -175,5 +261,16 @@ const styles = StyleSheet.create({
   placeholderSubtext: {
     fontSize: 16,
     color: '#999',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FAFBF8',
+  },
+  loadingText: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#2D7A4A',
   },
 });
